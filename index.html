@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Akshat's US Portfolio Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Hi User, Welcome to Akshat's US Portfolio Dashboard</h1>
+      <p>
+        Monitor your investments, track performance, and manage your portfolio
+        with ease.
+      </p>
+
+      <!-- ==========================================================================
+         Section One: Summary
+         ========================================================================== -->
+      <div class="card-section summary__grid">
+        <div class="summary__box">
+          <h4 class="summary__label">Invested</h4>
+          <h3 class="summary__number" data-label="Invested">Loading...</h3>
+        </div>
+        <div class="summary__box">
+          <h4 class="summary__label">Current</h4>
+          <h3 class="summary__number" data-label="Current">Loading...</h3>
+        </div>
+        <div class="summary__box">
+          <h4 class="summary__label">P&L</h4>
+            <h3 class="summary__number" data-label="P&L">Loading...</h3>
+            <h6 class="summary__percentage" data-label="P&L%">x%...</h6>
+        </div>
+        <div class="summary__box">
+          <h4 class="summary__label">Cash Position</h4>
+          <h3 class="summary__number" data-label="Cash Position">Loading...</h3>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+         Section Two: Portfolio Breakdown and Notifications
+         ========================================================================== -->
+      <div class="card-section portfolio__breakdown">
+        <!-- Pie Chart -->
+        <div class="portfolio__piechart-section">
+          <h3 class="portfolio__heading">Overview</h3>
+          <div class="portfolio__container">
+            <div class="portfolio__piechart">
+              <canvas id="portfolioChart" height="300"></canvas>
+            </div>
+            <div class="portfolio__color-meaning" id="color-meaning"></div>
+          </div>
+        </div>
+        <!-- Notifications -->
+        <div class="notifications__section">
+          <h5 class="notifications__heading">Recent Buy & Sell</h5>
+          <div class="notifications__scrollable">
+            <div id="ntf-container"></div>
+          </div>
+          <div id="ntf-toggle" class="ntf-toggle" style="display: none"></div>
+        </div>
+      </div>
+
+      <!-- ==========================================================================
+         Section Three: Stock Table and Bar Graph
+         ========================================================================== -->
+
+      <div id="stock-table">
+        <div id="skeleton-loader">
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+          <div class="skeleton-line" style="width: 100%"></div>
+        </div>
+      </div>
+      <!-- Bar Graph -->
+      <div class="chart-container">
+        <canvas id="allocationChart"></canvas>
+      </div>
+    </div>
+
+    <!-- ==========================================================================
+       JavaScript Libraries and Scripts
+       ========================================================================== -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
