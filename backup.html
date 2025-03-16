@@ -414,10 +414,10 @@
        ========================================================================== */
       @media (max-width: 768px) {
         body {
-          padding: 8px;
+          padding: 0px;
         }
         .card-section {
-          padding: 8px;
+          padding: 24px 16px;
         }
 
         /* Summary Section */
@@ -684,6 +684,7 @@
          Section Three: Stock Table and Bar Graph
          ========================================================================== -->
 
+      <div class="card-section">
       <div id="stock-table">
         <div id="skeleton-loader">
           <div class="skeleton-line" style="width: 100%"></div>
@@ -697,6 +698,7 @@
           <div class="skeleton-line" style="width: 100%"></div>
         </div>
       </div>
+    </div>
       <!-- Bar Graph -->
       <div class="chart-container">
         <canvas id="allocationChart"></canvas>
