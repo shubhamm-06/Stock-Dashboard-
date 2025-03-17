@@ -361,8 +361,8 @@
         background-color: #ffffff;
         border-top: 2px solid #ddd;
       }
-      .tabulator{
-        background-color: #F5F7FA !important;
+      .tabulator {
+        background-color: #f5f7fa !important;
       }
 
       /* ==========================================================================
@@ -527,13 +527,6 @@
         }
       }
 
-
-
-
-
-
-
-
       /* Existing styles remain unchanged unless specified below */
       .mobile-data-card {
         font-family: sans-serif;
@@ -616,7 +609,7 @@
           display: flex;
           flex-direction: column;
           gap: 10px; /* Reduced from 20px for tighter spacing */
-          padding:0px;
+          padding: 0px;
           max-width: 100%;
         }
         .mobile-data-card {
@@ -647,8 +640,8 @@
         </div>
         <div class="summary__box">
           <h4 class="summary__label">P&L</h4>
-            <h3 class="summary__number" data-label="P&L">Loading...</h3>
-            <h6 class="summary__percentage" data-label="P&L%">x%...</h6>
+          <h3 class="summary__number" data-label="P&L">Loading...</h3>
+          <h6 class="summary__percentage" data-label="P&L%">x%...</h6>
         </div>
         <div class="summary__box">
           <h4 class="summary__label">Cash Position</h4>
@@ -685,20 +678,20 @@
          ========================================================================== -->
 
       <div class="card-section">
-      <div id="stock-table">
-        <div id="skeleton-loader">
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
+        <div id="stock-table">
+          <div id="skeleton-loader">
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+            <div class="skeleton-line" style="width: 100%"></div>
+          </div>
         </div>
       </div>
-    </div>
       <!-- Bar Graph -->
       <div class="chart-container">
         <canvas id="allocationChart"></canvas>
@@ -712,50 +705,37 @@
     <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
     <script>
       // Function to fetch data with 30-minute caching
-async function fetchWithCache(url, storageKey) {
-  const cacheData = localStorage.getItem(storageKey);
-  const cacheTime = localStorage.getItem(`${storageKey}_time`);
-  const now = Date.now();
+      async function fetchWithCache(url) {
 
-  // If cache exists and is still valid (within 2 minutes), return cached data
-  if (cacheData && cacheTime && now - cacheTime < 2 * 60 * 1000) {
-    return JSON.parse(cacheData);
-  }
+        // Fetch fresh data if cache is expired or doesn't exist
+        try {
+          const response = await fetch(url, { cache: "no-store" });
+          if (!response.ok) throw new Error("Network response was not ok");
 
-  // Fetch fresh data if cache is expired or doesn't exist
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) throw new Error("Network response was not ok");
+          const data = await response.json();
 
-    const data = await response.json();
-    
-    // Store the new data and the timestamp
-    localStorage.setItem(storageKey, JSON.stringify(data));
-    localStorage.setItem(`${storageKey}_time`, now);
+          return data;
+        } catch (error) {
+          console.error(`Error fetching data from ${url}:`, error);
+          return null;
+        }
+      }
 
-    return data;
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    return null;
-  }
-}
+      // Fetch Portfolio Data
+      async function fetchPortfolioData() {
+        return await fetchWithCache(
+          "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec",
+          "portfolioData"
+        );
+      }
 
-// Fetch Portfolio Data
-async function fetchPortfolioData() {
-  return await fetchWithCache(
-    "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec",
-    "portfolioData"
-  );
-}
-
-// Fetch Notifications Data
-async function fetchNotificationsData() {
-  return await fetchWithCache(
-    "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec?sheet=Notification",
-    "notificationsData"
-  );
-}
-
+      // Fetch Notifications Data
+      async function fetchNotificationsData() {
+        return await fetchWithCache(
+          "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec?sheet=Notification",
+          "notificationsData"
+        );
+      }
 
       // Process Portfolio Data
       function processPortfolioData(data) {
@@ -1355,5 +1335,5 @@ async function fetchNotificationsData() {
 
       document.addEventListener("DOMContentLoaded", updateDashboard);
     </script>
-</body>
+  </body>
 </html>
