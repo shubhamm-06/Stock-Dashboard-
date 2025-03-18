@@ -16,35 +16,19 @@
       /* ==========================================================================
        General Styles
        ========================================================================== */
-      * {
-        margin: 0;
-        padding: 0;
+       *{
         box-sizing: border-box;
-        font-family: "Inter", sans-serif;
-      }
+        padding: 0;
+        margin: 0;
 
-      body {
-        background: #f5f7fa;
-        color: #333;
-        padding: 20px;
-      }
-
+       }
       .container {
+        box-sizing: border-box;
+        color: #333;
+        font-family: "Inter", sans-serif;
         max-width: 1400px;
+        padding: 0;
         margin: 0 auto;
-      }
-
-      h1 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #1a3c34;
-      }
-
-      p {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 30px;
       }
 
       /* ==========================================================================
@@ -77,10 +61,10 @@
         transition: transform 0.2s ease;
       }
 
-      .summary__box:hover {
+      /* .summary__box:hover {
         transform: translateY(-3px);
         box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
-      }
+      } */
 
       .summary__label {
         font-size: 14px;
@@ -413,11 +397,8 @@
        Mobile Media Queries
        ========================================================================== */
       @media (max-width: 768px) {
-        body {
-          padding: 12px;
-        }
         .card-section {
-          padding: 8px;
+          padding: 20px 8px;
         }
 
         /* Summary Section */
@@ -427,7 +408,7 @@
         }
 
         .summary__box {
-          padding: 10px;
+          padding: 12px 8px;
         }
         .summary__label {
           font-size: 12px;
@@ -448,6 +429,7 @@
 
         .portfolio__piechart-section {
           width: 100%;
+          display: none;
         }
         .portfolio__container {
           flex-direction: row;
@@ -487,13 +469,6 @@
         }
         .notifications__message {
           font-size: 13px;
-        }
-
-        h1 {
-          font-size: 24px;
-        }
-        p {
-          font-size: 14px;
         }
       }
 
@@ -619,11 +594,6 @@
   </head>
   <body>
     <div class="container">
-      <h1>Hi User, Welcome to Akshat's US Portfolio Dashboard</h1>
-      <p>
-        Monitor your investments, track performance, and manage your portfolio
-        with ease.
-      </p>
 
       <!-- ==========================================================================
          Section One: Summary
@@ -654,7 +624,7 @@
       <div class="card-section portfolio__breakdown">
         <!-- Pie Chart -->
         <div class="portfolio__piechart-section">
-          <h3 class="portfolio__heading">Overview</h3>
+          <h3 class="portfolio__heading">Allocation</h3>
           <div class="portfolio__container">
             <div class="portfolio__piechart">
               <canvas id="portfolioChart" height="300"></canvas>
@@ -677,6 +647,7 @@
          ========================================================================== -->
 
       <div class="card-section">
+        <h5 class="notifications__heading">Stock Holdings</h5>
         <div id="stock-table">
           <div id="skeleton-loader">
             <div class="skeleton-line" style="width: 100%"></div>
@@ -690,10 +661,10 @@
             <div class="skeleton-line" style="width: 100%"></div>
           </div>
         </div>
-      </div>
-      <!-- Bar Graph -->
-      <div class="chart-container">
-        <canvas id="allocationChart"></canvas>
+        <!-- Bar Graph -->
+        <div class="chart-container" style="height: 100px;">
+          <canvas id="allocationChart"></canvas>
+        </div>
       </div>
     </div>
 
@@ -705,7 +676,6 @@
     <script>
       // Function to fetch data with 30-minute caching
       async function fetchWithCache(url) {
-
         // Fetch fresh data if cache is expired or doesn't exist
         try {
           const response = await fetch(url, { cache: "no-store" });
@@ -842,7 +812,7 @@
         })}`;
       }
 
-      // Update Portfolio Chart
+      // Portfolio Chart
       let portfolioChart;
 
       const centerTextPlugin = {
@@ -874,7 +844,7 @@
         },
       };
 
-      Chart.register(centerTextPlugin);
+      // Note: Removed Chart.register(centerTextPlugin) to prevent global application
 
       function updatePortfolioChart(allocationData) {
         const ctx = document.getElementById("portfolioChart").getContext("2d");
@@ -944,12 +914,12 @@
                 },
               },
             },
-            plugins: [centerTextPlugin],
+            plugins: [centerTextPlugin], // Center text plugin applied only here
           });
         }
       }
 
-      // Update Fund Allocation Chart
+      // Fund Allocation Chart
       let allocationChart;
       function updateAllocationChart(invested, cash) {
         const ctx = document.getElementById("allocationChart").getContext("2d");
@@ -969,14 +939,14 @@
                   label: "Invested",
                   data: [invested],
                   backgroundColor: "#2ecc71",
-                  barThickness: 80,
+                  barThickness: 60,
                   borderRadius: 2,
                 },
                 {
-                  label: "Cash",
+                  label: "Cash Position",
                   data: [cash],
                   backgroundColor: "#3498db",
-                  barThickness: 80,
+                  barThickness: 60,
                   borderRadius: 2,
                 },
               ],
@@ -1178,7 +1148,7 @@
       // Initial call
       createTable();
 
-      // Your notifications code (unchanged)
+      // notifications code
       function renderNotifications(notifs) {
         const container = document.getElementById("ntf-container");
         container.innerHTML = notifs

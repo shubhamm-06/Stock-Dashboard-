@@ -1,35 +1,10 @@
 /* ==========================================================================
        General Styles
        ========================================================================== */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
-body {
-  background: #f5f7fa;
-  color: #333;
-  padding: 20px;
-}
-
 .container {
   max-width: 1400px;
   margin: 0 auto;
-}
-
-h1 {
-  font-size: 28px;
-  font-weight: 700;
-  margin-bottom: 10px;
-  color: #1a3c34;
-}
-
-p {
-  font-size: 16px;
-  color: #666;
-  margin-bottom: 30px;
+  font-family: "Inter", sans-serif;
 }
 
 /* ==========================================================================
