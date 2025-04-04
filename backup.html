@@ -362,7 +362,14 @@
         transform: translateY(-2px)
       }
 
+      .phone{
+          display: none !important;
+        }
+
       @media (max-width:768px) {
+        .phone{
+          display: none !important;
+        }
         .card-section {
           padding: 20px 8px
         }
@@ -391,7 +398,7 @@
 
         .portfolio__breakdown {
           flex-direction: column;
-          gap: 50px
+          gap: 15px
         }
 
         .portfolio__piechart-section {
@@ -447,6 +454,12 @@
       }
 
       @media (max-width:480px) {
+        .phone{
+          display: block !important;
+        }
+        .desktop{
+          display: none !important;
+        }
         .summary__number {
           font-size: 16px
         }
@@ -590,8 +603,21 @@
           <h3 class=summary__number data-label="Cash Position">Loading...</h3>
         </div>
       </div>
+
+
+
+      <div class="card-section portfolio__breakdown phone">
+        <h3 class=portfolio__heading>Allocation</h3>
+          <div class=portfolio__container>
+            <div class=portfolio__piechart> <canvas id=portfolioChart height=300></canvas> </div>
+            <div class=portfolio__color-meaning id=color-meaning></div>
+          </div>
+      </div>
+
+
+
       <div class="card-section portfolio__breakdown">
-        <div class=portfolio__piechart-section>
+        <div class="portfolio__piechart-sectio desktop">
           <h3 class=portfolio__heading>Allocation</h3>
           <div class=portfolio__container>
             <div class=portfolio__piechart> <canvas id=portfolioChart height=300></canvas> </div>
