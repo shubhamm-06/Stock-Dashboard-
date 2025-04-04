@@ -1,71 +1,41 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Akshat's US Portfolio Dashboard</title>
-    <link
-      href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-    <style>
-      /* ==========================================================================
-       General Styles
-       ========================================================================== */
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: "Inter", sans-serif;
-      }
+<!doctypehtml>
+  <html lang=en>
 
-      body {
-        background: #f5f7fa;
-        color: #333;
-        padding: 20px;
+  <head>
+    <meta charset=UTF-8>
+    <meta content="width=device-width,initial-scale=1" name=viewport>
+    <title>Akshat's US Portfolio Dashboard</title>
+    <link href=https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css rel=stylesheet>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel=stylesheet>
+    <style>
+      * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0
       }
 
       .container {
+        box-sizing: border-box;
+        color: #333;
+        font-family: Inter, sans-serif;
         max-width: 1400px;
-        margin: 0 auto;
+        padding: 0;
+        margin: 0 auto
       }
 
-      h1 {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 10px;
-        color: #1a3c34;
-      }
-
-      p {
-        font-size: 16px;
-        color: #666;
-        margin-bottom: 30px;
-      }
-
-      /* ==========================================================================
-       Card Section
-       ========================================================================== */
       .card-section {
         background: #fff;
         border-radius: 12px;
         padding: 25px;
         margin-bottom: 25px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-        border: 1px solid #e0e4e8;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, .05);
+        border: 1px solid #e0e4e8
       }
 
-      /* ==========================================================================
-       Summary Section
-       ========================================================================== */
       .summary__grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-        gap: 20px;
+        gap: 20px
       }
 
       .summary__box {
@@ -74,12 +44,7 @@
         border-radius: 8px;
         border: 1px solid #e0e4e8;
         text-align: center;
-        transition: transform 0.2s ease;
-      }
-
-      .summary__box:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.06);
+        transition: transform .2s ease
       }
 
       .summary__label {
@@ -87,20 +52,21 @@
         color: #666;
         font-weight: 500;
         margin-bottom: 10px;
-        text-transform: uppercase;
+        text-transform: uppercase
       }
 
       .summary__number {
         font-size: 24px;
         font-weight: 600;
-        color: #1a3c34;
+        color: #1a3c34
       }
 
       .summary__number.positive {
-        color: #28a745;
+        color: #28a745
       }
+
       .summary__number.negative {
-        color: #dc3545;
+        color: #dc3545
       }
 
       .summary__percentage {
@@ -109,44 +75,42 @@
         margin-top: 5px;
         display: inline-block;
         padding: 2px 8px;
-        border-radius: 4px;
+        border-radius: 4px
       }
 
       .summary__percentage.positive {
         color: #28a745;
-        background: #e6f3e9;
-      }
-      .summary__percentage.negative {
-        color: #dc3545;
-        background: #fce8e9;
+        background: #e6f3e9
       }
 
-      /* ==========================================================================
-       Portfolio Breakdown
-       ========================================================================== */
+      .summary__percentage.negative {
+        color: #dc3545;
+        background: #fce8e9
+      }
+
       .portfolio__breakdown {
         display: flex;
         gap: 25px;
-        align-items: stretch;
+        align-items: stretch
       }
 
       .portfolio__piechart-section {
         width: 55%;
         display: flex;
-        flex-direction: column;
+        flex-direction: column
       }
 
       .portfolio__heading {
         font-size: 18px;
         font-weight: 600;
         margin-bottom: 15px;
-        color: #1a3c34;
+        color: #1a3c34
       }
 
       .portfolio__container {
         display: flex;
         gap: 20px;
-        align-items: center;
+        align-items: center
       }
 
       .portfolio__color-meaning {
@@ -155,32 +119,32 @@
         padding-left: 10px;
         width: auto;
         scrollbar-width: thin;
-        scrollbar-color: #bbb #f5f7fa;
+        scrollbar-color: #bbb #f5f7fa
       }
 
       .portfolio__color-meaning::-webkit-scrollbar {
-        width: 8px;
+        width: 8px
       }
 
       .portfolio__color-meaning::-webkit-scrollbar-track {
         background: #f5f7fa;
-        border-radius: 4px;
+        border-radius: 4px
       }
 
       .portfolio__color-meaning::-webkit-scrollbar-thumb {
         background-color: #bbb;
         border-radius: 4px;
-        border: 2px solid #f5f7fa;
+        border: 2px solid #f5f7fa
       }
 
       .portfolio__color-meaning::-webkit-scrollbar-thumb:hover {
-        background-color: #999;
+        background-color: #999
       }
 
       .portfolio__color-box {
         display: flex;
         align-items: center;
-        margin-bottom: 12px;
+        margin-bottom: 12px
       }
 
       .portfolio__color {
@@ -188,33 +152,30 @@
         height: 8px;
         border-radius: 4px;
         margin-right: 12px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1)
       }
 
       .portfolio__meaning {
         font-size: 14px;
         color: #333;
-        font-weight: 500;
+        font-weight: 500
       }
 
       .portfolio__piechart {
         max-width: 60%;
-        flex: 1;
+        flex: 1
       }
 
-      /* ==========================================================================
-       Notifications Section
-       ========================================================================== */
       .notifications__section {
         flex: 1;
-        min-width: 0;
+        min-width: 0
       }
 
       .notifications__heading {
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 15px;
-        color: #1a3c34;
+        color: #1a3c34
       }
 
       .notifications__scrollable {
@@ -225,29 +186,28 @@
         border-radius: 6px;
         background: #fafafa;
         scrollbar-width: thin;
-        scrollbar-color: #bbb #f5f7fa;
+        scrollbar-color: #bbb #f5f7fa
       }
 
       .notifications__scrollable::-webkit-scrollbar {
-        width: 8px;
+        width: 8px
       }
 
       .notifications__scrollable::-webkit-scrollbar-track {
         background: #f5f7fa;
-        border-radius: 4px;
+        border-radius: 4px
       }
 
       .notifications__scrollable::-webkit-scrollbar-thumb {
         background-color: #bbb;
         border-radius: 4px;
-        border: 2px solid #f5f7fa;
+        border: 2px solid #f5f7fa
       }
 
       .notifications__scrollable::-webkit-scrollbar-thumb:hover {
-        background-color: #999;
+        background-color: #999
       }
 
-      /* Notification Box Styling */
       .notifications__box {
         display: flex;
         align-items: center;
@@ -255,28 +215,27 @@
         border-radius: 8px;
         margin-bottom: 12px;
         background: #fff;
-        transition: all 0.2s ease;
+        transition: all .2s ease;
         opacity: 0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-        border-left: 4px solid #000; /* Default black border */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .05);
+        border-left: 4px solid #000
       }
 
       .notifications__box.show {
-        opacity: 1;
+        opacity: 1
       }
 
       .notifications__box:hover {
         background: #f9f9f9;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, .1)
       }
 
-      /* Dynamic border colors based on content */
       .notifications__box--buy {
-        border-left-color: #28a745; /* Green for Bought */
+        border-left-color: #28a745
       }
 
       .notifications__box--sell {
-        border-left-color: #dc3545; /* Red for Sold */
+        border-left-color: #dc3545
       }
 
       .notifications__img {
@@ -285,46 +244,43 @@
         border-radius: 50%;
         margin-right: 16px;
         border: 1px solid #eee;
-        object-fit: cover;
+        object-fit: cover
       }
 
       .notifications__content {
         flex-grow: 1;
-        min-width: 0;
+        min-width: 0
       }
 
       .notifications__header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 4px;
+        margin-bottom: 4px
       }
 
       .notifications__title {
         font-size: 15px;
         font-weight: 600;
-        color: #1a3c34;
+        color: #1a3c34
       }
 
       .notifications__date {
         font-size: 12px;
-        color: #999;
+        color: #999
       }
 
       .notifications__message {
         font-size: 14px;
         color: #555;
         line-height: 1.5;
-        overflow-wrap: break-word;
+        overflow-wrap: break-word
       }
 
-      /* ==========================================================================
-       Table Styling
-       ========================================================================== */
       #stock-table {
-        border-radius: 0px;
+        border-radius: 0;
         width: 100%;
-        overflow-x: auto;
+        overflow-x: auto
       }
 
       .tabulator .tabulator-header {
@@ -333,12 +289,12 @@
         font-weight: 600;
         background: #dae7eb;
         color: #333;
-        border-bottom: 2px solid #ccc;
+        border-bottom: 2px solid #ccc
       }
 
       .tabulator .tabulator-header .tabulator-col {
         padding: 10px;
-        white-space: nowrap;
+        white-space: nowrap
       }
 
       .tabulator .tabulator-cell {
@@ -346,416 +302,361 @@
         font-size: 14px;
         color: #333;
         border-right: 1px solid #e5e5e5;
-        white-space: nowrap;
+        white-space: nowrap
       }
 
       .tabulator .tabulator-row:nth-child(even) {
-        background-color: #f9f9f9;
+        background-color: #f9f9f9
       }
 
       .tabulator .tabulator-row:hover {
-        background-color: #fff9cc;
+        background-color: #fff9cc
       }
 
       .tabulator .tabulator-footer {
-        background-color: #ffffff;
-        border-top: 2px solid #ddd;
-      }
-      .tabulator{
-        background-color: #F5F7FA !important;
+        background-color: #fff;
+        border-top: 2px solid #ddd
       }
 
-      /* ==========================================================================
-       Skeleton Loader
-       ========================================================================== */
+      .tabulator {
+        background-color: #f5f7fa !important
+      }
+
       #skeleton-loader {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 10px
       }
 
       .skeleton-line {
         height: 25px;
         background: #e0e0e0;
         border-radius: 4px;
-        animation: pulse 1.5s infinite;
+        animation: pulse 1.5s infinite
       }
 
       @keyframes pulse {
         0% {
-          opacity: 1;
+          opacity: 1
         }
+
         50% {
-          opacity: 0.4;
+          opacity: .4
         }
+
         100% {
-          opacity: 1;
+          opacity: 1
         }
       }
 
-      /* ==========================================================================
-       Toggle Styling
-       ========================================================================== */
       .ntf-toggle {
         margin-top: 12px;
-        font-size: 0.9rem;
+        font-size: .9rem;
         color: #39808d;
         cursor: pointer;
         text-decoration: underline;
-        transition: transform 0.2s ease;
+        transition: transform .2s ease
       }
 
       .ntf-toggle:hover {
-        transform: translateY(-2px);
+        transform: translateY(-2px)
       }
 
-      /* ==========================================================================
-       Mobile Media Queries
-       ========================================================================== */
-      @media (max-width: 768px) {
-        body {
-          padding: 0px;
-        }
+      @media (max-width:768px) {
         .card-section {
-          padding: 24px 16px;
+          padding: 20px 8px
         }
 
-        /* Summary Section */
         .summary__grid {
           grid-template-columns: repeat(2, 1fr);
-          gap: 10px;
+          gap: 10px
         }
 
         .summary__box {
-          padding: 10px;
-        }
-        .summary__label {
-          font-size: 12px;
-        }
-        .summary__number {
-          font-size: 18px;
-        }
-        .summary__percentage {
-          font-size: 12px;
-          margin-top: 5px;
+          padding: 12px 8px
         }
 
-        /* Portfolio Section */
+        .summary__label {
+          font-size: 12px
+        }
+
+        .summary__number {
+          font-size: 18px
+        }
+
+        .summary__percentage {
+          font-size: 12px;
+          margin-top: 5px
+        }
+
         .portfolio__breakdown {
           flex-direction: column;
-          gap: 15px;
+          gap: 50px
         }
 
         .portfolio__piechart-section {
           width: 100%;
-          /* display: none; */
         }
+
         .portfolio__container {
           flex-direction: row;
-          gap: 10px;
-          justify-content: center;
+          gap: 30px;
+          justify-content: start;
         }
+
         .portfolio__piechart {
-          max-width: 200px;
+          max-width: 200px
         }
+
         .portfolio__color-meaning {
           width: auto;
           max-height: 150px;
-          padding-right: 5px;
-        }
-        .portfolio__meaning {
-          font-size: 10px;
+          padding-right: 5px
         }
 
-        /* Notifications Section */
+        .portfolio__meaning {
+          font-size: 10px
+        }
+
         .notifications__scrollable {
           height: 300px;
-          padding: 8px;
+          padding: 8px
         }
+
         .notifications__box {
-          padding: 10px;
+          padding: 10px
         }
+
         .notifications__img {
           width: 32px;
           height: 32px;
-          margin-right: 12px;
-        }
-        .notifications__title {
-          font-size: 14px;
-        }
-        .notifications__date {
-          font-size: 11px;
-        }
-        .notifications__message {
-          font-size: 13px;
+          margin-right: 12px
         }
 
-        h1 {
-          font-size: 24px;
+        .notifications__title {
+          font-size: 14px
         }
-        p {
-          font-size: 14px;
+
+        .notifications__date {
+          font-size: 11px
+        }
+
+        .notifications__message {
+          font-size: 13px
         }
       }
 
-      @media (max-width: 480px) {
+      @media (max-width:480px) {
         .summary__number {
-          font-size: 16px;
+          font-size: 16px
         }
+
         .portfolio__piechart {
           max-width: 50%;
+          max-height: 200px;
         }
+
         .portfolio__color-meaning {
-          width: auto;
+          width: auto
         }
+
         .notifications__box {
-          padding: 8px;
+          padding: 8px
         }
+
         .notifications__img {
           width: 28px;
           height: 28px;
-          margin-right: 10px;
+          margin-right: 10px
         }
+
         .notifications__title {
-          font-size: 13px;
+          font-size: 13px
         }
+
         .notifications__date {
-          font-size: 10px;
+          font-size: 10px
         }
+
         .notifications__message {
-          font-size: 12px;
+          font-size: 12px
         }
       }
 
-
-
-
-
-
-
-
-      /* Existing styles remain unchanged unless specified below */
       .mobile-data-card {
         font-family: sans-serif;
-        padding: 12px; /* Reduced from 15px */
-        background-color: #ffffff;
+        padding: 12px;
+        background-color: #fff;
         border: 1px solid #eee;
         border-radius: 5px;
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
-        font-size: 12px; /* Reduced from 14px */
+        font-size: 12px
       }
 
-      /* Card Asset Header */
       .card-asset-header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 8px; /* Reduced from 10px */
+        margin-bottom: 8px
       }
 
       .card-asset-name {
-        font-size: 16px; /* Reduced from 1.2em */
-        font-weight: 400; /* Semi-bold instead of bold */
-        color: #333;
+        font-size: 16px;
+        font-weight: 400;
+        color: #333
       }
 
       .card-loss {
         color: #e57373;
-        font-weight: 400; /* Semi-bold instead of bold */
+        font-weight: 400
       }
 
-      /* Card Data Row */
       .card-data-row {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        margin-bottom: 8px; /* Reduced from 10px */
-        flex-wrap: wrap;
+        margin-bottom: 8px;
+        flex-wrap: wrap
       }
 
-      /* Label-Value Pairs Container */
       .card-pairs {
         display: flex;
-        gap: 10px; /* Reduced from 10px */
-        flex-wrap: wrap;
+        gap: 10px;
+        flex-wrap: wrap
       }
 
-      /* Individual Pair */
       .card-pair {
         display: flex;
-        gap: 4px; /* Reduced from 5px */
+        gap: 4px
       }
 
       .card-label {
-        font-weight: normal;
-        color: #666;
+        font-weight: 400;
+        color: #666
       }
 
       .card-value {
-        font-weight: 500; /* Medium weight instead of bold */
-        color: #666;
+        font-weight: 500;
+        color: #666
       }
 
       .card-percentage {
         color: #e57373;
-        font-weight: 500; /* Medium weight instead of implied bold */
+        font-weight: 500
       }
 
-      /* Last data row separator */
       .card-data-row:last-child {
         border-top: 1px solid #eee;
-        padding-top: 8px; /* Reduced from 10px */
-        margin-top: 8px; /* Reduced from 10px */
+        padding-top: 8px;
+        margin-top: 8px
       }
 
-      /* Mobile-specific adjustments */
-      @media (max-width: 600px) {
+      @media (max-width:600px) {
         #stock-table {
           display: flex;
           flex-direction: column;
-          gap: 10px; /* Reduced from 20px for tighter spacing */
-          padding:0px;
-          max-width: 100%;
+          gap: 10px;
+          padding: 0;
+          max-width: 100%
         }
+
         .mobile-data-card {
-          padding: 10px; /* Further reduced from 15px */
+          padding: 10px
         }
       }
     </style>
   </head>
+
   <body>
-    <div class="container">
-      <h1>Hi User, Welcome to Akshat's US Portfolio Dashboard</h1>
-      <p>
-        Monitor your investments, track performance, and manage your portfolio
-        with ease.
-      </p>
-
-      <!-- ==========================================================================
-         Section One: Summary
-         ========================================================================== -->
+    <div class=container>
       <div class="card-section summary__grid">
-        <div class="summary__box">
-          <h4 class="summary__label">Invested</h4>
-          <h3 class="summary__number" data-label="Invested">Loading...</h3>
+        <div class=summary__box>
+          <h4 class=summary__label>Invested</h4>
+          <h3 class=summary__number data-label=Invested>Loading...</h3>
         </div>
-        <div class="summary__box">
-          <h4 class="summary__label">Current</h4>
-          <h3 class="summary__number" data-label="Current">Loading...</h3>
+        <div class=summary__box>
+          <h4 class=summary__label>Current</h4>
+          <h3 class=summary__number data-label=Current>Loading...</h3>
         </div>
-        <div class="summary__box">
-          <h4 class="summary__label">P&L</h4>
-            <h3 class="summary__number" data-label="P&L">Loading...</h3>
-            <h6 class="summary__percentage" data-label="P&L%">x%...</h6>
+        <div class=summary__box>
+          <h4 class=summary__label>P&L</h4>
+          <h3 class=summary__number data-label=P&L>Loading...</h3>
+          <h6 class=summary__percentage data-label=P&L%>x%...</h6>
         </div>
-        <div class="summary__box">
-          <h4 class="summary__label">Cash Position</h4>
-          <h3 class="summary__number" data-label="Cash Position">Loading...</h3>
+        <div class=summary__box>
+          <h4 class=summary__label>Cash Position</h4>
+          <h3 class=summary__number data-label="Cash Position">Loading...</h3>
         </div>
       </div>
-
-      <!-- ==========================================================================
-         Section Two: Portfolio Breakdown and Notifications
-         ========================================================================== -->
       <div class="card-section portfolio__breakdown">
-        <!-- Pie Chart -->
-        <div class="portfolio__piechart-section">
-          <h3 class="portfolio__heading">Overview</h3>
-          <div class="portfolio__container">
-            <div class="portfolio__piechart">
-              <canvas id="portfolioChart" height="300"></canvas>
-            </div>
-            <div class="portfolio__color-meaning" id="color-meaning"></div>
+        <div class=portfolio__piechart-section>
+          <h3 class=portfolio__heading>Allocation</h3>
+          <div class=portfolio__container>
+            <div class=portfolio__piechart> <canvas id=portfolioChart height=300></canvas> </div>
+            <div class=portfolio__color-meaning id=color-meaning></div>
           </div>
         </div>
-        <!-- Notifications -->
-        <div class="notifications__section">
-          <h5 class="notifications__heading">Recent Buy & Sell</h5>
-          <div class="notifications__scrollable">
-            <div id="ntf-container"></div>
+        <div class=notifications__section>
+          <h5 class=notifications__heading>Recent Buy & Sell</h5>
+          <div class=notifications__scrollable>
+            <div id=ntf-container></div>
           </div>
-          <div id="ntf-toggle" class="ntf-toggle" style="display: none"></div>
+          <div class=ntf-toggle style=display:none id=ntf-toggle></div>
         </div>
       </div>
-
-      <!-- ==========================================================================
-         Section Three: Stock Table and Bar Graph
-         ========================================================================== -->
-
-      <div class="card-section">
-      <div id="stock-table">
-        <div id="skeleton-loader">
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
-          <div class="skeleton-line" style="width: 100%"></div>
+      <div class=card-section>
+        <h5 class=notifications__heading>Stock Holdings</h5>
+        <div id=stock-table>
+          <div id=skeleton-loader>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+            <div class=skeleton-line style=width:100%></div>
+          </div>
         </div>
+        <div class=chart-container style=height:100px> <canvas id=allocationChart></canvas> </div>
       </div>
     </div>
-      <!-- Bar Graph -->
-      <div class="chart-container">
-        <canvas id="allocationChart"></canvas>
-      </div>
-    </div>
+    <script src=https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js></script>
+    <script src=https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js></script>
+    <script> // Function to fetch data with 30-minute caching
+      async function fetchWithCache(url) {
+        // Fetch fresh data if cache is expired or doesn't exist
+        try {
+          const response = await fetch(url, { cache: "no-store" });
+          if (!response.ok) throw new Error("Network response was not ok");
 
-    <!-- ==========================================================================
-       JavaScript Libraries and Scripts
-       ========================================================================== -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-    <script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
-    <script>
-      // Function to fetch data with 30-minute caching
-async function fetchWithCache(url, storageKey) {
-  const cacheData = localStorage.getItem(storageKey);
-  const cacheTime = localStorage.getItem(`${storageKey}_time`);
-  const now = Date.now();
+          const data = await response.json();
 
-  // If cache exists and is still valid (within 2 minutes), return cached data
-  if (cacheData && cacheTime && now - cacheTime < 2 * 60 * 1000) {
-    return JSON.parse(cacheData);
-  }
+          return data;
+        } catch (error) {
+          console.error(`Error fetching data from ${url}:`, error);
+          return null;
+        }
+      }
 
-  // Fetch fresh data if cache is expired or doesn't exist
-  try {
-    const response = await fetch(url, { cache: "no-store" });
-    if (!response.ok) throw new Error("Network response was not ok");
+      // Fetch Portfolio Data
+      async function fetchPortfolioData() {
+        return await fetchWithCache(
+          "https://shubhamm-06.github.io/Portfolio-API/Data.json",
+          "portfolioData"
+        );
+      }
 
-    const data = await response.json();
-    
-    // Store the new data and the timestamp
-    localStorage.setItem(storageKey, JSON.stringify(data));
-    localStorage.setItem(`${storageKey}_time`, now);
-
-    return data;
-  } catch (error) {
-    console.error(`Error fetching data from ${url}:`, error);
-    return null;
-  }
-}
-
-// Fetch Portfolio Data
-async function fetchPortfolioData() {
-  return await fetchWithCache(
-    "https://shubhamm-06.github.io/Portfolio-API/Data.json",
-    "portfolioData"
-  );
-}
-
-// Fetch Notifications Data
-async function fetchNotificationsData() {
-  return await fetchWithCache(
-    "https://shubhamm-06.github.io/Portfolio-API/notification.json",
-    "notificationsData"
-  );
-}
-
+      // Fetch Notifications Data
+      async function fetchNotificationsData() {
+        return await fetchWithCache(
+          "https://shubhamm-06.github.io/Portfolio-API/notification.json",
+          "notificationsData"
+        );
+      }
 
       // Process Portfolio Data
       function processPortfolioData(data) {
@@ -782,6 +683,16 @@ async function fetchNotificationsData() {
           "#FFA07A",
           "#FFD700",
           "#4CAF50",
+          "#55DFFF",
+          "#66EEFF",
+          "#77FFFF",
+          "#88FFFF",
+          "#99FFFF",
+          "#B05195",
+          "#E45087",
+          "#FF6F40",
+          "#FFB07A",
+          "#FFE700",
         ];
 
         let totalInvested = 0;
@@ -836,12 +747,11 @@ async function fetchNotificationsData() {
         const pnlElement = document.querySelector(
           '.summary__number[data-label="P&L"]'
         );
-        pnlElement.textContent = `${
-          data.pnl >= 0 ? "+" : ""
-        }$${data.pnl.toLocaleString("en-US", {
-          minimumFractionDigits: 2,
-          maximumFractionDigits: 2,
-        })}`;
+        pnlElement.textContent = `${data.pnl >= 0 ? "+" : ""
+          }$${data.pnl.toLocaleString("en-US", {
+            minimumFractionDigits: 2,
+            maximumFractionDigits: 2,
+          })}`;
         pnlElement.classList.toggle("positive", data.pnl >= 0);
         pnlElement.classList.toggle("negative", data.pnl < 0);
 
@@ -849,9 +759,8 @@ async function fetchNotificationsData() {
         const percentageElement = document.querySelector(
           ".summary__percentage"
         );
-        percentageElement.textContent = `${
-          percentage >= 0 ? "+" : ""
-        }${percentage}%`;
+        percentageElement.textContent = `${percentage >= 0 ? "+" : ""
+          }${percentage}%`;
         percentageElement.classList.toggle("positive", percentage >= 0);
         percentageElement.classList.toggle("negative", percentage < 0);
 
@@ -863,7 +772,7 @@ async function fetchNotificationsData() {
         })}`;
       }
 
-      // Update Portfolio Chart
+      // Portfolio Chart
       let portfolioChart;
 
       const centerTextPlugin = {
@@ -880,9 +789,8 @@ async function fetchNotificationsData() {
           const activeElements = chart.getActiveElements();
           if (activeElements.length > 0) {
             const index = activeElements[0].index;
-            textToDisplay = `${
-              chart.data.labels[index]
-            } (${chart.data.datasets[0].data[index].toFixed(2)}%)`;
+            textToDisplay = `${chart.data.labels[index]
+              } (${chart.data.datasets[0].data[index].toFixed(2)}%)`;
           }
 
           ctx.save();
@@ -895,7 +803,7 @@ async function fetchNotificationsData() {
         },
       };
 
-      Chart.register(centerTextPlugin);
+      // Note: Removed Chart.register(centerTextPlugin) to prevent global application
 
       function updatePortfolioChart(allocationData) {
         const ctx = document.getElementById("portfolioChart").getContext("2d");
@@ -909,9 +817,8 @@ async function fetchNotificationsData() {
             (item) => `
       <div class="portfolio__color-box">
         <div class="portfolio__color" style="background: ${item.color}"></div>
-        <div class="portfolio__meaning">${
-          item.ticker
-        } (${item.allocation.toFixed(2)}%)</div>
+        <div class="portfolio__meaning">${item.ticker
+              } (${item.allocation.toFixed(2)}%)</div>
       </div>
   `
           )
@@ -965,12 +872,12 @@ async function fetchNotificationsData() {
                 },
               },
             },
-            plugins: [centerTextPlugin],
+            plugins: [centerTextPlugin], // Center text plugin applied only here
           });
         }
       }
 
-      // Update Fund Allocation Chart
+      // Fund Allocation Chart
       let allocationChart;
       function updateAllocationChart(invested, cash) {
         const ctx = document.getElementById("allocationChart").getContext("2d");
@@ -990,14 +897,14 @@ async function fetchNotificationsData() {
                   label: "Invested",
                   data: [invested],
                   backgroundColor: "#2ecc71",
-                  barThickness: 80,
+                  barThickness: 60,
                   borderRadius: 2,
                 },
                 {
-                  label: "Cash",
+                  label: "Cash Position",
                   data: [cash],
                   backgroundColor: "#3498db",
-                  barThickness: 80,
+                  barThickness: 60,
                   borderRadius: 2,
                 },
               ],
@@ -1041,7 +948,6 @@ async function fetchNotificationsData() {
           // Fetch data only if not cached
           if (!cachedFinanceData) {
             cachedFinanceData = await fetchPortfolioData();
-            console.log("Data fetched:", cachedFinanceData); // Debug
           }
           const financeData = cachedFinanceData;
           const skeletonLoader = document.getElementById("skeleton-loader");
@@ -1059,10 +965,19 @@ async function fetchNotificationsData() {
               return isNaN(num)
                 ? value
                 : num.toLocaleString("en-US", {
-                    style: "currency",
-                    currency: "USD",
-                    minimumFractionDigits: 2,
-                  });
+                  style: "currency",
+                  currency: "USD",
+                  minimumFractionDigits: 2,
+                });
+            };
+            // Function to format P&L
+            const formatpl = (value) => {
+              const num = parseFloat(value);
+              if (isNaN(num)) return value;
+              const formatted = "$" + Math.abs(num).toFixed(2);
+              return num < 0
+                ? `<span style="color: red;">-${formatted}</span>`
+                : `<span style="color: green;">+${formatted}</span>`;
             };
 
             // Function to format percentage
@@ -1096,9 +1011,7 @@ async function fetchNotificationsData() {
   </div>
   <div class="card-asset-header">
     <span class="card-asset-name">${data["Ticker"]}</span>
-    <span class="card-loss"
-      >${formatCurrency(data["Present Value"] - data["Buy Value"])}</span
-    >
+    <span class="card-value">${formatpl(data["Present Value"] - data["Buy Value"])}</span>
   </div>
   <div class="card-data-row">
     <div class="card-pairs">
@@ -1110,8 +1023,8 @@ async function fetchNotificationsData() {
     <div class="card-pair">
       <span class="card-label">LTP</span>
       <span class="card-value">${formatCurrency(
-        data["LTP"]
-      )} (${formatPercentage(data["Price Change (1D)"])})</span>
+                data["LTP"]
+              )} (${formatPercentage(data["Price Change (1D)"])})</span>
     </div>
   </div>
 </div>
@@ -1130,36 +1043,35 @@ async function fetchNotificationsData() {
               if (isMobile) {
                 // Render cards for mobile
                 stockTable.innerHTML = financeData.map(createCard).join("");
-                console.log("Mobile cards rendered"); // Debug
               } else {
-                // Original table rendering for desktop
-                const columns = Object.keys(financeData[0]).map((key) => ({
-                  title: key,
-                  field: key,
-                  headerSort: true,
-                  minWidth: 90,
-                  hozAlign: "left",
-                  frozen: key === "Ticker",
-                  formatter: (cell) => {
-                    const headerName = cell.getColumn().getDefinition().title;
-                    const raw = cell.getRow().getData()[key];
-                    if (key === "Ticker") return `<strong>${raw}</strong>`;
-                    if (
-                      [
-                        "Buy Value",
-                        "Avg Buy Price (P/S)",
-                        "LTP",
-                        "Present Value",
-                      ].includes(headerName)
-                    ) {
-                      return formatCurrency(raw);
-                    }
-                    if (["P&L (%)", "Price Change (1D)"].includes(headerName)) {
-                      return formatPercentage(raw);
-                    }
-                    return raw;
-                  },
-                }));
+                // Render table for desktop
+                const columns = Object.keys(financeData[0])
+                  .filter((key) => key !== "Allocation (%)") // Exclude Allocation (%)
+                  .map((key) => ({
+                    title: key,
+                    field: key,
+                    headerSort: true,
+                    minWidth: 90,
+                    hozAlign: "left",
+                    frozen: key === "Ticker",
+                    formatter: (cell) => {
+                      const headerName = cell.getColumn().getDefinition().title;
+                      const raw = cell.getRow().getData()[key];
+                      if (key === "Ticker") return `<strong>${raw}</strong>`;
+                      if (
+                        ["Buy Value", "Avg Buy Price (P/S)", "LTP", "Present Value"].includes(
+                          headerName
+                        )
+                      ) {
+                        return formatCurrency(raw);
+                      }
+                      if (["P&L (%)", "Price Change (1D)"].includes(headerName)) {
+                        return formatPercentage(raw);
+                      }
+                      return raw;
+                    },
+                  }));
+
 
                 const table = new Tabulator("#stock-table", {
                   data: financeData,
@@ -1168,12 +1080,10 @@ async function fetchNotificationsData() {
                   responsiveLayout: false,
                   height: "auto",
                 });
-                console.log("Desktop table rendered"); // Debug
               }
 
               if (skeletonLoader) skeletonLoader.style.display = "none";
             } else {
-              console.log("No re-render needed"); // Debug
             }
           } else {
             stockTable.innerHTML = "<p>No data found.</p>";
@@ -1191,7 +1101,6 @@ async function fetchNotificationsData() {
       window.addEventListener("resize", () => {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(() => {
-          console.log("Resize event triggered"); // Debug
           createTable();
         }, 200); // Wait 200ms after last resize
       });
@@ -1199,23 +1108,18 @@ async function fetchNotificationsData() {
       // Initial call
       createTable();
 
-      // Your notifications code (unchanged)
+      // notifications code
       function renderNotifications(notifs) {
         const container = document.getElementById("ntf-container");
         container.innerHTML = notifs
           .map((notif) => {
             let content = notif.Content || "";
-            console.log(`Notification Content: "${content}"`);
             const trimmedContent = content.trim().toLowerCase();
             let borderClass = "";
             if (trimmedContent.startsWith("bought")) {
               borderClass = "notifications__box--buy";
-              console.log(`Class applied: ${borderClass}`);
             } else if (trimmedContent.startsWith("sold")) {
               borderClass = "notifications__box--sell";
-              console.log(`Class applied: ${borderClass}`);
-            } else {
-              console.log("Default black border applied");
             }
             content = content.replace(/([\d\W]+)/g, "<strong>$1</strong>");
             content = content.replace(/^(\w+)/, "<strong>$1</strong>");
@@ -1269,7 +1173,6 @@ async function fetchNotificationsData() {
         container.innerHTML = notifs
           .map((notif) => {
             let content = notif.Content || ""; // Ensure content is a string
-            console.log(`Notification Content: "${content}"`); // Debug: Log raw content
 
             // Determine border class based on original content
             const trimmedContent = content.trim().toLowerCase();
@@ -1278,12 +1181,8 @@ async function fetchNotificationsData() {
             if (trimmedContent.startsWith("bought")) {
               // Check in lowercase
               borderClass = "notifications__box--buy";
-              console.log(`Class applied: ${borderClass}`); // Debug: Confirm class
             } else if (trimmedContent.startsWith("sold")) {
               borderClass = "notifications__box--sell";
-              console.log(`Class applied: ${borderClass}`); // Debug: Confirm class
-            } else {
-              console.log("Default black border applied"); // Debug: Confirm default
             }
 
             // Apply bold formatting
@@ -1301,7 +1200,7 @@ async function fetchNotificationsData() {
             <div class="notifications__message">${content}</div>
           </div>
         </div>
-      `;
+      `; c
           })
           .join("");
 
@@ -1353,7 +1252,4 @@ async function fetchNotificationsData() {
         await fetchNotifications();
       }
 
-      document.addEventListener("DOMContentLoaded", updateDashboard);
-    </script>
-</body>
-</html>
+      document.addEventListener("DOMContentLoaded", updateDashboard); </script>
