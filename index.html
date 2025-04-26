@@ -16,12 +16,11 @@
       /* ==========================================================================
        General Styles
        ========================================================================== */
-       *{
+      * {
         box-sizing: border-box;
         padding: 0;
         margin: 0;
-
-       }
+      }
       .container {
         box-sizing: border-box;
         color: #333;
@@ -594,7 +593,6 @@
   </head>
   <body>
     <div class="container">
-
       <!-- ==========================================================================
          Section One: Summary
          ========================================================================== -->
@@ -662,7 +660,7 @@
           </div>
         </div>
         <!-- Bar Graph -->
-        <div class="chart-container" style="height: 100px;">
+        <div class="chart-container" style="height: 100px">
           <canvas id="allocationChart"></canvas>
         </div>
       </div>
@@ -693,7 +691,7 @@
       // Fetch Portfolio Data
       async function fetchPortfolioData() {
         return await fetchWithCache(
-          "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec",
+          "https://shubhamm-06.github.io/Portfolio-API/Data.json",
           "portfolioData"
         );
       }
@@ -701,7 +699,7 @@
       // Fetch Notifications Data
       async function fetchNotificationsData() {
         return await fetchWithCache(
-          "https://script.google.com/macros/s/AKfycbyZf4DthqkVu_mM0xb1031tliQ2Fm9F_KvJR5RVIz0r0uujFqkbS6iBdU_YUGZweVD7TA/exec?sheet=Notification",
+          "https://shubhamm-06.github.io/Portfolio-API/notification.json",
           "notificationsData"
         );
       }
@@ -1013,6 +1011,15 @@
                     minimumFractionDigits: 2,
                   });
             };
+            // Function to format P&L
+            const formatpl = (value) => {
+              const num = parseFloat(value);
+              if (isNaN(num)) return value;
+              const formatted = "$" + Math.abs(num).toFixed(2);
+              return num < 0
+                ? `<span style="color: red;">-${formatted}</span>`
+                : `<span style="color: green;">+${formatted}</span>`;
+            };
 
             // Function to format percentage
             const formatPercentage = (value) => {
@@ -1045,9 +1052,7 @@
   </div>
   <div class="card-asset-header">
     <span class="card-asset-name">${data["Ticker"]}</span>
-    <span class="card-loss"
-      >${formatCurrency(data["Present Value"] - data["Buy Value"])}</span
-    >
+    <span class="card-value">${formatpl(data["Present Value"] - data["Buy Value"])}</span>
   </div>
   <div class="card-data-row">
     <div class="card-pairs">
