@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
+<html lang="en" data-theme="dark"> <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aether Investment Analyser | AED</title>
+    <title>Shubham</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,185 +14,166 @@
 
 </head>
 <body>
-    <script>
-        (function() {
-            try {
-                const savedTheme = localStorage.getItem('theme');
-                const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-                const initialTheme = savedTheme || (prefersDark ? 'dark' : 'light');
-                document.documentElement.setAttribute('data-theme', initialTheme);
-            } catch (e) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                console.error("Error setting initial theme:", e);
-            }
-        })();
-    </script>
 
+    <div id="nav-overlay" class="navigation-overlay no-print"></div>
+
+    <nav id="side-drawer" class="side-navigation no-print">
+        <div class="nav-header">
+            <span class="nav-title">Invest & Settle Dubai</span>
+            <button id="nav-close-button" class="nav-close" title="Close Navigation">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="./index.html">
+                    <i class="fa-solid fa-calculator"></i> Property Overview Analysis
+                </a>
+            </li>
+            <li>
+                <a href="./sell.html">
+                    <i class="fa-solid fa-tags"></i> Exit Profit Calculator 
+                </a>
+            </li>
+            <li>
+                <a href="./finance.html">
+                    <i class="fa-solid fa-scale-balanced"></i> Property Growth Forecast
+                </a>
+            </li>
+            <li>
+                <a href="https://www.canva.com/design/DAGkQ4-vCgM/73R6OR-8dXaLWhhitecITQ/edit?utm_content=DAGkQ4-vCgM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    <i class="fa-solid fa-file-powerpoint"></i> Power Point
+                </a>
+            </li>
+            <li>
+                <a href="https://docs.google.com/document/d/1oa95h7yVrgnlmBQsdFzkT1Gn5n8TEJDTnq8laSlzE8o/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-brain"></i> Calculation Logic
+                </a>
+            </li>
+        </ul>
+        <div class="nav-footer">
+             <p>&copy; 2025 Shubham Corp.</p> </div>
+    </nav>
     <main class="investment-analyser">
 
         <section class="pane input-pane no-print">
-             <header class="pane-header input-pane-controls">
-                 <div class="header-title">
-                     <h2><i class="fa-solid fa-sliders fa-beat-fade" style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.05;"></i> Configuration</h2>
-                     <p>Enter your investment parameters below.</p>
-                 </div>
-                 <button id="theme-toggle" class="theme-toggle-button no-print" title="Toggle Theme">
-                     <i class="fa-solid"></i>
-                 </button>
-             </header>
+            <header class="pane-header input-pane-controls">
+                <div class="header-title">
+                    <h2 id="config-nav-toggle" class="nav-toggle-header" title="Toggle Navigation Menu">
+                        <i class="fa-solid fa-sliders fa-beat-fade" style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.05;"></i> Invest & Settle Dubai
+                    </h2>
+                    <p>Enter your investment parameters below.</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle-button no-print" title="Toggle Theme">
+                    <i class="fa-solid"></i> </button>
+            </header>
 
             <form id="investment-form" onsubmit="event.preventDefault(); calculate();">
 
                 <details class="input-section" open>
-                     <summary>
-                         <h3><i class="fa-solid fa-building-columns"></i> Property Details</h3>
-                     </summary>
-                     <div class="input-grid">
-                         <div class="input-group">
-                             <label for="projectName"><i class="fa-regular fa-file-signature"></i> Project Name</label>
-                             <input type="text" id="projectName" placeholder="e.g., Elysian Towers">
-                         </div>
-                         <div class="input-group">
-                             <label for="developer"><i class="fa-regular fa-user-helmet-safety"></i> Developer</label>
-                             <input type="text" id="developer" placeholder="e.g., Vertex Group">
-                         </div>
-                         <div class="input-group">
-                             <label for="location"><i class="fa-regular fa-map-location-dot"></i> Location</label>
-                             <input type="text" id="location" placeholder="e.g., Apex District">
-                         </div>
-                          <div class="input-group">
-                             <label for="bedBath"><i class="fa-regular fa-bed-front"></i> Bed / Bath</label>
-                             <input type="text" id="bedBath" placeholder="e.g., 1 Bed / 1 Bath">
-                         </div>
-                         <div class="input-group">
-                             <label for="sqft"><i class="fa-regular fa-ruler-combined"></i> Area (sq ft) <span class="required">*</span></label>
-                             <input type="number" id="sqft" class="input-field" placeholder="423" value="423" required>
-                         </div>
-                         <div class="input-group">
-                              <label for="status"><i class="fa-regular fa-signal-stream"></i> Status</label>
-                              <select id="status" class="input-field" onchange="toggleHandover(this.value)">
-                                   <option value="Ready" selected>Ready</option>
-                                   <option value="Offplan">Offplan</option>
-                              </select>
-                          </div>
-                          <div class="input-group handover-field" id="handover-year-group">
-                             <label for="handoverYear"><i class="fa-regular fa-calendar-check"></i> Handover Year</label>
-                             <input type="number" id="handoverYear" class="input-field" placeholder="e.g., 2026">
-                         </div>
-                     </div>
-                 </details>
-
-                <details class="input-section" open>
-                     <summary>
-                         <h3><i class="fa-solid fa-sack-dollar"></i> Purchase & Loan <span class="required">*</span></h3>
-                     </summary>
-                     <div class="input-grid">
-                         <div class="input-group">
-                             <label for="purchasePrice"><i class="fa-regular fa-money-bill-1-wave"></i> Purchase Price (PP)</label>
-                             <input type="number" id="purchasePrice" class="input-field" placeholder="750,000" value="750000" required>
-                         </div>
-                         <div class="input-group">
-                             <label for="grossRentYear"><i class="fa-regular fa-calendar-days"></i> Gross Annual Rent</label>
-                             <input type="number" id="grossRentYear" class="input-field" placeholder="70,000" value="70000" required>
-                         </div>
-                          <div class="input-group">
-                              <label for="ltv"><i class="fa-regular fa-landmark"></i> LTV (%)</label>
-                              <input type="number" id="ltv" class="input-field" placeholder="50" min="0" max="100" value="50" required>
-                          </div>
-                          <div class="input-group">
-                             <label for="loanTenure"><i class="fa-regular fa-clock"></i> Loan Tenure (Years)</label>
-                             <input type="number" id="loanTenure" class="input-field" placeholder="25" value="25" required>
-                         </div>
-                          <div class="input-group">
-                              <label for="interestRate"><i class="fa-solid fa-percent"></i> Annual Interest Rate (%)</label>
-                              <input type="number" id="interestRate" class="input-field" placeholder="6.50" step="0.01" value="6.50" required>
-                          </div>
-                     </div>
-                 </details>
-
-                <details class="input-section">
-                     <summary>
-                         <h3><i class="fa-solid fa-receipt"></i> Upfront Costs</h3>
-                     </summary>
-                      <div class="input-grid wide"> <div class="input-group"> <label for="dldPercent">DLD Fee (% PP)</label> <input type="number" id="dldPercent" class="input-field" step="0.01" value="4.00"> </div>
-                          <div class="input-group"> <label for="mortgageRegPercent">Mortgage Reg. (% Loan)</label> <input type="number" id="mortgageRegPercent" class="input-field" step="0.01" value="0.25"> </div>
-                          <div class="input-group"> <label for="bankProcessingPercent">Bank Proc. (% Loan)</label> <input type="number" id="bankProcessingPercent" class="input-field" step="0.01" value="0.50"> </div>
-                          <div class="input-group"> <label for="agencyFeePercent">Agency Fee (% PP)</label> <input type="number" id="agencyFeePercent" class="input-field" step="0.1" value="2.0"> </div>
-                          <div class="input-group"> <label for="vatPercent">VAT on Agency Fee (%)</label> <input type="number" id="vatPercent" class="input-field" step="0.1" value="5.0"> </div>
-                          <div class="input-group"> <label for="mortgageRegFixed">Mortgage Reg. (Fixed)</label> <input type="number" id="mortgageRegFixed" class="input-field" value="290"> </div>
-                          <div class="input-group"> <label for="titleDeedFee">Title Deed Fee</label> <input type="number" id="titleDeedFee" class="input-field" value="580"> </div>
-                          <div class="input-group"> <label for="trusteeFee">Registration Trustee</label> <input type="number" id="trusteeFee" class="input-field" value="4200"> </div>
-                          <div class="input-group"> <label for="propertyValuationFee">Property Valuation</label> <input type="number" id="propertyValuationFee" class="input-field" value="2625"> </div>
-                          <div class="input-group"> <label for="inspectionCost">Property Insp.</label> <input type="number" id="inspectionCost" class="input-field" value="1500"> </div>
-                          <div class="input-group"> <label for="conveyanceFee">Conveyance Fee</label> <input type="number" id="conveyanceFee" class="input-field" value="6000"> </div>
-                          <div class="input-group"> <label for="furnishingCost">Furnishing Cost</label> <input type="number" id="furnishingCost" class="input-field" value="0"> </div>
-                          <div class="input-group"> <label for="utilityDeposit">Utility Dep. (Refundable)</label> <input type="number" id="utilityDeposit" class="input-field" value="2000"> </div>
-                          <div class="input-group"> <label for="mortgageReleaseFee">Mortgage Release</label> <input type="number" id="mortgageReleaseFee" class="input-field" value="0"> </div>
-                      </div>
-                 </details>
-
-                <details class="input-section">
-                      <summary>
-                           <h3><i class="fa-solid fa-rotate"></i> Recurring Costs</h3>
-                      </summary>
-                      <h4>Fixed Monthly</h4>
-                      <div class="input-grid">
-                           <div class="input-group"> <label for="serviceChargeMonthly">Service Charge</label> <input type="number" id="serviceChargeMonthly" class="input-field" step="0.01" value="475.88"> </div>
-                           <div class="input-group"> <label for="homeInsuranceMonthly">Home Insurance</label> <input type="number" id="homeInsuranceMonthly" class="input-field" step="0.01" value="83.33"> </div>
-                           <div class="input-group"> <label for="utilitiesMonthly">Utilities</label> <input type="number" id="utilitiesMonthly" class="input-field" value="0"> </div>
-                           <div class="input-group"> <label for="cleaningMonthly">Cleaning</label> <input type="number" id="cleaningMonthly" class="input-field" value="0"> </div>
-                      </div>
-                       <h4>Variable (% Monthly Rent)</h4>
-                      <div class="input-grid">
-                           <div class="input-group"> <label for="capexPercent">Capex Reserve</label> <input type="number" id="capexPercent" class="input-field" step="0.1" value="10"> </div>
-                           <div class="input-group"> <label for="rmPercent">Repairs & Maint.</label> <input type="number" id="rmPercent" class="input-field" step="0.1" value="5"> </div>
-                           <div class="input-group"> <label for="mgmtPercent">Property Mgmt</label> <input type="number" id="mgmtPercent" class="input-field" step="0.1" value="10"> </div>
-                           <div class="input-group"> <label for="vacancyPercent">Vacancy Loss</label> <input type="number" id="vacancyPercent" class="input-field" step="0.1" value="5"> </div>
-                      </div>
-                 </details>
-
-                <details class="input-section">
-                    <summary>
-                         <h3><i class="fa-solid fa-plus-minus"></i> Other Factors</h3>
-                    </summary>
+                    <summary><h3><i class="fa-solid fa-building-columns"></i> Property Details</h3></summary>
                     <div class="input-grid">
-                         <div class="input-group"> <label for="refinancePercentRent">Refinance Cost (% Rent)</label> <input type="number" id="refinancePercentRent" class="input-field" step="0.1" value="7"> </div>
-                         <div class="input-group"> <label for="cashReservesPercent">Cash Reserves (% Rent/mo)</label> <input type="number" id="cashReservesPercent" class="input-field" step="0.1" value="2.50"> </div>
+                        <div class="input-group"><label for="projectName"><i class="fa-regular fa-file-signature"></i> Project Name</label><input type="text" id="projectName" placeholder="e.g., Elysian Towers"></div>
+                        <div class="input-group"><label for="developer"><i class="fa-regular fa-user-helmet-safety"></i> Developer</label><input type="text" id="developer" placeholder="e.g., Vertex Group"></div>
+                        <div class="input-group"><label for="location"><i class="fa-regular fa-map-location-dot"></i> Location</label><input type="text" id="location" placeholder="e.g., Apex District"></div>
+                        <div class="input-group"><label for="bedBath"><i class="fa-regular fa-bed-front"></i> Bed / Bath</label><input type="text" id="bedBath" placeholder="e.g., 1 Bed / 1 Bath"></div>
+                        <div class="input-group"><label for="sqft"><i class="fa-regular fa-ruler-combined"></i> Area (sq ft) <span class="required">*</span></label><input type="number" id="sqft" class="input-field" placeholder="423" value="423" required></div>
+                        <div class="input-group"><label for="status"><i class="fa-regular fa-signal-stream"></i> Status</label><select id="status" class="input-field" onchange="toggleHandover(this.value)"><option value="Ready" selected>Ready</option><option value="Offplan">Offplan</option></select></div>
+                        <div class="input-group handover-field" id="handover-year-group"><label for="handoverYear"><i class="fa-regular fa-calendar-check"></i> Handover Year</label><input type="number" id="handoverYear" class="input-field" placeholder="e.g., 2026"></div>
+                    </div>
+                </details>
+
+                 <details class="input-section" open>
+                    <summary><h3><i class="fa-solid fa-sack-dollar"></i> Purchase & Loan <span class="required">*</span></h3></summary>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="purchasePrice"><i class="fa-regular fa-money-bill-1-wave"></i> Purchase Price (PP)</label><input type="number" id="purchasePrice" class="input-field" placeholder="750,000" value="750000" required></div>
+                        <div class="input-group"><label for="grossRentYear"><i class="fa-regular fa-calendar-days"></i> Gross Annual Rent</label><input type="number" id="grossRentYear" class="input-field" placeholder="70,000" value="70000" required></div>
+                        <div class="input-group"><label for="ltv"><i class="fa-regular fa-landmark"></i> LTV (%)</label><input type="number" id="ltv" class="input-field" placeholder="50" min="0" max="100" value="50" required></div>
+                        <div class="input-group"><label for="loanTenure"><i class="fa-regular fa-clock"></i> Loan Tenure (Years)</label><input type="number" id="loanTenure" class="input-field" placeholder="25" value="25" required min="1"></div>
+                        <div class="input-group"><label for="interestRate"><i class="fa-solid fa-percent"></i> Annual Interest Rate (%)</label><input type="number" id="interestRate" class="input-field" placeholder="6.50" step="0.01" value="6.50" required min="0"></div>
+                    </div>
+                </details>
+
+                <details class="input-section">
+                    <summary><h3><i class="fa-solid fa-receipt"></i> Upfront Costs</h3></summary>
+                    <div class="input-grid wide">
+                        <div class="input-group"><label for="dldPercent">DLD Fee (% PP)</label><input type="number" id="dldPercent" class="input-field" step="0.01" value="4.00" min="0"></div>
+                        <div class="input-group"><label for="mortgageRegPercent">Mortgage Reg. (% Loan)</label><input type="number" id="mortgageRegPercent" class="input-field" step="0.01" value="0.25" min="0"></div>
+                        <div class="input-group"><label for="bankProcessingPercent">Bank Proc. (% Loan)</label><input type="number" id="bankProcessingPercent" class="input-field" step="0.01" value="0.50" min="0"></div>
+                        <div class="input-group"><label for="agencyFeePercent">Agency Fee (% PP)</label><input type="number" id="agencyFeePercent" class="input-field" step="0.1" value="2.0" min="0"></div>
+                        <div class="input-group"><label for="vatPercent">VAT on Agency Fee (%)</label><input type="number" id="vatPercent" class="input-field" step="0.1" value="5.0" min="0"></div>
+                        <div class="input-group"><label for="mortgageRegFixed">Mortgage Reg. (Fixed)</label><input type="number" id="mortgageRegFixed" class="input-field" value="290" min="0"></div>
+                        <div class="input-group"><label for="titleDeedFee">Title Deed Fee</label><input type="number" id="titleDeedFee" class="input-field" value="580" min="0"></div>
+                        <div class="input-group"><label for="trusteeFee">Registration Trustee</label><input type="number" id="trusteeFee" class="input-field" value="4200" min="0"></div>
+                        <div class="input-group"><label for="propertyValuationFee">Property Valuation</label><input type="number" id="propertyValuationFee" class="input-field" value="2625" min="0"></div>
+                        <div class="input-group"><label for="inspectionCost">Property Insp.</label><input type="number" id="inspectionCost" class="input-field" value="1500" min="0"></div>
+                        <div class="input-group"><label for="conveyanceFee">Conveyance Fee</label><input type="number" id="conveyanceFee" class="input-field" value="6000" min="0"></div>
+                        <div class="input-group"><label for="furnishingCost">Furnishing Cost</label><input type="number" id="furnishingCost" class="input-field" value="0" min="0"></div>
+                        <div class="input-group"><label for="utilityDeposit">Utility Dep. (Refundable)</label><input type="number" id="utilityDeposit" class="input-field" value="2000" min="0"></div>
+                        <div class="input-group"><label for="mortgageReleaseFee">Mortgage Release</label><input type="number" id="mortgageReleaseFee" class="input-field" value="0" min="0"></div>
+                    </div>
+                </details>
+
+                <details class="input-section">
+                    <summary><h3><i class="fa-solid fa-rotate"></i> Recurring Costs</h3></summary>
+                    <h4>Fixed Monthly</h4>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="serviceChargeMonthly">Service Charge</label><input type="number" id="serviceChargeMonthly" class="input-field" step="0.01" value="475.88" min="0"></div>
+                        <div class="input-group"><label for="homeInsuranceMonthly">Home Insurance</label><input type="number" id="homeInsuranceMonthly" class="input-field" step="0.01" value="83.33" min="0"></div>
+                        <div class="input-group"><label for="utilitiesMonthly">Utilities</label><input type="number" id="utilitiesMonthly" class="input-field" value="0" min="0"></div>
+                        <div class="input-group"><label for="cleaningMonthly">Cleaning</label><input type="number" id="cleaningMonthly" class="input-field" value="0" min="0"></div>
+                    </div>
+                     <h4>Variable (% Monthly Rent)</h4>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="capexPercent">Capex Reserve</label><input type="number" id="capexPercent" class="input-field" step="0.1" value="10" min="0"></div>
+                        <div class="input-group"><label for="rmPercent">Repairs & Maint.</label><input type="number" id="rmPercent" class="input-field" step="0.1" value="5" min="0"></div>
+                        <div class="input-group"><label for="mgmtPercent">Property Mgmt</label><input type="number" id="mgmtPercent" class="input-field" step="0.1" value="10" min="0"></div>
+                        <div class="input-group"><label for="vacancyPercent">Vacancy Loss</label><input type="number" id="vacancyPercent" class="input-field" step="0.1" value="5" min="0"></div>
+                    </div>
+                </details>
+
+                <details class="input-section">
+                    <summary><h3><i class="fa-solid fa-plus-minus"></i> Other Factors</h3></summary>
+                    <div class="input-grid">
+                        <div class="input-group"><label for="refinancePercentRent">Refinance Cost (% Rent)</label><input type="number" id="refinancePercentRent" class="input-field" step="0.1" value="7" min="0"></div>
+                        <div class="input-group"><label for="cashReservesPercent">Cash Reserves (% Rent/mo)</label><input type="number" id="cashReservesPercent" class="input-field" step="0.1" value="2.50" min="0"></div>
                     </div>
                 </details>
 
                  <div class="button-container">
-                       <button type="submit" class="cta-button">
-                            <i class="fa-solid fa-rocket"></i> Analyse Investment
-                       </button>
-                   </div>
-                   <div id="validation-errors" class="validation-error-box" style="display: none;"></div>
+                     <button type="submit" class="cta-button">
+                         <i class="fa-solid fa-rocket"></i> Analyse Investment
+                     </button>
+                 </div>
+                 <div id="validation-errors" class="validation-error-box" style="display: none;"></div>
 
             </form>
         </section>
 
         <section class="pane output-pane">
-             <header class="pane-header output-pane-header"> <div class="header-title"> <h2><i class="fa-solid fa-chart-line"></i> Analysis Results</h2>
-                 </div>
-                  <button class="print-button no-print" onclick="window.print()" title="Print / Save PDF">
-                       <i class="fa-solid fa-print"></i>
-                   </button>
-             </header>
-
+            <header class="pane-header output-pane-header">
+                <div class="header-title">
+                    <h2><i class="fa-solid fa-chart-line"></i> Dubai Property Rental Cashflow and ROI Analysis
+                    </h2>
+                </div>
+                <button class="print-button no-print" onclick="window.print()" title="Print / Save PDF">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+            </header>
             <div id="output-content">
-                 <div class="placeholder">
-                      <i class="fa-solid fa-lightbulb-on"></i>
-                      <p>Enter your parameters and click "Analyse Investment" to see the results.</p>
-                  </div>
-              </div>
-             <footer class="output-footer no-print">
-                   <p><i class="fa-regular fa-clock"></i> Analysis generated: <span id="timestamp"></span></p>
-                   <p><i class="fa-solid fa-circle-info"></i> All figures in AED. ROI definitions may vary.</p>
-              </footer>
+                <div class="placeholder">
+                    <i class="fa-solid fa-lightbulb-on"></i>
+                    <p>Enter your parameters and click "Analyse Investment" to see the results.</p>
+                </div>
+
+                </div>
+            <footer class="output-footer no-print">
+                <p><i class="fa-regular fa-clock"></i> Analysis generated: <span id="timestamp">N/A</span></p>
+                <p><i class="fa-solid fa-circle-info"></i> All figures in AED. ROI definitions may vary.</p>
+            </footer>
         </section>
 
-    </main>
-
-    <script src="script.js" defer></script>
+    </main> <script src="script.js" defer></script>
 </body>
 </html>
+

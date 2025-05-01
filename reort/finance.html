@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Property Investment Analysis - Invest & Settle Dubai</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+
+    <div id="nav-overlay" class="navigation-overlay no-print"></div>
+
+    <nav id="side-drawer" class="side-navigation no-print">
+        <div class="nav-header">
+            <span class="nav-title">Invest & Settle Dubai</span>
+            <button id="nav-close-button" class="nav-close" title="Close Navigation">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="./index.html">
+                    <i class="fa-solid fa-calculator"></i> Property Overview Analysis
+                </a>
+            </li>
+            <li>
+                <a href="./sell.html">
+                    <i class="fa-solid fa-tags"></i> Exit Profit Calculator 
+                </a>
+            </li>
+            <li>
+                <a href="./finance.html">
+                    <i class="fa-solid fa-scale-balanced"></i> Property Growth Forecast
+                </a>
+            </li>
+            <li>
+                <a href="https://www.canva.com/design/DAGkQ4-vCgM/73R6OR-8dXaLWhhitecITQ/edit?utm_content=DAGkQ4-vCgM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    <i class="fa-solid fa-file-powerpoint"></i> Power Point
+                </a>
+            </li>
+            <li>
+                <a href="https://docs.google.com/document/d/1oa95h7yVrgnlmBQsdFzkT1Gn5n8TEJDTnq8laSlzE8o/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-brain"></i> Calculation Logic
+                </a>
+            </li>
+        </ul>
+        <div class="nav-footer">
+             <p>&copy; 2025 Shubham Corp.</p> </div>
+    </nav>
+
+    <main class="investment-analyser">
+
+        <section class="pane input-pane no-print">
+            <header class="pane-header input-pane-controls">
+                <div class="header-title">
+                    <h2 id="config-nav-toggle" class="nav-toggle-header" title="Toggle Navigation Menu">
+                        <i class="fa-solid fa-sliders fa-beat-fade" style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.05;"></i> Investment Analysis </h2>
+                    <p>Analyze the projected performance of a property over time.</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle-button no-print" title="Toggle Theme">
+                    <i class="fa-solid"></i> </button>
+            </header>
+
+            <form id="analysis-form" onsubmit="event.preventDefault(); calculateAnalysis();">
+
+                <details class="input-section" open>
+                     <summary><h3><i class="fa-solid fa-sack-dollar"></i> Property & Financial Details</h3></summary>
+                     <div class="input-grid">
+                        <div class="input-group">
+                            <label for="purchasePrice"><i class="fa-regular fa-money-bill-1-wave"></i> Purchase Price (PP) <span class="required">*</span></label>
+                            <input type="number" id="purchasePrice" class="input-field" placeholder="750,000" value="750000" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="closingCosts"><i class="fa-solid fa-file-invoice-dollar"></i> Closing Costs <span class="required">*</span></label>
+                            <input type="number" id="closingCosts" class="input-field" placeholder="66,280" value="66280" required min="0">
+                        </div>
+                         <div class="input-group">
+                            <label for="sqft"><i class="fa-solid fa-ruler-combined"></i> Sq Ft <span class="required">*</span></label>
+                            <input type="number" id="sqft" class="input-field" placeholder="423" value="423" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="monthlyInflow"><i class="fa-solid fa-money-bill-trend-up"></i> Initial Monthly Inflow (Rent) <span class="required">*</span></label>
+                            <input type="number" id="monthlyInflow" class="input-field" placeholder="5833.33" value="5833.33" required min="0" step="0.01">
+                        </div>
+                        <div class="input-group">
+                            <label for="monthlyOutflow"><i class="fa-solid fa-money-bill-wave"></i> Initial Monthly Outflow (Expenses) <span class="required">*</span></label>
+                            <input type="number" id="monthlyOutflow" class="input-field" placeholder="5395.40" value="5395.40" required min="0" step="0.01">
+                        </div>
+                        <div class="input-group">
+                             <label for="yearsToProject"><i class="fa-regular fa-calendar-check"></i> Years to Project <span class="required">*</span></label>
+                             <input type="number" id="yearsToProject" class="input-field" placeholder="10" value="10" required min="1" step="1">
+                         </div>
+                    </div>
+                 </details>
+
+                 <details class="input-section" open>
+                    <summary><h3><i class="fa-solid fa-chart-simple"></i> Appreciation Rates</h3></summary>
+                    <div class="input-grid"> <div class="input-group">
+                            <label for="propAppreciationRate"><i class="fa-solid fa-house-chimney-crack"></i> Property Apprec. (%/yr) <span class="required">*</span></label>
+                            <input type="number" id="propAppreciationRate" class="input-field" placeholder="2" value="2" required min="-100" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="rentAppreciationRate"><i class="fa-solid fa-arrow-trend-up"></i> Rent Apprec. (%/yr) <span class="required">*</span></label>
+                            <input type="number" id="rentAppreciationRate" class="input-field" placeholder="2" value="2" required min="-100" step="0.1">
+                        </div>
+                        <div class="input-group">
+                            <label for="expenseAppreciationRate"><i class="fa-solid fa-arrow-trend-down"></i> Expense Apprec. (%/yr) <span class="required">*</span></label>
+                            <input type="number" id="expenseAppreciationRate" class="input-field" placeholder="1" value="1" required min="-100" step="0.1">
+                        </div>
+                    </div>
+                 </details>
+
+                <div class="button-container">
+                     <button type="submit" class="cta-button">
+                        <i class="fa-solid fa-calculator"></i> Calculate Analysis
+                    </button>
+                </div>
+                <div id="validation-errors" class="validation-error-box" style="display: none;"></div>
+
+            </form>
+        </section>
+
+        <section class="pane output-pane">
+            <header class="pane-header output-pane-header">
+                <div class="header-title">
+                     <h2><i class="fa-solid fa-magnifying-glass-chart"></i> Property Growth Forecast Results</h2>
+                </div>
+                <button class="print-button no-print" onclick="window.print()" title="Print / Save PDF">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+            </header>
+            <div id="output-content">
+                <div class="placeholder">
+                    <i class="fa-solid fa-lightbulb-on"></i>
+                     <p>Enter property details and click "Calculate Analysis" to see the projected results.</p>
+                </div>
+            </div>
+            <footer class="output-footer no-print">
+                <p><i class="fa-regular fa-clock"></i> Analysis generated: <span id="timestamp">N/A</span></p>
+                <p><i class="fa-solid fa-circle-info"></i> All figures in AED. Calculations based on provided inputs & assumptions.</p>
+            </footer>
+        </section>
+
+    </main>
+
+    <script>
+        // script.js - Adapted for Single Property Investment Analysis with Dynamic Summaries
+    
+        // Store results globally for access by event handlers
+        let currentAnalysisResults = null;
+    
+        // --- Utility Functions ---
+        function getValue(id) {
+            const element = document.getElementById(id);
+            if (!element) return null;
+            const valueString = element.value.trim();
+            if (valueString === '') return null;
+            // Allow potential negative values for appreciation rates
+             if (element.type === 'number' && valueString.startsWith('-')) {
+                  const value = parseFloat(valueString);
+                  return isNaN(value) ? null : value;
+             }
+            const value = parseFloat(valueString);
+            // Check for min attribute for non-rate fields
+            const minAttr = element.getAttribute('min');
+            if (minAttr !== null && !isNaN(parseFloat(minAttr)) && value < parseFloat(minAttr) && !id.includes('Rate')) {
+                 // Handled by validation, but good practice
+                // console.warn(`Value for ${id} (${value}) is below minimum (${minAttr}). Using minimum.`);
+                 return parseFloat(minAttr); // Let validation handle error display
+            }
+             return isNaN(value) ? null : value;
+        }
+    
+        function formatCurrencyAED(value, showSign = false) {
+            // Handle non-finite numbers gracefully
+             if (typeof value !== 'number' || !isFinite(value)) {
+                  return 'AED 0.00'; // Or 'N/A' or some other indicator
+             }
+            const options = { style: 'currency', currency: 'AED', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+            const formatted = value.toLocaleString('en-AE', options);
+            return (showSign && value > 0) ? `+${formatted}` : formatted;
+        }
+    
+        function formatPercent(value, decimals = 2) {
+            if (typeof value !== 'number' || !isFinite(value)) {
+                 return 'N/A';
+            }
+            return value.toFixed(decimals) + '%';
+        }
+    
+        function formatNumber(value, decimals = 2) {
+             if (typeof value !== 'number' || !isFinite(value)) {
+                  return 'N/A';
+             }
+              return value.toLocaleString('en-AE', { minimumFractionDigits: decimals, maximumFractionDigits: decimals });
+          }
+    
+        // Definition for createMetricCard (Used for Initial Snapshot)
+        function createMetricCard(label, displayValue, // Value formatted for display
+                                   numericValueForClass, // Original number for +/- class logic
+                                   subValue = '')
+        {
+            let valueClass = 'neutral'; // Default class
+            // Ensure numericValueForClass is actually a number before checking sign
+            if (typeof numericValueForClass === 'number' && !isNaN(numericValueForClass)) {
+                 if (numericValueForClass > 0) valueClass = 'positive';
+                 else if (numericValueForClass < 0) valueClass = 'negative';
+            }
+            // Sanitize HTML content (Basic sanitization)
+            const safeLabel = String(label).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const safeDisplayValue = String(displayValue).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            const safeSubValue = String(subValue).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    
+            return `<div class="metric-card">
+                         <span class="label">${safeLabel}</span>
+                         <span class="value ${valueClass}">${safeDisplayValue}</span>
+                         ${subValue ? `<span class="sub-value">${safeSubValue}</span>` : ''}
+                        </div>`;
+        }
+    
+    
+        // --- Theme Toggling ---
+        const themeToggleButton = document.getElementById('theme-toggle');
+        function setTheme(theme) {
+            if (theme !== 'light' && theme !== 'dark') { theme = 'light'; }
+            document.documentElement.setAttribute('data-theme', theme);
+            localStorage.setItem('theme', theme);
+            updateThemeIcon(theme);
+        }
+        function updateThemeIcon(theme) {
+            if (themeToggleButton) {
+                const icon = themeToggleButton.querySelector('i');
+                if (icon) {
+                    icon.className = theme === 'dark' ? 'fa-solid fa-moon' : 'fa-solid fa-sun';
+                    themeToggleButton.title = theme === 'dark' ? "Switch to Light Mode" : "Switch to Dark Mode";
+                }
+            }
+        }
+        if (themeToggleButton) {
+            themeToggleButton.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                setTheme((currentTheme === 'dark') ? 'light' : 'dark');
+            });
+        } else { console.warn("Theme toggle button not found."); }
+    
+        // --- Navigation Drawer Logic ---
+        const navToggleButton = document.getElementById('config-nav-toggle');
+        const sideDrawer = document.getElementById('side-drawer');
+        const navOverlay = document.getElementById('nav-overlay');
+        const navCloseButton = document.getElementById('nav-close-button');
+        function openDrawer() { if (sideDrawer && navOverlay) { sideDrawer.classList.add('open'); navOverlay.classList.add('active'); } }
+        function closeDrawer() { if (sideDrawer && navOverlay) { sideDrawer.classList.remove('open'); navOverlay.classList.remove('active'); } }
+        if (navToggleButton && sideDrawer && navOverlay && navCloseButton) {
+            navToggleButton.addEventListener('click', (e) => { e.stopPropagation(); openDrawer(); });
+            navCloseButton.addEventListener('click', closeDrawer);
+            navOverlay.addEventListener('click', closeDrawer);
+            sideDrawer.querySelectorAll('.nav-links a').forEach(link => link.addEventListener('click', closeDrawer));
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && sideDrawer.classList.contains('open')) { closeDrawer(); } });
+        } else { console.error("Navigation elements missing."); }
+    
+        // --- Input Validation ---
+        function validateInputs(inputs) {
+            const errors = [];
+            const form = document.getElementById('analysis-form'); // Use correct form ID
+            if (!form) return false;
+    
+            form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+    
+            if (!form.checkValidity()) {
+                 form.querySelectorAll(':invalid').forEach(el => {
+                    const labelElement = form.querySelector(`label[for='${el.id}']`);
+                    const labelText = labelElement ? labelElement.textContent.replace('*','').trim() : el.id;
+                     if (!errors.some(e => e.includes(labelText))) { // Prevent duplicate messages
+                          errors.push(`${labelText} is required or invalid.`);
+                     }
+                    el.classList.add('error');
+                 });
+            }
+    
+            // Additional checks (allow negative appreciation rates)
+            const positiveChecks = [
+                { id: 'purchasePrice', name: 'Purchase Price', min: 1 },
+                { id: 'closingCosts', name: 'Closing Costs', min: 0 },
+                { id: 'sqft', name: 'Sq Ft', min: 1 },
+                { id: 'monthlyInflow', name: 'Monthly Inflow', min: 0 },
+                { id: 'monthlyOutflow', name: 'Monthly Outflow', min: 0 },
+                { id: 'yearsToProject', name: 'Years to Project', min: 1 },
+            ];
+    
+            positiveChecks.forEach(check => {
+                const value = inputs[check.id];
+                const element = document.getElementById(check.id);
+                 if (value === null || (check.min !== undefined && value < check.min)) {
+                    const errorMsg = `${check.name} must be at least ${check.min}.`;
+                     if (!errors.includes(errorMsg)) errors.push(errorMsg);
+                    if (element) element.classList.add('error');
+                 }
+            });
+    
+              // Check if rates are numbers (can be negative)
+              const rateChecks = [
+                 { id: 'propAppreciationRate', name: 'Property Appreciation Rate'},
+                 { id: 'rentAppreciationRate', name: 'Rent Appreciation Rate'},
+                 { id: 'expenseAppreciationRate', name: 'Expense Appreciation Rate'},
+              ];
+              rateChecks.forEach(check => {
+                   const value = inputs[check.id];
+                   const element = document.getElementById(check.id);
+                   if (value === null) {
+                        const errorMsg = `${check.name} must be a valid number.`;
+                        if (!errors.includes(errorMsg)) errors.push(errorMsg);
+                        if (element) element.classList.add('error');
+                   }
+              });
+    
+    
+            const errorContainer = document.getElementById('validation-errors');
+            if (errorContainer) {
+                if (errors.length > 0) {
+                    errorContainer.innerHTML = `<strong>Please correct the following:</strong><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
+                    errorContainer.style.display = 'block';
+                    return false;
+                } else {
+                    errorContainer.style.display = 'none';
+                    errorContainer.innerHTML = '';
+                }
+            }
+            return errors.length === 0;
+        }
+    
+    
+        // --- Calculation Logic ---
+    
+        // MODIFIED: Removed specific summary calculation from here
+        function performAnalysisCalculations(inputs) {
+            const pp = inputs.purchasePrice ?? 0;
+            const cc = inputs.closingCosts ?? 0;
+            const sqft = inputs.sqft ?? 1; // Avoid division by zero
+            const initialMonthlyInflow = inputs.monthlyInflow ?? 0;
+            const initialMonthlyOutflow = inputs.monthlyOutflow ?? 0;
+            const yearsToProject = inputs.yearsToProject ?? 1;
+            const propApprRate = (inputs.propAppreciationRate ?? 0) / 100;
+            const rentApprRate = (inputs.rentAppreciationRate ?? 0) / 100;
+            const expenseApprRate = (inputs.expenseAppreciationRate ?? 0) / 100;
+    
+            const totalOutlay = pp + cc;
+            const initialPricePerSqft = sqft > 0 ? pp / sqft : 0;
+            const initialYearlyCashflow = (initialMonthlyInflow * 12) - (initialMonthlyOutflow * 12);
+    
+            const yearlyData = [];
+            let currentPropertyValue = pp;
+    
+            for (let year = 1; year <= yearsToProject; year++) {
+                let startOfYearValue = (year === 1) ? pp : yearlyData[year - 2].propertyValue;
+                currentPropertyValue = startOfYearValue * (1 + propApprRate);
+                const currentYearlyInflow = (initialMonthlyInflow * 12) * Math.pow(1 + rentApprRate, year - 1);
+                const currentYearlyOutflow = (initialMonthlyOutflow * 12) * Math.pow(1 + expenseApprRate, year - 1);
+                const currentYearlyCashflow = currentYearlyInflow - currentYearlyOutflow;
+                const currentPricePerSqft = sqft > 0 ? currentPropertyValue / sqft : 0;
+    
+                yearlyData.push({
+                    year: year,
+                    propertyValue: currentPropertyValue, // Value at END of year
+                    grossRentPerYear: currentYearlyInflow,
+                    pricePerSqft: currentPricePerSqft,
+                    totalExpensesPerYear: currentYearlyOutflow,
+                    totalCashflow: currentYearlyCashflow
+                });
+            }
+    
+            // RETURN only raw data
+            return {
+                inputs: inputs,
+                initialMetrics: {
+                    totalOutlay: totalOutlay,
+                    pricePerSqft: initialPricePerSqft,
+                    monthlyCashflow: initialMonthlyInflow - initialMonthlyOutflow,
+                    yearlyCashflow: initialYearlyCashflow
+                },
+                yearlyData: yearlyData // Full yearly breakdown
+            };
+        }
+    
+        // NEW: Function to calculate summary for a SPECIFIC year
+        function calculateSummaryForYear(targetYear, yearlyData, purchasePrice, totalOutlay) {
+            if (targetYear <= 0 || !yearlyData || yearlyData.length < targetYear) {
+                // Return zeroed or default values if year is invalid
+                return { years: targetYear, totalCashflow: 0, propertyAppreciation: 0, totalGain: 0, roi: 0, cagr: 0 };
+            }
+    
+            const endYearIndex = targetYear - 1;
+            const endYearData = yearlyData[endYearIndex];
+    
+            const cashflowUpToN = yearlyData.slice(0, targetYear).reduce((sum, yr) => sum + yr.totalCashflow, 0);
+            const appreciationUpToN = endYearData.propertyValue - purchasePrice;
+            const totalGainUpToN = cashflowUpToN + appreciationUpToN;
+            const roiUpToN = totalOutlay > 0 ? (totalGainUpToN / totalOutlay) * 100 : 0;
+    
+            let cagrUpToN = 0;
+            if (totalOutlay > 0 && targetYear > 0) {
+                const endValueBasis = totalOutlay + totalGainUpToN;
+                if (endValueBasis > 0) {
+                    cagrUpToN = (Math.pow(endValueBasis / totalOutlay, 1 / targetYear) - 1) * 100;
+                } else {
+                    cagrUpToN = -100; // Total loss or more
+                }
+            }
+    
+            return {
+                years: targetYear,
+                totalCashflow: cashflowUpToN,
+                propertyAppreciation: appreciationUpToN,
+                totalGain: totalGainUpToN,
+                roi: roiUpToN,
+                cagr: cagrUpToN
+            };
+        }
+    
+    
+        // --- DOM Update Functions ---
+    
+        // createTableHTML function (Used for Yearly Breakdown)
+        function createTableHTML(id, headers, dataRows, footerRow = null) {
+            if (!Array.isArray(headers) || !Array.isArray(dataRows)) return '';
+              let tableHTML = `<div class="table-container"><table class="data-table" id="${id}"><thead><tr>`;
+            headers.forEach(h => tableHTML += `<th>${String(h || '').replace(/</g, "&lt;").replace(/>/g, "&gt;")}</th>`);
+            tableHTML += `</tr></thead><tbody>`;
+            dataRows.forEach(row => {
+                if (!Array.isArray(row)) return;
+                tableHTML += `<tr>${row.map((cell, index) => {
+                     let cellClass = '';
+                     const headerText = (index < headers.length && headers[index]) ? String(headers[index]).toLowerCase() : '';
+    
+                     // Determine alignment and formatting based on header/content
+                      let cellContent = '';
+                     if (headerText.includes('year')) {
+                          cellClass = ' class="number"'; // Right align Year
+                          cellContent = String(cell ?? ''); // Display Year as plain number
+                     } else if (typeof cell === 'number') {
+                           cellClass = ' class="currency"'; // Right align all other numbers
+                          cellContent = formatCurrencyAED(cell); // Format as currency
+                     } else {
+                           // Fallback for any non-numeric data if needed
+                           cellClass = '';
+                           cellContent = String(cell ?? '').replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                     }
+    
+                    return `<td${cellClass}>${cellContent}</td>`;
+                }).join('')}</tr>`;
+            });
+            tableHTML += `</tbody>`;
+            // Footer logic can remain if needed
+            tableHTML += `</table></div>`;
+            return tableHTML;
+        }
+    
+        // NEW: Function to update a specific summary box content
+        function updateSummaryBox(boxIndex, selectedYear) {
+            if (!currentAnalysisResults) return; // Need data
+    
+            const containerId = `summary-box-content-${boxIndex}`;
+            const contentDiv = document.getElementById(containerId);
+            if (!contentDiv) {
+                 console.error(`Summary content container ${containerId} not found.`);
+                 return;
+            }
+    
+            // Calculate the summary for the selected year
+            const summaryData = calculateSummaryForYear(
+                selectedYear,
+                currentAnalysisResults.yearlyData,
+                currentAnalysisResults.inputs.purchasePrice,
+                currentAnalysisResults.initialMetrics.totalOutlay
+            );
+    
+            // Generate HTML for the metrics
+            let boxHTML = '';
+            if (summaryData) {
+                 boxHTML += `<div class="summary-metric"><span class="label">Total Cashflow</span><span class="value ${summaryData.totalCashflow >= 0 ? 'positive' : 'negative'}">${formatCurrencyAED(summaryData.totalCashflow, true)}</span></div>`;
+                 boxHTML += `<div class="summary-metric"><span class="label">Property Appreciation</span><span class="value ${summaryData.propertyAppreciation >= 0 ? 'positive' : 'negative'}">${formatCurrencyAED(summaryData.propertyAppreciation, true)}</span></div>`;
+                 boxHTML += `<div class="summary-metric"><span class="label">Total Gain</span><span class="value ${summaryData.totalGain >= 0 ? 'positive' : 'negative'}"><strong>${formatCurrencyAED(summaryData.totalGain, true)}</strong></span></div>`;
+                 boxHTML += `<div class="summary-metric"><span class="label">ROI (vs Total Outlay)</span><span class="value ${summaryData.roi >= 0 ? 'positive' : 'negative'}">${formatPercent(summaryData.roi)}</span></div>`;
+                 boxHTML += `<div class="summary-metric"><span class="label">CAGR</span><span class="value ${summaryData.cagr >= 0 ? 'positive' : 'negative'}">${formatPercent(summaryData.cagr)}</span></div>`;
+            } else {
+                 boxHTML = '<p>Could not calculate summary for this year.</p>';
+            }
+    
+            contentDiv.innerHTML = boxHTML;
+        }
+    
+    
+        // MODIFIED: renderAnalysisOutput for new summary structure
+        function renderAnalysisOutput(results) {
+            const outputContainer = document.getElementById('output-content');
+            if (!outputContainer) {
+                console.error("Output container 'output-content' not found.");
+                return;
+            }
+            outputContainer.innerHTML = ''; // Clear previous results
+    
+            // Store results for event handlers
+            currentAnalysisResults = results;
+            const yearsToProject = results.inputs.yearsToProject;
+    
+            try {
+                // --- Section 1: Initial Snapshot --- (Render using metric cards)
+                const initialSection = document.createElement('div');
+                initialSection.className = 'output-section';
+                initialSection.id = 'initial-snapshot';
+                let initialHTML = `<h4><i class="fa-solid fa-receipt"></i> Initial Investment Snapshot</h4><div class="metric-grid">`;
+                initialHTML += createMetricCard('Purchase Price', formatCurrencyAED(results.inputs.purchasePrice), results.inputs.purchasePrice);
+                initialHTML += createMetricCard('Closing Costs', formatCurrencyAED(results.inputs.closingCosts), results.inputs.closingCosts);
+                initialHTML += createMetricCard('Total Outlay', formatCurrencyAED(results.initialMetrics.totalOutlay), results.initialMetrics.totalOutlay, 'PP + Closing Costs');
+                initialHTML += createMetricCard('Price / Sq Ft', formatCurrencyAED(results.initialMetrics.pricePerSqft), results.initialMetrics.pricePerSqft, `on ${formatNumber(results.inputs.sqft,0)} Sq Ft`);
+                initialHTML += createMetricCard('Monthly Cashflow', formatCurrencyAED(results.initialMetrics.monthlyCashflow, true), results.initialMetrics.monthlyCashflow, 'Initial Inflow - Outflow');
+                initialHTML += createMetricCard('Year 1 Cashflow', formatCurrencyAED(results.initialMetrics.yearlyCashflow, true), results.initialMetrics.yearlyCashflow);
+                initialHTML += `</div>`;
+                initialSection.innerHTML = initialHTML;
+                outputContainer.appendChild(initialSection);
+    
+    
+                // --- Section 2: Performance Summaries (NEW STRUCTURE) ---
+                const summarySection = document.createElement('div');
+                summarySection.className = 'output-section';
+                summarySection.id = 'performance-summary';
+                summarySection.innerHTML = `<h4><i class="fa-solid fa-flag-checkered"></i> Performance Summary</h4>`;
+    
+                let summaryGridHTML = '<div class="dynamic-summary-grid">'; // Wrapper class for the two slots
+    
+                // Determine default years (e.g., Year 5 and Year 10 or fallbacks)
+                const defaultYear1 = Math.min(5, yearsToProject);
+                // Ensure defaultYear2 is different from defaultYear1 if possible, and within range
+                let defaultYear2 = Math.min(10, yearsToProject);
+                if (yearsToProject > 1 && defaultYear2 === defaultYear1) {
+                    defaultYear2 = Math.min(defaultYear1 + 1, yearsToProject); // Try next year if 5/10 is same
+                }
+    
+    
+                // Create two summary slots
+                for (let i = 0; i < 2; i++) {
+                     // Assign different defaults to each box if possible
+                     const defaultYear = (i === 0) ? defaultYear1 : (yearsToProject > 1 ? defaultYear2 : defaultYear1);
+    
+                    summaryGridHTML += `<div class="summary-slot">`;
+                    // Dropdown
+                    summaryGridHTML += `<div class="summary-year-selector">`;
+                    summaryGridHTML += `<label for="summary-year-${i}"><i class="fa-regular fa-calendar-days"></i> Summary up to Year:</label>`;
+                    summaryGridHTML += `<select id="summary-year-${i}" data-box-index="${i}">`;
+                    for (let year = 1; year <= yearsToProject; year++) {
+                        summaryGridHTML += `<option value="${year}" ${year === defaultYear ? 'selected' : ''}>Year ${year}</option>`;
+                    }
+                    summaryGridHTML += `</select>`;
+                    summaryGridHTML += `</div>`; // End selector
+    
+                    // Content Box (initially empty, populated by JS)
+                    summaryGridHTML += `<div class="summary-box-content" id="summary-box-content-${i}">`;
+                    // Content will be loaded by updateSummaryBox
+                    summaryGridHTML += `<div class="placeholder-small"><i class="fa-solid fa-spinner fa-spin"></i> Loading...</div>`;
+                    summaryGridHTML += `</div>`; // End content box
+    
+                    summaryGridHTML += `</div>`; // End summary-slot
+                }
+    
+                summaryGridHTML += '</div>'; // Close dynamic-summary-grid
+                summarySection.innerHTML += summaryGridHTML;
+                outputContainer.appendChild(summarySection);
+    
+                // Add event listeners AFTER appending to DOM
+                const select1 = document.getElementById('summary-year-0');
+                const select2 = document.getElementById('summary-year-1');
+    
+                if (select1) {
+                    select1.addEventListener('change', (event) => {
+                        const selectedYear = parseInt(event.target.value);
+                        const boxIndex = parseInt(event.target.getAttribute('data-box-index'));
+                        updateSummaryBox(boxIndex, selectedYear);
+                    });
+                     // Initial population
+                     updateSummaryBox(0, parseInt(select1.value));
+                }
+                 if (select2) {
+                    select2.addEventListener('change', (event) => {
+                        const selectedYear = parseInt(event.target.value);
+                        const boxIndex = parseInt(event.target.getAttribute('data-box-index'));
+                        updateSummaryBox(boxIndex, selectedYear);
+                    });
+                     // Initial population
+                     updateSummaryBox(1, parseInt(select2.value));
+                }
+    
+    
+                // --- Section 3: Yearly Breakdown Table --- (Render using createTableHTML)
+                const yearlySection = document.createElement('div');
+                yearlySection.className = 'output-section';
+                yearlySection.id = 'yearly-breakdown';
+                yearlySection.innerHTML = `<h4><i class="fa-solid fa-calendar-alt"></i> Yearly Projected Breakdown</h4>`;
+                const yearlyHeaders = ['Year', 'Property Value (AED)', 'Gross Rent Per Year (AED)', 'Price / Sqft (AED)', 'Total Expenses (AED)', 'Total Cashflow (AED)'];
+                const yearlyRows = results.yearlyData.map(data => [
+                    data.year, data.propertyValue, data.grossRentPerYear,
+                    data.pricePerSqft, data.totalExpensesPerYear, data.totalCashflow
+                ]);
+                yearlySection.innerHTML += createTableHTML('yearly-breakdown-table', yearlyHeaders, yearlyRows);
+                outputContainer.appendChild(yearlySection);
+    
+    
+                // --- Update Timestamp ---
+                const timestampElement = document.getElementById('timestamp');
+                if (timestampElement) {
+                    timestampElement.textContent = new Date().toLocaleString('en-AE', { dateStyle: 'medium', timeStyle: 'short' });
+                }
+    
+            } catch (error) {
+                console.error("Error rendering output:", error);
+                outputContainer.innerHTML = `<div class="placeholder error-placeholder"><i class="fa-solid fa-bomb"></i><p>An error occurred while generating the analysis: ${error.message}</p></div>`;
+                // Clear stored results on error
+                currentAnalysisResults = null;
+            }
+        }
+    
+    
+        // --- Main Calculation Trigger ---
+        function calculateAnalysis() {
+            console.log("Calculate Analysis function called.");
+            const inputs = {
+                 purchasePrice: getValue('purchasePrice'),
+                 closingCosts: getValue('closingCosts'),
+                 sqft: getValue('sqft'),
+                 monthlyInflow: getValue('monthlyInflow'),
+                 monthlyOutflow: getValue('monthlyOutflow'),
+                 yearsToProject: getValue('yearsToProject'),
+                 propAppreciationRate: getValue('propAppreciationRate'),
+                 rentAppreciationRate: getValue('rentAppreciationRate'),
+                 expenseAppreciationRate: getValue('expenseAppreciationRate'),
+            };
+    
+            // Clear previous results before validation
+            currentAnalysisResults = null;
+            // Clear output immediately on new calculation attempt
+            const outputContainer = document.getElementById('output-content');
+            if(outputContainer) {
+                outputContainer.innerHTML = '<div class="placeholder"><i class="fa-solid fa-calculator"></i><p>Calculating analysis...</p></div>';
+            }
+            const timestampElement = document.getElementById('timestamp');
+            if (timestampElement) timestampElement.textContent = 'N/A';
+    
+    
+            if (!validateInputs(inputs)) {
+                console.log("Validation failed.");
+                // Update output container to show validation error message
+                 if(outputContainer) { outputContainer.innerHTML = '<div class="placeholder error-placeholder"><i class="fa-solid fa-triangle-exclamation"></i><p>Please fix the errors highlighted in the form.</p></div>'; }
+                return;
+            }
+    
+            try {
+                // Perform calculations (may take a moment)
+                const results = performAnalysisCalculations(inputs);
+    
+                // Render the full output
+                renderAnalysisOutput(results);
+    
+                // Scroll to results on smaller screens
+                if (window.innerWidth <= 1024) {
+                    const outputPane = document.querySelector('.output-pane');
+                    if (outputPane) {
+                        setTimeout(() => { outputPane.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+                    }
+                }
+            } catch (error) {
+                console.error("Error during calculation or rendering:", error);
+                if(outputContainer) { outputContainer.innerHTML = `<div class="placeholder error-placeholder"><i class="fa-solid fa-bomb"></i><p>Calculation Error: ${error.message}. Check console for details.</p></div>`; }
+                 currentAnalysisResults = null; // Clear on error
+               }
+        }
+    
+    
+        // --- Initial Setup ---
+        document.addEventListener('DOMContentLoaded', () => {
+             console.log("DOM fully loaded and parsed for Investment Analysis Calculator.");
+    
+            // Set initial theme
+            try {
+                const preferredTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+                setTheme(preferredTheme);
+            } catch (e) { console.error("Error setting initial theme:", e); }
+    
+            // Update timestamp initially
+            try {
+                 const timestampElement = document.getElementById('timestamp');
+                if (timestampElement) { timestampElement.textContent = 'Not generated yet'; }
+                 else { console.warn("Timestamp element not found in footer."); }
+            } catch (e) { console.error("Error setting initial timestamp:", e); }
+    
+              // Attach Navigation Drawer Event Listeners (code already included above)
+    
+              // Check form existence
+              const analysisForm = document.getElementById('analysis-form');
+              if (!analysisForm) {
+                   console.error("Analysis form element not found! Inline onsubmit will not work.");
+              }
+              // Optionally, attach submit handler here instead of inline HTML
+              // if (analysisForm) {
+              //     analysisForm.addEventListener('submit', (event) => {
+              //         event.preventDefault();
+              //         calculateAnalysis();
+              //     });
+              // }
+    
+    
+              console.log("Initial setup complete.");
+        }); // End DOMContentLoaded
+    
+    </script>
+</body>
+</html>

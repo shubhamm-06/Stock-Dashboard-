@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+    <div id="nav-overlay" class="navigation-overlay no-print"></div>
+
+    <nav id="side-drawer" class="side-navigation no-print">
+        <div class="nav-header">
+            <span class="nav-title">Invest & Settle Dubai</span>
+            <button id="nav-close-button" class="nav-close" title="Close Navigation">
+                <i class="fa-solid fa-times"></i>
+            </button>
+        </div>
+        <ul class="nav-links">
+            <li>
+                <a href="./index.html">
+                    <i class="fa-solid fa-calculator"></i> Property Overview Analysis
+                </a>
+            </li>
+            <li>
+                <a href="./sell.html">
+                    <i class="fa-solid fa-tags"></i> Exit Profit Calculator 
+                </a>
+            </li>
+            <li>
+                <a href="./finance.html">
+                    <i class="fa-solid fa-scale-balanced"></i> Property Growth Forecast
+                </a>
+            </li>
+            <li>
+                <a href="https://www.canva.com/design/DAGkQ4-vCgM/73R6OR-8dXaLWhhitecITQ/edit?utm_content=DAGkQ4-vCgM&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">
+                    <i class="fa-solid fa-file-powerpoint"></i> Power Point
+                </a>
+            </li>
+            <li>
+                <a href="https://docs.google.com/document/d/1oa95h7yVrgnlmBQsdFzkT1Gn5n8TEJDTnq8laSlzE8o/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-brain"></i> Calculation Logic
+                </a>
+            </li>
+        </ul>
+        <div class="nav-footer">
+             <p>&copy; 2025 Shubham Corp.</p> </div>
+    </nav>
+    <main class="investment-analyser">
+
+        <section class="pane input-pane no-print">
+            <header class="pane-header input-pane-controls">
+                <div class="header-title">
+                    <h2 id="config-nav-toggle" class="nav-toggle-header" title="Toggle Navigation Menu">
+                        <i class="fa-solid fa-sliders fa-beat-fade" style="--fa-beat-fade-opacity: 0.5; --fa-beat-fade-scale: 1.05;"></i> Invest & Settle Dubai
+                    </h2>
+                    <p>Enter your exit strategy parameters below.</p>
+                </div>
+                <button id="theme-toggle" class="theme-toggle-button no-print" title="Toggle Theme">
+                    <i class="fa-solid"></i> </button>
+            </header>
+
+            <form id="investment-form" onsubmit="event.preventDefault(); calculate();">
+
+                <details class="input-section" open>
+                    <summary><h3><i class="fa-solid fa-sack-dollar"></i> Investment & Sale Details</h3></summary>
+                    <div class="input-grid">
+                        <div class="input-group">
+                            <label for="purchasePrice"><i class="fa-regular fa-money-bill-1-wave"></i> Purchase Price (PP) <span class="required">*</span></label>
+                            <input type="number" id="purchasePrice" class="input-field" placeholder="750,000" value="750000" required min="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="totalAcquisitionCost"><i class="fa-solid fa-coins"></i> Total Acquisition Cost (TAC) <span class="required">*</span></label>
+                            <input type="number" id="totalAcquisitionCost" class="input-field" placeholder="816,280" value="816280" required min="1">
+                        </div>
+                         <div class="input-group">
+                            <label for="sellingPrice"><i class="fa-solid fa-tags"></i> Selling Price (SP) <span class="required">*</span></label>
+                            <input type="number" id="sellingPrice" class="input-field" placeholder="1,000,000" value="1000000" required min="1">
+                        </div>
+                         <div class="input-group">
+                            <label for="yearsSincePurchase"><i class="fa-regular fa-calendar-days"></i> Years Since Purchase <span class="required">*</span></label>
+                            <input type="number" id="yearsSincePurchase" class="input-field" placeholder="2" value="2" required min="1" step="1">
+                        </div>
+                        <div class="input-group">
+                            <label for="annualNetCashflow"><i class="fa-solid fa-money-bill-trend-up"></i> Annual Net Cashflow (Year 1) <span class="required">*</span></label>
+                            <input type="number" id="annualNetCashflow" class="input-field" placeholder="5,255.18" value="5255.18" required> </div>
+                        <div class="input-group">
+                            <label for="rentAppreciation"><i class="fa-solid fa-arrow-trend-up"></i> Rent Appreciation (% Yearly) <span class="required">*</span></label>
+                            <input type="number" id="rentAppreciation" class="input-field" placeholder="5" value="5" required min="0" step="0.1">
+                        </div>
+                       </div>
+                </details>
+
+                <div class="button-container">
+                     <button type="submit" class="cta-button">
+                        <i class="fa-solid fa-calculator"></i> Calculate Exit Returns
+                    </button>
+                </div>
+                <div id="validation-errors" class="validation-error-box" style="display: none;"></div>
+
+            </form>
+        </section>
+
+        <section class="pane output-pane">
+            <header class="pane-header output-pane-header">
+                <div class="header-title">
+                     <h2><i class="fa-solid fa-chart-line"></i> Exit Analysis Results</h2>
+                </div>
+                <button class="print-button no-print" onclick="window.print()" title="Print / Save PDF">
+                    <i class="fa-solid fa-print"></i>
+                </button>
+            </header>
+            <div id="output-content">
+                <div class="placeholder">
+                    <i class="fa-solid fa-lightbulb-on"></i>
+                     <p>Enter your parameters and click "Calculate Exit Returns" to see the results.</p>
+                </div>
+            </div>
+            <footer class="output-footer no-print">
+                <p><i class="fa-regular fa-clock"></i> Analysis generated: <span id="timestamp">N/A</span></p>
+                <p><i class="fa-solid fa-circle-info"></i> All figures in AED. Calculations based on provided inputs.</p>
+            </footer>
+        </section>
+
+    </main>
+    <script>
+        // script.js
+
+// --- Utility Functions ---
+function getValue(id) {
+    const element = document.getElementById(id);
+    if (!element) return null;
+    if (element.type === 'text' || element.type === 'select-one' || element.type === 'email' || element.type === 'tel') {
+        return element.value.trim();
+    }
+    const valueString = element.value.trim();
+    if (valueString === '') return null;
+    const value = parseFloat(valueString);
+    return isNaN(value) ? null : value;
+}
+
+function getTextValue(id) { // Keep this in case it's useful later
+    const element = document.getElementById(id);
+    return element ? element.value.trim() : '';
+}
+
+function formatCurrencyAED(value, showSign = false) {
+    const numValue = typeof value === 'number' && !isNaN(value) ? value : 0;
+    const options = { style: 'currency', currency: 'AED', minimumFractionDigits: 2, maximumFractionDigits: 2 };
+    const formatted = numValue.toLocaleString('en-AE', options);
+    return (showSign && numValue > 0) ? `+${formatted}` : formatted;
+}
+
+function formatPercent(value, decimals = 2) { // Added decimals parameter
+    const numValue = typeof value === 'number' && !isNaN(value) ? value : 0;
+    return numValue.toFixed(decimals) + '%';
+}
+
+// Removed calculateEMI as it's not needed for this calculator
+
+// --- UI Interaction Functions ---
+// Removed toggleHandover as 'status' input is gone
+
+// --- Theme Toggling --- (Keep as is)
+const themeToggleButton = document.getElementById('theme-toggle');
+
+function setTheme(theme) {
+    if (theme !== 'light' && theme !== 'dark') {
+        theme = 'light'; // Default
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateThemeIcon(theme);
+}
+
+function updateThemeIcon(theme) {
+    if (themeToggleButton) {
+        const icon = themeToggleButton.querySelector('i');
+        if (icon) {
+            if (theme === 'dark') {
+                icon.className = 'fa-solid fa-moon';
+                themeToggleButton.title = "Switch to Light Mode";
+            } else {
+                icon.className = 'fa-solid fa-sun';
+                themeToggleButton.title = "Switch to Dark Mode";
+            }
+        }
+    }
+}
+
+if (themeToggleButton) {
+    themeToggleButton.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = (currentTheme === 'dark') ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
+} else {
+    console.warn("Theme toggle button not found.");
+}
+
+
+// --- Navigation Drawer Logic --- (Keep as is)
+const navToggleButton = document.getElementById('config-nav-toggle'); // H2 Toggle
+const sideDrawer = document.getElementById('side-drawer');
+const navOverlay = document.getElementById('nav-overlay');
+const navCloseButton = document.getElementById('nav-close-button');
+
+function openDrawer() {
+    if (sideDrawer && navOverlay && navToggleButton) {
+        sideDrawer.classList.add('open');
+        navOverlay.classList.add('active');
+    } else {
+         console.warn("Cannot open drawer - required elements missing.");
+    }
+}
+
+function closeDrawer() {
+    if (sideDrawer && navOverlay && navToggleButton) {
+        sideDrawer.classList.remove('open');
+        navOverlay.classList.remove('active');
+    } else {
+         console.warn("Cannot close drawer - required elements missing.");
+    }
+}
+
+
+// --- Input Validation --- (Modified)
+function validateInputs(inputs) {
+    const errors = [];
+    const form = document.getElementById('investment-form');
+    if (!form) return false;
+
+    // Clear previous error highlights
+    form.querySelectorAll('.error').forEach(el => el.classList.remove('error'));
+
+    // Check HTML5 required constraint first
+    if (!form.checkValidity()) {
+        form.querySelectorAll(':invalid').forEach(el => {
+            const labelElement = form.querySelector(`label[for='${el.id}']`);
+            const labelText = labelElement ? labelElement.textContent.trim() : el.id;
+            if (!errors.includes(`${labelText} is required.`)) {
+                errors.push(`${labelText} is required.`);
+            }
+            el.classList.add('error');
+        });
+    }
+
+    // Additional specific checks for numeric inputs
+    const checks = [
+        { id: 'purchasePrice', name: 'Purchase Price', min: 1 },
+        { id: 'totalAcquisitionCost', name: 'Total Acquisition Cost', min: 1 },
+        { id: 'sellingPrice', name: 'Selling Price', min: 1 },
+        { id: 'yearsSincePurchase', name: 'Years Since Purchase', min: 1 },
+    ];
+
+    checks.forEach(check => {
+        const value = inputs[check.id];
+        const element = document.getElementById(check.id);
+        if (value === null || value < check.min) {
+            errors.push(`${check.name} must be at least ${check.min}.`);
+            if (element) element.classList.add('error');
+        }
+    });
+
+    // Display errors if any
+    const errorContainer = document.getElementById('validation-errors');
+    if (errorContainer) {
+        if (errors.length > 0) {
+            errorContainer.innerHTML = `<strong>Please correct the following:</strong><ul>${errors.map(e => `<li>${e}</li>`).join('')}</ul>`;
+            errorContainer.style.display = 'block';
+            return false;
+        } else {
+            errorContainer.style.display = 'none';
+            errorContainer.innerHTML = '';
+        }
+    }
+
+    return errors.length === 0;
+}
+
+
+// --- Calculation Logic --- (Rewritten based on Exit Strategy Example)
+function performCalculations(inputs) {
+    const pp = inputs.pp ?? 0;
+    const tac = inputs.tac ?? 0;
+    const sp = inputs.sp ?? 0;
+    const years = inputs.years ?? 1; // Ensure years is at least 1
+    const annualNetCashflowStart = inputs.annualNetCashflow ?? 0;
+    const rentAppreciationPercent = inputs.rentAppreciation ?? 0;
+
+    // --- Sale Expenses (Based on example, hardcoded - consider making inputs later) ---
+    const nocDevFee = 525.00; // If Completed, 525. If offplan then 5250 - ASSUMING COMPLETED
+    const sellerAgentCommission = sp * 0.021; // 2% + VAT = 2.1% directly on SP as per example table
+    const nocMcFee = 1050.00;
+    const utilityClearanceFee = 500.00;
+
+    const totalSaleExpenses = nocDevFee + sellerAgentCommission + nocMcFee + utilityClearanceFee;
+    const saleExpensesPercentOfSP = sp > 0 ? (totalSaleExpenses / sp) * 100 : 0;
+
+    const saleExpensesBreakdown = [
+        { label: 'NOC from Developer', amount: nocDevFee, basis: 'Fixed (Completed)' },
+        { label: 'Seller\'s Agent Comm.', amount: sellerAgentCommission, basis: formatPercent(2.10, 2) + ' of SP (Incl. VAT)'}, // Use 2.10% from example
+        { label: 'NOC from Management Co.', amount: nocMcFee, basis: 'Fixed' },
+        { label: 'Clearance from Utilities', amount: utilityClearanceFee, basis: 'Fixed (DEWA, etc.)' }
+    ];
+
+    // --- Summary / Profit (Appreciation) ---
+    const netProceeds = sp - totalSaleExpenses;
+    const profitAppreciation = netProceeds - tac;
+    const roiAppreciation = tac > 0 ? (profitAppreciation / tac) * 100 : 0;
+
+    let cagrAppreciation = 0;
+    if (tac > 0 && netProceeds > 0 && years > 0) {
+        // CAGR = (Ending Value / Beginning Value)^(1 / Number of Years) - 1
+        cagrAppreciation = (Math.pow(netProceeds / tac, 1 / years) - 1) * 100;
+    } else if (tac > 0 && years > 0 && netProceeds <= 0) {
+         cagrAppreciation = -100; // Total loss
+    }
+
+
+    // --- Rental Income Contribution ---
+    let totalCashflowReceived = 0;
+    const yearlyCashflows = []; // Optional: Store for potential breakdown later
+    const appreciationFactor = 1 + (rentAppreciationPercent / 100);
+
+    for (let i = 0; i < years; i++) {
+        const cashflowThisYear = annualNetCashflowStart * Math.pow(appreciationFactor, i);
+        totalCashflowReceived += cashflowThisYear;
+        yearlyCashflows.push({ year: i + 1, cashflow: cashflowThisYear });
+    }
+
+    // --- Net ROI ---
+    const totalProceedsOverall = profitAppreciation + totalCashflowReceived;
+    const netRoiTotal = tac > 0 ? (totalProceedsOverall / tac) * 100 : 0;
+
+    let netCagrTotal = 0;
+    const finalValueForCagr = netProceeds + totalCashflowReceived; // This is the total return (Equity + CF) received relative to TAC
+
+    if (tac > 0 && finalValueForCagr > 0 && years > 0) {
+        // Method 1: Based on ROI (as shown in example calculation check)
+        // netCagrTotal = (Math.pow(netRoiTotal / 100 + 1, 1 / years) - 1) * 100;
+
+        // Method 2: Direct CAGR formula on total effective value (Net Proceeds + CF) vs TAC
+        // This aligns better with the concept of overall growth rate of the initial investment
+         netCagrTotal = (Math.pow(finalValueForCagr / tac, 1 / years) - 1) * 100;
+
+         // Let's double-check the example's 10.00% Net CAGR again:
+         // Profit=160645, CF=10773.11, Total=171418.11, TAC=816280, Years=2
+         // ( (171418.11 / 816280)^(1/2) - 1 ) * 100 = (0.2100^0.5 - 1) * 100 = (0.458 - 1) * 100 = -54% -> This is wrong.
+         // The example likely calculated: ((Profit+CF)/TAC + 1)^(1/Years) - 1
+         // ( (171418.11 / 816280 + 1)^(1/2) - 1 ) * 100 = (1.21^0.5 - 1) * 100 = (1.1 - 1) * 100 = 10%. OK, let's use this formula.
+         netCagrTotal = (Math.pow(totalProceedsOverall / tac + 1, 1 / years) - 1) * 100;
+
+    } else if (tac > 0 && years > 0 && finalValueForCagr <= 0) {
+         netCagrTotal = -100; // Total loss
+    }
+
+
+    return {
+        // Inputs pass-through
+        pp: pp,
+        tac: tac,
+        sp: sp,
+        years: years,
+        annualNetCashflowStart: annualNetCashflowStart,
+        rentAppreciationPercent: rentAppreciationPercent,
+
+        // Sale Expenses
+        nocDevFee: nocDevFee,
+        sellerAgentCommission: sellerAgentCommission,
+        nocMcFee: nocMcFee,
+        utilityClearanceFee: utilityClearanceFee,
+        totalSaleExpenses: totalSaleExpenses,
+        saleExpensesPercentOfSP: saleExpensesPercentOfSP,
+        saleExpensesBreakdown: saleExpensesBreakdown,
+
+        // Summary/Profit (Appreciation)
+        netProceeds: netProceeds,
+        profitAppreciation: profitAppreciation,
+        roiAppreciation: roiAppreciation,
+        cagrAppreciation: cagrAppreciation,
+
+        // Rental Contribution
+        totalCashflowReceived: totalCashflowReceived,
+        yearlyCashflows: yearlyCashflows, // Keep if needed for future detail
+
+        // Net ROI / Overall
+        totalProceedsOverall: totalProceedsOverall,
+        netRoiTotal: netRoiTotal,
+        netCagrTotal: netCagrTotal
+    };
+}
+
+
+// --- DOM Update Functions ---
+// (Keep createMetricCard as is)
+function createMetricCard(label, displayValue, // Value formatted for display
+                          numericValueForClass, // Original number for +/- class logic
+                          subValue = '')
+{
+    let valueClass = 'neutral'; // Default class
+    // Ensure numericValueForClass is actually a number before checking sign
+    if (typeof numericValueForClass === 'number' && !isNaN(numericValueForClass)) {
+         if (numericValueForClass > 0) valueClass = 'positive';
+         else if (numericValueForClass < 0) valueClass = 'negative';
+    }
+    // Sanitize HTML content
+    const safeDisplayValue = String(displayValue).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    const safeSubValue = String(subValue).replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    return `<div class="metric-card"><span class="label">${label}</span><span class="value ${valueClass}">${safeDisplayValue}</span>${subValue ? `<span class="sub-value">${safeSubValue}</span>` : ''}</div>`;
+}
+
+// (Keep createTableHTML as is)
+function createTableHTML(id, headers, dataRows, footerRow = null) {
+    if (!Array.isArray(headers) || !Array.isArray(dataRows)) return '';
+    let tableHTML = `<div class="table-container"><table class="data-table" id="${id}"><thead><tr>`;
+    // Sanitize headers
+    headers.forEach(h => tableHTML += `<th>${String(h || '').replace(/</g, "&lt;").replace(/>/g, "&gt;")}</th>`);
+    tableHTML += `</tr></thead><tbody>`;
+    dataRows.forEach(row => {
+        if (!Array.isArray(row)) return;
+        tableHTML += `<tr>${row.map((cell, index) => {
+            let cellClass = '';
+            const headerText = (index < headers.length && headers[index]) ? String(headers[index]).toLowerCase() : '';
+            // Determine alignment class based on header text
+            if (headerText.includes('(aed)') || headerText.includes('amount') || headerText.includes('price')) { cellClass = ' class="currency"'; }
+            else if (headerText.includes('(%)') || headerText.includes('years')) { cellClass = ' class="number"'; }
+
+            // Sanitize cell content
+            let cellContent = String(cell ?? '').replace(/</g, "&lt;").replace(/>/g, "&gt;");
+
+            // Special formatting for 'Basis' column (wrap in notes span)
+            if (headers[index] === 'Basis' && !cellContent.startsWith('<span class="notes">')) {
+                 cellContent = `<span class="notes">${cellContent}</span>`;
+            }
+            return `<td${cellClass}>${cellContent}</td>`;
+            }).join('')}</tr>`;
+    });
+    tableHTML += `</tbody>`;
+    if (footerRow && Array.isArray(footerRow)) {
+        tableHTML += `<tfoot><tr>`;
+        let currentHeaderIndex = 0;
+        footerRow.forEach((cell) => {
+            let attributes = ''; let content = ''; let colspan = 1;
+            if (typeof cell === 'object' && cell !== null && cell.content !== undefined) {
+                colspan = parseInt(cell.colspan, 10) || 1;
+                attributes = ` colspan="${colspan}"`; content = cell.content;
+            } else { content = cell; }
+
+            let cellClass = '';
+            const headerIndexForAlign = currentHeaderIndex + colspan - 1; // Align based on the last column spanned
+            if (headerIndexForAlign < headers.length) {
+                const headerText = String(headers[headerIndexForAlign] || '').toLowerCase();
+                 if (headerText.includes('(aed)') || headerText.includes('amount') || headerText.includes('price')) { cellClass = 'currency'; }
+                 else if (headerText.includes('(%)') || headerText.includes('years')) { cellClass = 'number'; }
+            }
+            if (cellClass) { attributes += ` class="${cellClass}"`; }
+
+            // Sanitize footer content
+            const safeContent = String(content ?? '').replace(/</g, "&lt;").replace(/>/g, "&gt;");
+            // Bold footer content unless it's explicitly marked as notes
+            let cellDisplay = (typeof content === 'string' && content.startsWith('<span class="notes">')) ? safeContent : `<strong>${safeContent}</strong>`;
+
+            tableHTML += `<td${attributes}>${cellDisplay}</td>`;
+            currentHeaderIndex += colspan;
+        });
+        tableHTML += `</tr></tfoot>`;
+    }
+    tableHTML += `</table></div>`;
+    return tableHTML;
+}
+
+
+// **** renderOutput Function Modified for Exit Strategy ****
+function renderOutput(results) {
+    const outputContainer = document.getElementById('output-content');
+    if (!outputContainer) {
+        console.error("Output container 'output-content' not found.");
+        return;
+    }
+    outputContainer.innerHTML = ''; // Clear previous results or placeholder
+
+    try {
+        // --- Section 1: Sale Summary ---
+        const saleSummarySection = document.createElement('div');
+        saleSummarySection.className = 'output-section';
+        saleSummarySection.id = 'sale-summary';
+        let saleSummaryHTML = `<h4><i class="fa-solid fa-tags"></i> Sale Summary</h4><div class="metric-grid">`;
+        saleSummaryHTML += createMetricCard('Selling Price (SP)', formatCurrencyAED(results.sp), results.sp);
+        saleSummaryHTML += createMetricCard('Total Sale Expenses', formatCurrencyAED(results.totalSaleExpenses), -Math.abs(results.totalSaleExpenses), formatPercent(results.saleExpensesPercentOfSP) + ' of SP');
+        saleSummaryHTML += createMetricCard('Net Proceeds from Sale', formatCurrencyAED(results.netProceeds), results.netProceeds, 'SP - Expenses');
+        saleSummaryHTML += `</div>`;
+        saleSummarySection.innerHTML = saleSummaryHTML;
+        outputContainer.appendChild(saleSummarySection);
+
+        // --- Section 2: Profitability (Property Appreciation) ---
+        const profitSection = document.createElement('div');
+        profitSection.className = 'output-section';
+        profitSection.id = 'profit-appreciation';
+        let profitHTML = `<h4><i class="fa-solid fa-arrow-up-right-dots"></i> Profitability (Appreciation Only)</h4><div class="metric-grid">`;
+        profitHTML += createMetricCard('Total Acquisition Cost (TAC)', formatCurrencyAED(results.tac), results.tac);
+        profitHTML += createMetricCard('Profit (Appreciation)', formatCurrencyAED(results.profitAppreciation, true), results.profitAppreciation, 'Net Proceeds - TAC');
+        profitHTML += createMetricCard('ROI (Appreciation)', formatPercent(results.roiAppreciation), results.roiAppreciation, 'Profit / TAC');
+        profitHTML += createMetricCard('CAGR (Appreciation)', formatPercent(results.cagrAppreciation), results.cagrAppreciation, 'Annualized Growth of Equity');
+        profitHTML += `</div>`;
+        profitSection.innerHTML = profitHTML;
+        outputContainer.appendChild(profitSection);
+
+        // --- Section 3: Rental Contribution ---
+        const rentalSection = document.createElement('div');
+        rentalSection.className = 'output-section';
+        rentalSection.id = 'rental-contribution';
+        let rentalHTML = `<h4><i class="fa-solid fa-money-bill-transfer"></i> Rental Contribution</h4><div class="metric-grid">`;
+        rentalHTML += createMetricCard('Holding Period', `${results.years} Years`, results.years);
+        rentalHTML += createMetricCard('Annual Net CF (Year 1)', formatCurrencyAED(results.annualNetCashflowStart, true), results.annualNetCashflowStart);
+        rentalHTML += createMetricCard('Rent Appreciation Rate', formatPercent(results.rentAppreciationPercent), results.rentAppreciationPercent, 'Yearly');
+        rentalHTML += createMetricCard(`Total Cashflow (${results.years} yrs)`, formatCurrencyAED(results.totalCashflowReceived, true), results.totalCashflowReceived, 'Sum of yearly CF');
+        rentalHTML += `</div>`;
+        rentalSection.innerHTML = rentalHTML;
+        outputContainer.appendChild(rentalSection);
+
+        // --- Section 4: Overall Performance ---
+        const overallSection = document.createElement('div');
+        overallSection.className = 'output-section';
+        overallSection.id = 'overall-performance';
+        let overallHTML = `<h4><i class="fa-solid fa-chart-pie"></i> Overall Performance</h4><div class="metric-grid">`;
+        overallHTML += createMetricCard('Total Proceeds', formatCurrencyAED(results.totalProceedsOverall, true), results.totalProceedsOverall, 'Profit + Total CF');
+        overallHTML += createMetricCard('Net ROI (Total)', formatPercent(results.netRoiTotal), results.netRoiTotal, 'Total Proceeds / TAC');
+        overallHTML += createMetricCard('Net CAGR (Total)', formatPercent(results.netCagrTotal), results.netCagrTotal, 'Annualized Total Return');
+        overallHTML += `</div>`;
+        overallSection.innerHTML = overallHTML;
+        outputContainer.appendChild(overallSection);
+
+        // --- Section 5: Sale Expense Breakdown ---
+        const costSection = document.createElement('div');
+        costSection.className = 'output-section';
+        costSection.id = 'sale-cost-breakdown';
+        costSection.innerHTML = `<h4><i class="fa-solid fa-file-invoice-dollar"></i> Sale Expense Breakdown</h4>`;
+        const expenseHeaders = ['Expense Item', 'Basis', 'Amount (AED)'];
+        const expenseRows = results.saleExpensesBreakdown.map(item => [item.label, item.basis, formatCurrencyAED(item.amount)]);
+        const expenseFooter = [{ content: 'Total Sale Expenses', colspan: 2 }, formatCurrencyAED(results.totalSaleExpenses)];
+        costSection.innerHTML += createTableHTML('sale-expenses-table', expenseHeaders, expenseRows, expenseFooter);
+        outputContainer.appendChild(costSection);
+
+
+        // --- Update Timestamp ---
+        const timestampElement = document.getElementById('timestamp');
+        if (timestampElement) {
+            timestampElement.textContent = new Date().toLocaleString('en-AE', { dateStyle: 'medium', timeStyle: 'short' });
+        }
+
+    } catch (error) {
+        console.error("Error rendering output:", error);
+        outputContainer.innerHTML = `<div class="placeholder error-placeholder"><i class="fa-solid fa-bomb"></i><p>An error occurred while generating the analysis.</p></div>`;
+    }
+}
+
+
+// --- Main Calculation Trigger --- (Modified)
+function calculate() {
+    console.log("Calculate function called.");
+    const inputs = {
+        // Gather inputs from the new fields
+        pp: getValue('purchasePrice'),
+        tac: getValue('totalAcquisitionCost'),
+        sp: getValue('sellingPrice'),
+        years: getValue('yearsSincePurchase'),
+        annualNetCashflow: getValue('annualNetCashflow'),
+        rentAppreciation: getValue('rentAppreciation'),
+        // Add NOC/Agent fees here if they become inputs
+        // nocDevFee: getValue('nocDevFee'),
+        // nocMcFee: getValue('nocMcFee'),
+        // utilityFee: getValue('utilityFee'),
+        // agentCommissionPercent: getValue('agentCommissionPercent'),
+    };
+    // console.log("Inputs gathered:", inputs); // Debugging
+
+    if (!validateInputs(inputs)) {
+        console.log("Validation failed.");
+        const outputContainer = document.getElementById('output-content');
+        if(outputContainer) { outputContainer.innerHTML = '<div class="placeholder error-placeholder"><i class="fa-solid fa-triangle-exclamation"></i><p>Please fix the errors highlighted in the form.</p></div>'; } // Use error placeholder
+        const timestampElement = document.getElementById('timestamp');
+        if (timestampElement) timestampElement.textContent = 'N/A';
+        return;
+    }
+    // console.log("Validation passed."); // Debugging
+
+    try {
+        // console.log("Performing calculations..."); // Debugging
+        const results = performCalculations(inputs);
+        // console.log("Calculations complete:", results); // Debugging
+        // console.log("Rendering output..."); // Debugging
+        renderOutput(results);
+        // console.log("Output rendered."); // Debugging
+
+        // Scroll to results on smaller screens
+        if (window.innerWidth <= 1024) {
+            const outputPane = document.querySelector('.output-pane');
+            if (outputPane) {
+                setTimeout(() => { outputPane.scrollIntoView({ behavior: 'smooth', block: 'start' }); }, 100);
+            }
+        }
+    } catch (error) {
+         console.error("Error during calculation or rendering:", error);
+         const outputContainer = document.getElementById('output-content');
+         if(outputContainer) { outputContainer.innerHTML = '<div class="placeholder error-placeholder"><i class="fa-solid fa-bomb"></i><p>Calculation Error. Check console for details.</p></div>'; } // Use error placeholder
+    }
+}
+
+
+// --- Initial Setup ---
+document.addEventListener('DOMContentLoaded', () => {
+    console.log("DOM fully loaded and parsed for Exit Strategy Calculator.");
+
+    // 1. Set initial theme (Keep as is)
+    try {
+        const preferredTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        setTheme(preferredTheme);
+    } catch (e) { console.error("Error setting initial theme:", e); }
+
+    // 2. Set initial state for conditional fields (Removed toggleHandover call)
+    // No conditional fields in this version initially.
+
+    // 3. Update timestamp initially (Keep as is)
+    try {
+         const timestampElement = document.getElementById('timestamp');
+        if (timestampElement) { timestampElement.textContent = new Date().toLocaleString('en-AE', { dateStyle: 'medium', timeStyle: 'short' }); }
+        else { console.warn("Timestamp element not found in footer."); }
+    } catch (e) { console.error("Error setting initial timestamp:", e); }
+
+    // 4. Attach Navigation Drawer Event Listeners (Keep as is)
+    try {
+        const navToggle = document.getElementById('config-nav-toggle');
+        const drawer = document.getElementById('side-drawer');
+        const overlay = document.getElementById('nav-overlay');
+        const closeBtn = document.getElementById('nav-close-button');
+
+        if (navToggle && drawer && overlay && closeBtn) {
+            console.log("Attaching navigation listeners...");
+            navToggle.addEventListener('click', (event) => {
+                console.log("Nav toggle clicked"); event.stopPropagation();
+                if (drawer.classList.contains('open')) { closeDrawer(); } else { openDrawer(); }
+            });
+            closeBtn.addEventListener('click', () => { console.log("Nav close clicked"); closeDrawer(); });
+            overlay.addEventListener('click', () => { console.log("Nav overlay clicked"); closeDrawer(); });
+            drawer.querySelectorAll('.nav-links a').forEach(link => {
+                link.addEventListener('click', () => { console.log("Nav link clicked"); closeDrawer(); });
+            });
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape' && drawer.classList.contains('open')) { console.log("Escape key pressed"); closeDrawer(); }
+            });
+            console.log("Navigation listeners attached.");
+        } else {
+             console.error("Navigation functionality disabled: One or more required elements not found.", {
+                 navToggleFound: !!navToggle,
+                 drawerFound: !!drawer,
+                 overlayFound: !!overlay,
+                 closeBtnFound: !!closeBtn
+              });
+        }
+    } catch (e) { console.error("Error attaching navigation listeners:", e); }
+
+    // 5. Form submit listener (Handled by inline HTML `onsubmit="..."`)
+    if (!document.getElementById('investment-form')) {
+        console.error("Investment form element not found! Inline onsubmit will not work.");
+    }
+
+    console.log("Initial setup complete.");
+}); // End DOMContentLoaded
+    </script>
+</body>
+</html>
