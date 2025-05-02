@@ -285,16 +285,16 @@ function renderOutput(results) {
         roiSection.id = 'roi-metrics';
         let roiHTML = `<h4><i class="fa-solid fa-chart-pie"></i> Return Metrics</h4>`;
         roiHTML += `<h5>Before Expenses</h5><div class="metric-grid">`;
-        roiHTML += createMetricCard('Gross ROI (w.r to Purchase Price)', formatPercent(results.roiGrossYieldPP), results.roiGrossYieldPP);
-        roiHTML += createMetricCard('Gross ROI (w.r to Total Acquisition Price)', formatPercent(results.roiCashOnCash), results.roiCashOnCash, 'Annual Net CF / Cash Needed');
+        roiHTML += createMetricCard('Gross ROI ', formatPercent(results.roiGrossYieldPP), results.roiGrossYieldPP, 'w.r to Purchase Price');
+        roiHTML += createMetricCard('Gross ROI ', formatPercent(results.roiCashOnCash), results.roiCashOnCash, 'w.r to Total Acquisition Price');
         const paybackTextStd = isFinite(results.netPaybackPeriod) ? `${results.netPaybackPeriod.toFixed(1)} yrs` : 'N/A';
         // roiHTML += createMetricCard('Net Payback Period', paybackTextStd, results.netPaybackPeriod, 'Acquisition Cost / Annual Net CF');
         roiHTML += `</div>`;
         if (Math.abs(results.totalAcquisitionCostBasis - results.sheetAcquisitionCostForROI) > 1) {
             roiHTML += `<h5 style="margin-top: 20px;">After Expenses</h5><div class="metric-grid">`;
-            roiHTML += createMetricCard('Net ROI (after Rental Expenses) (w.r. to Purchase Price)', formatPercent(results.roiSheetGrossYieldAC), results.roiSheetGrossYieldAC, `Using AC: ${formatCurrencyAED(results.sheetAcquisitionCostForROI)}`);
-            roiHTML += createMetricCard(' Net ROI (after Expenses & EMI) (w.r. to Purchase Price)', formatPercent(results.roiSheetNetYieldAC), results.roiSheetNetYieldAC, 'Net CF / Sheet AC');
-            roiHTML += createMetricCard('Net ROI (after Expenses & EMI) (w.r. to Total Acquisition Price)', formatPercent(results.roiSheetExcludingEMI), results.roiSheetExcludingEMI, '(Rent - Expenses) / Sheet AC');
+            roiHTML += createMetricCard('Net ROI (after Rental Expenses)', formatPercent(results.roiSheetGrossYieldAC), results.roiSheetGrossYieldAC, `W.R. to Purchase Price `);
+            roiHTML += createMetricCard(' Net ROI (after Expenses & EMI) ', formatPercent(results.roiSheetNetYieldAC), results.roiSheetNetYieldAC, 'w.r. to Purchase Price');
+            roiHTML += createMetricCard('Net ROI (after Expenses & EMI) ', formatPercent(results.roiSheetExcludingEMI), results.roiSheetExcludingEMI, 'w.r. to Total Acquisition Price');
             if (Math.abs(results.netPaybackPeriod - results.netPaybackPeriodSheet) > 0.1) {
                  const paybackTextSheet = isFinite(results.netPaybackPeriodSheet) ? `${results.netPaybackPeriodSheet.toFixed(1)} yrs` : 'N/A';
                 //  roiHTML += createMetricCard('Payback Period (Sheet AC)', paybackTextSheet, results.netPaybackPeriodSheet, `Using AC: ${formatCurrencyAED(results.sheetAcquisitionCostForROI)}`);
