@@ -783,7 +783,8 @@ html[data-theme='dark'] .nav-header {
 
 .nav-links li a {
     display: flex;
-    align-items: center;
+    /* align-items: center; */ /* CHANGE FROM THIS */
+    align-items: flex-start; /* TO THIS - Aligns icon with the top of the text */
     gap: 15px; /* Space between icon and text */
     padding: 13px 25px; /* Vertical | Horizontal padding */
     color: var(--text-secondary);
@@ -796,7 +797,8 @@ html[data-theme='dark'] .nav-header {
                 padding-left var(--transition-speed) ease,
                 border-left-color var(--transition-speed) ease;
     border-left: 4px solid transparent; /* Indicator bar, initially transparent */
-    white-space: nowrap; /* Prevent link text wrapping */
+    /* white-space: nowrap; */   /* REMOVE OR COMMENT OUT THIS LINE */
+    white-space: normal;     /* ADD THIS LINE - Allows text wrapping */
 }
 
 .nav-links li a i {
@@ -805,7 +807,10 @@ html[data-theme='dark'] .nav-header {
     color: var(--accent-primary); /* Icon color */
     transition: color var(--transition-speed) ease;
     flex-shrink: 0; /* Prevent icon shrinking */
+    /* OPTIONAL: Add a small top margin if the icon looks too high with flex-start */
+    /* margin-top: 2px; */
 }
+
 
 .nav-links li a:hover {
     background-color: var(--bg-tertiary); /* Hover background */

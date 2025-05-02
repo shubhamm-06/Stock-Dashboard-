@@ -288,16 +288,16 @@ function renderOutput(results) {
         roiHTML += createMetricCard('Gross Yield (Rent / PP)', formatPercent(results.roiGrossYieldPP), results.roiGrossYieldPP);
         roiHTML += createMetricCard('Cash on Cash ROI', formatPercent(results.roiCashOnCash), results.roiCashOnCash, 'Annual Net CF / Cash Needed');
         const paybackTextStd = isFinite(results.netPaybackPeriod) ? `${results.netPaybackPeriod.toFixed(1)} yrs` : 'N/A';
-        roiHTML += createMetricCard('Net Payback Period', paybackTextStd, results.netPaybackPeriod, 'Acquisition Cost / Annual Net CF');
+        // roiHTML += createMetricCard('Net Payback Period', paybackTextStd, results.netPaybackPeriod, 'Acquisition Cost / Annual Net CF');
         roiHTML += `</div>`;
         if (Math.abs(results.totalAcquisitionCostBasis - results.sheetAcquisitionCostForROI) > 1) {
-            roiHTML += `<h5 style="margin-top: 20px;">Metrics (Potentially Matching External Sheets)</h5><div class="metric-grid">`;
+            roiHTML += `<h5 style="margin-top: 20px;">Metrics: </h5><div class="metric-grid">`;
             roiHTML += createMetricCard('ROI (Rent / Sheet AC)', formatPercent(results.roiSheetGrossYieldAC), results.roiSheetGrossYieldAC, `Using AC: ${formatCurrencyAED(results.sheetAcquisitionCostForROI)}`);
             roiHTML += createMetricCard('Actual ROI (Sheet Def.)', formatPercent(results.roiSheetNetYieldAC), results.roiSheetNetYieldAC, 'Net CF / Sheet AC');
             roiHTML += createMetricCard('ROI Excl. EMI (Sheet Def.)', formatPercent(results.roiSheetExcludingEMI), results.roiSheetExcludingEMI, '(Rent - Expenses) / Sheet AC');
             if (Math.abs(results.netPaybackPeriod - results.netPaybackPeriodSheet) > 0.1) {
                  const paybackTextSheet = isFinite(results.netPaybackPeriodSheet) ? `${results.netPaybackPeriodSheet.toFixed(1)} yrs` : 'N/A';
-                 roiHTML += createMetricCard('Payback Period (Sheet AC)', paybackTextSheet, results.netPaybackPeriodSheet, `Using AC: ${formatCurrencyAED(results.sheetAcquisitionCostForROI)}`);
+                //  roiHTML += createMetricCard('Payback Period (Sheet AC)', paybackTextSheet, results.netPaybackPeriodSheet, `Using AC: ${formatCurrencyAED(results.sheetAcquisitionCostForROI)}`);
             }
             roiHTML += `</div>`;
         }

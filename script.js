@@ -542,3 +542,29 @@ async function fetchWithCache(url) {
     console.log("Dashboard initializing...");
     updateDashboard();
   });
+
+  document.addEventListener("DOMContentLoaded", () => {
+    const themeToggleButton = document.getElementById("theme-toggle");
+    const htmlElement = document.documentElement; // Refers to the <html> tag
+
+    // Function to update the theme icon
+    const updateThemeIcon = () => {
+        const icon = themeToggleButton.querySelector("i");
+        if (htmlElement.getAttribute("data-theme") === "dark") {
+            icon.className = "fa-solid fa-sun"; // Light mode icon
+        } else {
+            icon.className = "fa-solid fa-moon"; // Dark mode icon
+        }
+    };
+
+    // Toggle theme on button click
+    themeToggleButton.addEventListener("click", () => {
+        const currentTheme = htmlElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        htmlElement.setAttribute("data-theme", newTheme);
+        updateThemeIcon();
+    });
+
+    // Initialize the icon on page load
+    updateThemeIcon();
+});
