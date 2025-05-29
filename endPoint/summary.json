@@ -1,17 +1,18 @@
 [
   {
-    "Unrealized P&L": 83109.4046156006,
-    "Unrealized P&L%": 0.11264248646062905,
+    "Unrealized P&L": 81508.84461560042,
+    "Unrealized P&L%": 0.1104731644812053,
     "Realized_P&L": 28556.822417079566,
     "Realized P&L%": 0.038704542492543126,
     "Total Amt (started with)": 1000000,
     "Invested Amount": 737815.7853843994,
-    "Current Value": 820925.19,
+    "Current Value": 819324.6299999998,
     "Last Update": "2025-05-29T09:00:55.068Z",
     "Risk Free Return": 0.045,
     "Daily Interest Accumulated": 0.0001232876712328767,
     "CashPostion": 290741.03703268024,
     "Todays  Daily Interest": 35.84478538759071,
-    "Accumulated Daily Interest (since X date)": 143.37914155036285
+    "Accumulated Daily Interest (since X date)": 143.37914155036285,
+    "RFCP": 0.019432918675718336
   }
 ]
