@@ -5,539 +5,266 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CurateMyStay - Premium Stays, Seamlessly Managed</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['Montserrat', 'sans-serif'],
-                        serif: ['Playfair Display', 'serif'],
-                    },
-                    colors: {
-                        'brand-primary': '#0A2342',
-                        'brand-secondary': '#D4AF37',
-                        'brand-light': '#F8F9FA',
-                        'brand-dark': '#1A1A1A',
-                        'brand-gray': '#4A5568',
-                        'brand-accent-light': '#FDF6E3',
-                    },
-                    boxShadow: {
-                        'subtle': '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
-                        'medium': '0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)',
-                        'interactive': '0 6px 20px -3px rgba(212, 175, 55, 0.3)', 
-                    },
-                    transitionTimingFunction: {
-                        'custom-ease': 'cubic-bezier(0.25, 0.1, 0.25, 1)',
-                    },
-                    keyframes: {
-                        fadeInUp: {
-                            '0%': { opacity: '0', transform: 'translateY(20px)' },
-                            '100%': { opacity: '1', transform: 'translateY(0)' },
-                        },
-                        pulseGlow: {
-                            '0%, 100%': { boxShadow: '0 0 5px #D4AF37', opacity: '1'},
-                            '50%': { boxShadow: '0 0 20px #D4AF37', opacity: '0.8' },
-                        }
-                    },
-                    animation: {
-                        fadeInUp: 'fadeInUp 0.6s ease-out forwards',
-                        pulseGlow: 'pulseGlow 2s infinite ease-in-out',
-                    }
-                }
-            }
-        }
-    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            font-family: 'Inter', sans-serif;
         }
-        h1, h2, .font-serif-display { 
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-        }
-        .card-title-serif {
-             font-family: 'Playfair Display', serif;
-             font-weight: 700;
-        }
-
-        .hero-section {
-            position: relative;
+        .hero-bg {
+            /* Updated background image URL */
+            background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.pexels.com/photos/4429333/pexels-photo-4429333.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2');
             background-size: cover;
             background-position: center;
         }
-        .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(10, 35, 66, 0.7);
+        /* Simple animation for sections */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
         }
-        .hero-content {
-            position: relative;
-            z-index: 10;
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
-
-        .cta-button {
-            transition: all 0.3s var(--tw-transition-timing-function-custom-ease);
+        /* Add a subtle hover effect to buttons */
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
         }
-        .cta-button:hover {
-            transform: translateY(-3px) scale(1.03);
-            box-shadow: var(--tw-shadow-interactive);
-        }
-        .section-title {
-            position: relative;
-            padding-bottom: 0.75rem; 
-        }
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px; 
-            height: 3px;
-            background-color: #D4AF37;
-            border-radius: 2px; 
-            transition: width 0.3s ease;
-        }
-        .section-title:hover::after {
-            width: 80px; 
-        }
-
-        .feature-icon {
-            width: 28px; 
-            height: 28px;
-            color: #D4AF37;
-            transition: transform 0.3s ease;
-        }
-        .how-it-works-card .accordion-trigger:hover .feature-icon {
-            transform: scale(1.15); 
-        }
-
-        .social-icon:hover {
-            color: #D4AF37;
-            transform: scale(1.2); 
-            transition: color 0.3s ease, transform 0.3s ease;
-        }
-
-        .why-choose-us-item {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border-radius: 0.75rem; 
-        }
-        .why-choose-us-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--tw-shadow-medium);
-        }
-        
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.5s var(--tw-transition-timing-function-custom-ease), padding 0.5s var(--tw-transition-timing-function-custom-ease);
-            padding-left: calc(28px + 1rem);
-        }
-        .accordion-item.active .accordion-content {
-            max-height: 200px; 
-            padding-top: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-        .accordion-trigger {
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            padding: 0.75rem;
-        }
-         .accordion-trigger:hover {
-            background-color: var(--tw-colors-brand-accent-light);
-         }
-
-        .accordion-item.active .accordion-arrow {
-            transform: rotate(90deg);
-        }
-        .accordion-arrow {
-            transition: transform 0.3s ease;
-            color: var(--tw-colors-brand-secondary);
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-        }
-        .animate-on-scroll.is-visible {
-            opacity: 1;
-            transform: translateY(0) !important; 
-        }
-
-        .nav-scrolled {
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1), 0 2px 4px -1px rgba(0,0,0,0.06) !important; 
-        }
-        #mobileMenu a {
-            padding: 0.75rem 1.5rem;
-        }
-        
-        /* Custom image styling */
-        .property-image {
-            border-radius: 12px;
-            transition: transform 0.4s ease;
-        }
-        .property-image:hover {
-            transform: scale(1.02);
+        .icon-placeholder {
+            width: 24px;
+            height: 24px;
+            display: inline-block;
+            background-color: #e0e7ff; /* Light indigo for placeholder */
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            font-weight: bold;
+            color: #4f46e5; /* Indigo */
         }
     </style>
 </head>
-<body class="font-sans bg-brand-light text-brand-dark antialiased">
+<body class="bg-gray-50 text-gray-800">
 
-    <nav id="mainNav" class="bg-white shadow-subtle sticky top-0 z-50 transition-shadow duration-300">
-        <div class="container mx-auto px-4 sm:px-6 py-4 flex justify-between items-center">
-            <a href="#" class="text-2xl md:text-3xl font-serif-display text-brand-primary hover:opacity-80 transition-opacity flex items-center">
-                <svg class="w-8 h-8 mr-2 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
-                </svg>
-                CurateMyStay
-            </a>
-            <div class="hidden md:flex space-x-5 lg:space-x-6 items-center">
-                <a href="#about" class="text-sm lg:text-base text-brand-gray hover:text-brand-primary transition-colors">About</a>
-                <a href="#services" class="text-sm lg:text-base text-brand-gray hover:text-brand-primary transition-colors">What We Do</a>
-                <a href="#how-it-works" class="text-sm lg:text-base text-brand-gray hover:text-brand-primary transition-colors">How It Works</a>
-                <a href="#contact" class="text-sm lg:text-base text-brand-gray hover:text-brand-primary transition-colors">Contact</a>
-                <a href="#" class="bg-brand-secondary text-white px-4 py-2 lg:px-5 lg:py-2.5 rounded-lg text-xs lg:text-sm font-medium hover:bg-opacity-90 cta-button">Owner Login</a>
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-indigo-600">CurateMyStay</a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-600 hover:text-indigo-600">About</a>
+                <a href="#services" class="text-gray-600 hover:text-indigo-600">Services</a>
+                <a href="#contact" class="text-gray-600 hover:text-indigo-600">Contact</a>
             </div>
             <div class="md:hidden">
-                <button id="mobileMenuButton" class="text-brand-primary focus:outline-none p-2 -mr-2"> <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
                 </button>
             </div>
         </div>
-        <div id="mobileMenu" class="md:hidden hidden bg-white shadow-lg py-2 border-t border-gray-200">
-            <a href="#about" class="block px-6 py-3 text-brand-gray hover:bg-brand-accent-light hover:text-brand-primary">About</a>
-            <a href="#services" class="block px-6 py-3 text-brand-gray hover:bg-brand-accent-light hover:text-brand-primary">What We Do</a>
-            <a href="#how-it-works" class="block px-6 py-3 text-brand-gray hover:bg-brand-accent-light hover:text-brand-primary">How It Works</a>
-            <a href="#contact" class="block px-6 py-3 text-brand-gray hover:bg-brand-accent-light hover:text-brand-primary">Contact</a>
-            <a href="#" class="block px-6 py-3 bg-brand-secondary text-white text-center rounded-md mx-4 my-2 hover:bg-opacity-90 cta-button">Owner Login</a>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-lg">
+            <a href="#about" class="block px-6 py-3 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">About</a>
+            <a href="#services" class="block px-6 py-3 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">Services</a>
+            <a href="#contact" class="block px-6 py-3 text-gray-600 hover:bg-indigo-50 hover:text-indigo-600">Contact</a>
         </div>
     </nav>
 
-    <header 
-        class="hero-section text-white py-24 md:py-40 overflow-hidden" 
-        style="background-image: url('https://images.unsplash.com/photo-1583417319070-4a69db38a482?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');"
-        aria-labelledby="hero-heading"
-    >
-        <div class="hero-overlay"></div>
-        <div class="hero-content container mx-auto px-4 sm:px-6 text-center">
-            <h1 id="hero-heading" class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-on-scroll" style="transform: translateY(20px);">
-                Premium Stays. Seamlessly Managed.
-            </h1>
-            <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-xl md:max-w-3xl mx-auto text-gray-200 animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.2s;">
-                At CurateMyStay, we handle everything — from listing to guest experience — so your property earns more, effortlessly.
-            </p>
-            <div class="space-y-4 sm:space-y-0 sm:flex sm:flex-col sm:items-center md:flex-row md:justify-center md:space-x-6 animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.4s;">
-                <a href="#list-property" class="w-full sm:w-auto bg-brand-secondary text-white px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-opacity-90 cta-button inline-block mb-3 sm:mb-0 md:mb-0">List Your Property</a>
-                <a href="#explore-stays" class="w-full sm:w-auto bg-transparent border-2 border-brand-secondary text-brand-secondary px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-brand-secondary hover:text-white cta-button inline-block">Explore Our Stays</a>
+    <header class="hero-bg text-white fade-in-up">
+        <div class="container mx-auto px-6 py-24 md:py-32 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">Premium Stays. Seamlessly Managed.</h1>
+            <p class="text-lg md:text-2xl mb-10 max-w-3xl mx-auto">At CurateMyStay, we handle everything — from listing to guest experience — so your property earns more, effortlessly.</p>
+            <div class="space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#list-property" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition-transform duration-150 ease-in-out btn-hover">List Your Property</a>
+                <a href="#explore-stays" class="inline-block bg-white hover:bg-gray-100 text-indigo-600 font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition-transform duration-150 ease-in-out btn-hover">Explore Our Stays</a>
             </div>
         </div>
     </header>
 
-    <section id="services" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="animate-on-scroll text-center" style="transform: translateY(20px);">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-4 section-title">What We Do</h2>
-                <p class="text-xl md:text-2xl text-brand-primary font-light mb-6 md:mb-8 font-serif-display"> 
-                    Curated Stays, Powered by Smart Operations.
+    <section id="services" class="py-16 md:py-24 bg-white fade-in-up">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Curated Stays, Powered by Smart Operations.</h2>
+            <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto mb-8">
+                We offer a fully managed solution for short-term rentals — designed for property owners who want passive income, and guests who seek premium, well-maintained homes.
+            </p>
+            <p class="text-gray-600 text-lg md:text-xl max-w-3xl mx-auto">
+                Whether you're an owner looking to monetize your Goa villa or a guest seeking a beautiful beachfront retreat, we deliver comfort, care, and consistency.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-gray-100 fade-in-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-16">How It Works</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-indigo-600 mb-6">For Property Owners</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="icon-placeholder mr-4 mt-1 flex-shrink-0">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-700">Onboard Your Property</h4>
+                                <p class="text-gray-600">We photograph, furnish (if needed), and list it across top platforms like Airbnb, Booking.com, and more.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="icon-placeholder mr-4 mt-1 flex-shrink-0">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-700">We Handle Everything</h4>
+                                <p class="text-gray-600">Pricing, bookings, check-ins, cleanings, repairs — it’s all taken care of.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="icon-placeholder mr-4 mt-1 flex-shrink-0">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-700">You Earn, We Report</h4>
+                                <p class="text-gray-600">Get monthly payouts with performance dashboards and full transparency.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl font-semibold text-teal-600 mb-6">For Guests</h3>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <span class="icon-placeholder mr-4 mt-1 flex-shrink-0" style="background-color: #ccfbf1; color: #0d9488;">✓</span> <div>
+                                <h4 class="font-semibold text-lg text-gray-700">Curated Homes</h4>
+                                <p class="text-gray-600">Every property is handpicked for comfort, location, and design.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <span class="icon-placeholder mr-4 mt-1 flex-shrink-0" style="background-color: #ccfbf1; color: #0d9488;">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-700">Seamless Experience</h4>
+                                <p class="text-gray-600">From booking to checkout, enjoy hotel-grade service in a home-like setting.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <span class="icon-placeholder mr-4 mt-1 flex-shrink-0" style="background-color: #ccfbf1; color: #0d9488;">✓</span>
+                            <div>
+                                <h4 class="font-semibold text-lg text-gray-700">Local Support</h4>
+                                <p class="text-gray-600">Our on-ground team ensures 24x7 support and tailored recommendations.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-white fade-in-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-16">Why Choose Us</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">End-to-End Management</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Higher Yields for Owners</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Design-Rich, Guest-Ready Properties</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Hospitality-Grade Service</h3>
+                </div>
+                <div class="p-6 bg-gray-50 rounded-lg shadow-md">
+                    <div class="text-indigo-500 mb-4">
+                        <svg class="w-12 h-12 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-700 mb-2">Trusted by Industry Leaders</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="list-property" class="py-16 md:py-24 bg-indigo-700 text-white fade-in-up">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Own a home in Goa? Let’s turn it into a premium income stream.</h2>
+            <p class="text-lg md:text-xl mb-10 max-w-2xl mx-auto">
+                Join a new era of short-term rentals. We curate, manage, and maximize — while you relax.
+            </p>
+            <div class="space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#contact-form" class="inline-block bg-white hover:bg-gray-100 text-indigo-700 font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition-transform duration-150 ease-in-out btn-hover">List Your Property</a>
+                <a href="#callback-form" class="inline-block border border-white hover:bg-white hover:text-indigo-700 text-white font-semibold py-3 px-8 rounded-lg text-lg shadow-lg transition-transform duration-150 ease-in-out btn-hover">Get a Callback</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-16 md:py-24 bg-white fade-in-up">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-800 text-center mb-12">About CurateMyStay</h2>
+            <div class="max-w-3xl mx-auto text-lg text-gray-600 space-y-6">
+                <p>
+                    CurateMyStay is a premium short-term rental management company, starting with Goa and soon expanding across India’s favorite holiday towns. We blend boutique hospitality with operational excellence — enabling homeowners to earn more and travelers to experience better.
                 </p>
-                <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 max-w-5xl mx-auto">
-                    <div class="md:w-1/2 text-center md:text-left">
-                        <p class="text-brand-gray text-base md:text-lg leading-relaxed mb-4">
-                            We offer a fully managed solution for short-term rentals — designed for property owners who want passive income, and guests who seek premium, well-maintained homes.
-                        </p>
-                        <p class="text-brand-gray text-base md:text-lg leading-relaxed">
-                            Whether you're an owner looking to monetize your Goa villa or a guest seeking a beautiful beachfront retreat, we deliver comfort, care, and consistency.
-                        </p>
-                    </div>
-                    <div class="md:w-1/2">
-                        <img src="https://a0.muscache.com/im/pictures/81dca5d6-5a86-49bc-8eca-4a8610a07d27.jpg" alt="Elegant Goa villa interior" class="rounded-xl shadow-medium w-full h-auto object-cover property-image">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="how-it-works" class="py-16 md:py-24 bg-brand-light">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-12 md:mb-16 text-center section-title animate-on-scroll" style="transform: translateY(20px);">How It Works</h2>
-            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-medium how-it-works-card animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.2s;">
-                    <h3 class="text-2xl md:text-3xl font-semibold text-brand-primary mb-6 md:mb-8 card-title-serif">For Property Owners</h3>
-                    <ul class="space-y-3 md:space-y-4">
-                        <li class="accordion-item border-b border-gray-200 last:border-b-0">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                    <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l7 7m-7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">Onboard Your Property</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">We photograph, furnish (if needed), and list it across top platforms like Airbnb, Booking.com, and more.</p>
-                            </div>
-                        </li>
-                        <li class="accordion-item border-b border-gray-200 last:border-b-0">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                    <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">We Handle Everything</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">Pricing, bookings, check-ins, cleanings, repairs — it’s all taken care of.</p>
-                            </div>
-                        </li>
-                        <li class="accordion-item">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                    <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">You Earn, We Report</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">Get monthly payouts with performance dashboards and full transparency.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="bg-white p-6 md:p-8 rounded-xl shadow-medium how-it-works-card animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.4s;">
-                    <h3 class="text-2xl md:text-3xl font-semibold text-brand-primary mb-6 md:mb-8 card-title-serif">For Guests</h3>
-                    <ul class="space-y-3 md:space-y-4">
-                        <li class="accordion-item border-b border-gray-200 last:border-b-0">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                     <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">Curated Homes</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">Every property is handpicked for comfort, location, and design.</p>
-                            </div>
-                        </li>
-                        <li class="accordion-item border-b border-gray-200 last:border-b-0">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                    <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">Seamless Experience</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">From booking to checkout, enjoy hotel-grade service in a home-like setting.</p>
-                            </div>
-                        </li>
-                        <li class="accordion-item">
-                            <div class="accordion-trigger flex justify-between items-center rounded-md">
-                                <div class="flex items-center">
-                                    <svg class="feature-icon mr-3 md:mr-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path></svg>
-                                    <h4 class="font-semibold text-base md:text-lg text-brand-dark">Local Support</h4>
-                                </div>
-                                <svg class="accordion-arrow w-5 h-5 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
-                            </div>
-                            <div class="accordion-content">
-                                <p class="text-brand-gray text-sm md:text-base leading-relaxed">Our on-ground team ensures 24x7 support and tailored recommendations.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-12 md:mb-16 text-center section-title animate-on-scroll" style="transform: translateY(20px);">Why Choose Us</h2>
-            <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.1s;">
-                    <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">End-to-End Management</h4>
-                    <p class="text-brand-gray text-sm mt-2">Comprehensive property management from listing to guest support</p>
-                </div>
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.2s;">
-                    <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">Higher Yields for Owners</h4>
-                    <p class="text-brand-gray text-sm mt-2">Optimized pricing and occupancy for maximum returns</p>
-                </div>
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.3s;">
-                    <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.977l-.51.342A6.5 6.5 0 0112 13a6.5 6.5 0 01-2.619.528l-.51-.342a6 6 0 00-3.86-.977l-2.387.477a2 2 0 00-1.022.547M12 18V3m9 15a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">Design-Rich, Guest-Ready Properties</h4>
-                    <p class="text-brand-gray text-sm mt-2">Beautifully designed spaces that guests love</p>
-                </div>
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.4s;">
-                    <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7.014A7.987 7.987 0 0112 0c.873 0 1.797.143 2.7.402A8.001 8.001 0 0117.657 18.657z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z"></path></svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">Hospitality-Grade Service</h4>
-                    <p class="text-brand-gray text-sm mt-2">Professional cleaning, maintenance, and guest services</p>
-                </div>
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.5s;">
-                     <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">Trusted by Industry Leaders</h4>
-                    <p class="text-brand-gray text-sm mt-2">Partnered with major platforms and hospitality experts</p>
-                </div>
-                <div class="p-6 text-center why-choose-us-item animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.5s;">
-                     <div class="flex justify-center mb-4 md:mb-5">
-                        <div class="bg-brand-accent-light p-3 md:p-4 rounded-full inline-block">
-                            <svg class="w-8 h-8 md:w-10 md:h-10 text-brand-secondary" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L1.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09zM18.25 12L17 13.75l-1.25-1.75L14.25 12l1.5-1.75L17 8.25l1.25 1.75L19.75 12l-1.5 1.75z" />
-                            </svg>
-                        </div>
-                    </div>
-                    <h4 class="font-semibold text-lg md:text-xl text-brand-dark mb-2">Tech-Enabled Efficiency</h4>
-                    <p class="text-brand-gray text-sm mt-2">Smart systems for seamless operations and communication</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="list-property" class="py-20 md:py-24 lg:py-32 bg-brand-primary text-white overflow-hidden">
-        <div class="container mx-auto px-4 sm:px-6 text-center">
-            <div class="animate-on-scroll" style="transform: translateY(20px);">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">Own a home in Goa? Let’s turn it into a premium income stream.</h2>
-                <p class="text-base sm:text-lg md:text-xl mb-8 sm:mb-10 max-w-xl md:max-w-2xl mx-auto text-gray-200">
-                    Join a new era of short-term rentals. We curate, manage, and maximize — while you relax.
+                <p>
+                    Backed by trusted creators and operators, we bring care, detail, and tech to every stay.
                 </p>
-                <div class="space-y-4 sm:space-y-0 sm:flex sm:flex-col sm:items-center md:flex-row md:justify-center md:space-x-6">
-                    <a href="#" class="w-full sm:w-auto bg-brand-secondary text-white px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-opacity-90 cta-button inline-block animate-pulseGlow mb-3 sm:mb-0 md:mb-0">List Your Property</a>
-                    <a href="#" class="w-full sm:w-auto bg-white text-brand-primary px-6 py-3 sm:px-8 sm:py-3 rounded-lg text-base sm:text-lg font-semibold hover:bg-gray-100 cta-button inline-block">Get a Callback</a>
-                </div>
             </div>
         </div>
     </section>
 
-    <section id="about" class="py-16 md:py-24 bg-brand-light">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="animate-on-scroll" style="transform: translateY(20px);">
-                <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-10 text-center section-title">About CurateMyStay</h2>
-                <div class="max-w-3xl mx-auto text-brand-gray text-base md:text-lg leading-relaxed space-y-5 md:space-y-6 bg-white p-6 sm:p-8 md:p-10 lg:p-12 rounded-xl shadow-medium">
-                    <p>
-                        CurateMyStay is a premium short-term rental management company, starting with Goa and soon expanding across India’s favorite holiday towns. We blend boutique hospitality with operational excellence — enabling homeowners to earn more and travelers to experience better.
-                    </p>
-                    <p>
-                        Backed by trusted creators and operators, we bring care, detail, and tech to every stay. Our commitment is to provide a seamless and luxurious experience, ensuring peace of mind for property owners and unforgettable stays for guests.
-                    </p>
-                     <img src="https://images.unsplash.com/photo-1548013146-72479768bada?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=700&q=80" alt="Goa beach landscape" class="rounded-lg shadow-sm w-full h-auto object-cover mt-6 property-image">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="explore-stays" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 sm:px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-brand-primary mb-12 md:mb-16 text-center section-title animate-on-scroll" style="transform: translateY(20px);">Featured Goa Properties</h2>
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-brand-light rounded-xl overflow-hidden shadow-medium animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.1s;">
-                    <img src="https://images.unsplash.com/photo-1602343168117-bb8ffeaf8f24?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Luxury Goa Villa with Pool" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-primary mb-2">Seaside Villa, Calangute</h3>
-                        <p class="text-brand-gray mb-4">3 Bedrooms • Private Pool • Beach Access</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-brand-secondary font-bold">₹15,999/night</span>
-                            <a href="#" class="text-brand-primary font-medium hover:text-brand-secondary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-brand-light rounded-xl overflow-hidden shadow-medium animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.2s;">
-                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Modern Goa Apartment" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-primary mb-2">Modern Apartment, Panjim</h3>
-                        <p class="text-brand-gray mb-4">2 Bedrooms • City Views • Fully Equipped</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-brand-secondary font-bold">₹9,999/night</span>
-                            <a href="#" class="text-brand-primary font-medium hover:text-brand-secondary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-brand-light rounded-xl overflow-hidden shadow-medium animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.3s;">
-                    <img src="https://images.unsplash.com/photo-1561501900-3701fa6a0864?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Traditional Portuguese Villa" class="w-full h-64 object-cover">
-                    <div class="p-6">
-                        <h3 class="text-xl font-semibold text-brand-primary mb-2">Heritage Villa, Fontainhas</h3>
-                        <p class="text-brand-gray mb-4">4 Bedrooms • Traditional Architecture • Garden</p>
-                        <div class="flex justify-between items-center">
-                            <span class="text-brand-secondary font-bold">₹22,999/night</span>
-                            <a href="#" class="text-brand-primary font-medium hover:text-brand-secondary">View Details</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="text-center mt-12 animate-on-scroll" style="transform: translateY(20px); transition-delay: 0.4s;">
-                <a href="#" class="bg-brand-secondary text-white px-8 py-3 rounded-lg text-lg font-semibold hover:bg-opacity-90 cta-button inline-block">Explore All Properties</a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="bg-brand-dark text-gray-300 py-16 md:py-20">
-        <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10 mb-10">
-                <div class="mb-6 sm:mb-0">
-                    <h5 class="text-xl font-serif-display text-white mb-4">CurateMyStay</h5>
-                    <p class="text-sm">Premium stays, seamlessly managed.</p>
+    <footer id="contact" class="bg-gray-800 text-gray-300 py-16 fade-in-up">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-10">
+                <div>
+                    <h4 class="text-xl font-semibold text-white mb-4">CurateMyStay</h4>
+                    <p class="text-sm">Premium stays, seamlessly managed. Experience the best in short-term rentals.</p>
                 </div>
                 <div>
-                    <h5 class="text-lg font-semibold text-white mb-4">Quick Links</h5>
+                    <h4 class="text-lg font-semibold text-white mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="#about" class="hover:text-brand-secondary transition-colors">About</a></li>
-                        <li><a href="#list-property" class="hover:text-brand-secondary transition-colors">List Your Property</a></li>
-                        <li><a href="#explore-stays" class="hover:text-brand-secondary transition-colors">Explore Our Homes</a></li>
-                        <li><a href="#" class="hover:text-brand-secondary transition-colors">Owner Login</a></li>
-                        <li><a href="#contact" class="hover:text-brand-secondary transition-colors">Contact Us</a></li>
+                        <li><a href="#about" class="hover:text-indigo-400">About</a></li>
+                        <li><a href="#list-property" class="hover:text-indigo-400">List Your Property</a></li>
+                        <li><a href="#explore-stays" class="hover:text-indigo-400">Explore Our Homes</a></li>
+                        <li><a href="#" class="hover:text-indigo-400">Owner Login</a></li>
+                        <li><a href="#contact-form" class="hover:text-indigo-400">Contact Us</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h5 class="text-lg font-semibold text-white mb-4">Contact</h5>
-                    <ul class="space-y-2 text-sm">
-                        <li>Goa, India</li>
-                        <li><a href="mailto:info@curatemystay.com" class="hover:text-brand-secondary">info@curatemystay.com</a></li>
-                        <li><a href="tel:+911234567890" class="hover:text-brand-secondary">+91 123 456 7890</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h5 class="text-lg font-semibold text-white mb-4">Connect</h5>
-                    <div class="flex space-x-4 md:space-x-5">
-                        <a href="#" class="social-icon" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+                    <h4 class="text-lg font-semibold text-white mb-4">Connect With Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="hover:text-indigo-400" aria-label="Instagram">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2.045c-2.855 0-3.22.012-4.348.064-1.128.052-1.905.248-2.586.524a4.348 4.348 0 00-1.594 1.04A4.349 4.349 0 002.74 5.267c-.276.68-.472 1.458-.524 2.586C2.163 8.98 2.15 9.345 2.15 12.2c0 2.855.012 3.22.064 4.348.052 1.128.248 1.905.524 2.586a4.349 4.349 0 001.04 1.594 4.349 4.349 0 001.594 1.04c.68.276 1.458.472 2.586.524 1.128.052 1.492.064 4.348.064s3.22-.012 4.348-.064c1.128-.052 1.905-.248 2.586-.524a4.349 4.349 0 001.594-1.04 4.349 4.349 0 001.04-1.594c.276-.68.472-1.458.524-2.586.052-1.128.064-1.492.064-4.348s-.012-3.22-.064-4.348c-.052-1.128-.248-1.905-.524-2.586a4.349 4.349 0 00-1.04-1.594 4.349 4.349 0 00-1.594-1.04c-.68-.276-1.458-.472-2.586-.524C15.535 2.057 15.17 2.045 12.315 2.045zm0 1.955c2.805 0 3.15.012 4.25.06 1.075.05 1.65.22 2.02.36.44.17.75.39 1.05.7.3.3.525.61.7 1.05.14.37.31.945.36 2.02.05 1.1.06 1.445.06 4.25s-.01 3.15-.06 4.25c-.05 1.075-.22 1.65-.36 2.02-.175.44-.39.75-.7 1.05-.3.3-.61.525-1.05.7-.37.14-.945.31-2.02.36-1.1.05-1.445.06-4.25.06s-3.15-.01-4.25-.06c-1.075-.05-1.65-.22-2.02-.36-.44-.175-.75-.39-1.05-.7-.3-.3-.525-.61-.7-1.05-.14-.37-.31-.945-.36-2.02C4.06 15.35 4.05 15.005 4.05 12.2s.01-3.15.06-4.25c.05-1.075.22-1.65.36-2.02.175-.44.39-.75.7-1.05.3-.3.61-.525 1.05-.7.37-.14.945.31 2.02-.36 1.1-.05 1.445-.06 4.25-.06zm0 4.05a3.9 3.9 0 100 7.8 3.9 3.9 0 000-7.8zm0 6.15a2.25 2.25 0 110-4.5 2.25 2.25 0 010 4.5zm4.95-6.9a.975.975 0 100-1.95.975.975 0 000 1.95z" clip-rule="evenodd" /></svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="LinkedIn">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                        <a href="#" class="hover:text-indigo-400" aria-label="LinkedIn">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                         </a>
-                        <a href="#" class="social-icon" aria-label="WhatsApp">
-                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                         <a href="#" class="hover:text-indigo-400" aria-label="WhatsApp">
+                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.33 3.43 16.79L2 22L7.32 20.55C8.74 21.32 10.36 21.79 12.04 21.79C17.5 21.79 21.95 17.34 21.95 11.88C21.95 6.42 17.5 2 12.04 2ZM12.04 20.13C10.56 20.13 9.15 19.72 7.96 19L7.51 18.73L4.41 19.59L5.3 16.58L5.02 16.12C4.32 14.88 3.92 13.44 3.92 11.91C3.92 7.39 7.57 3.67 12.04 3.67C16.51 3.67 20.16 7.39 20.16 11.88C20.16 16.37 16.51 20.13 12.04 20.13ZM17.34 14.45C17.13 14.92 16.1 15.44 15.75 15.49C15.41 15.54 15.01 15.55 14.64 15.39C14.27 15.23 13.37 14.92 12.33 14C11.07 12.89 10.25 11.59 10.06 11.31C9.87 11.03 9.72 10.84 9.53 10.58C9.34 10.32 9.16 10.11 9 9.93C8.84 9.75 8.65 9.59 8.43 9.29C8.21 8.99 7.99 8.71 7.84 8.48C7.68 8.26 7.53 8.07 7.38 7.88C7.24 7.69 7.09 7.57 6.92 7.44C6.72 7.29 6.53 7.23 6.33 7.23C6.14 7.23 5.95 7.29 5.78 7.46C5.62 7.63 5.27 7.97 5.27 8.63C5.27 9.28 5.78 9.86 5.91 10.03C6.03 10.21 6.55 10.99 7.56 11.93C8.58 12.87 9.34 13.28 9.79 13.47C10.24 13.66 10.6 13.72 10.88 13.66C11.16 13.61 11.95 13.14 12.19 12.5C12.43 11.86 12.43 11.34 12.35 11.17C12.27 11 12.12 10.93 11.89 10.93C11.66 10.93 11.37 11.01 11.14 11.26C10.92 11.52 10.63 11.85 10.51 12.03C10.38 12.21 10.26 12.33 10.05 12.33C9.85 12.33 9.46 12.2 8.96 11.75C8.34 11.19 7.81 10.34 7.72 10.18C7.63 10.02 7.3 9.35 7.3 8.78C7.3 8.22 7.71 7.86 7.93 7.86C8.08 7.86 8.23 7.89 8.36 7.92C8.49 7.95 8.6 7.99 8.73 8.12C8.86 8.25 8.96 8.39 9.03 8.54C9.11 8.69 9.16 8.84 9.16 8.93C9.16 9.03 9.16 9.35 9.08 9.62C9.01 9.89 8.53 10.57 8.53 10.57C8.53 10.57 8.43 10.75 8.65 10.94C8.88 11.13 9.41 11.54 9.98 12.05C10.73 12.72 11.29 13.02 11.51 13.14C11.73 13.26 11.93 13.28 12.09 13.2C12.26 13.12 12.48 12.79 12.67 12.52C12.86 12.25 13.13 12.19 13.37 12.19C13.61 12.19 13.9 12.27 14.08 12.44C14.27 12.61 14.73 13.03 14.97 13.3C15.21 13.57 15.33 13.72 15.38 13.84C15.43 13.96 15.43 14.13 15.38 14.23C15.33 14.31 15.29 14.36 15.29 14.36L15.28 14.37C15.28 14.37 15.49 13.91 17.34 14.45Z"/></svg>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="border-t border-gray-700 pt-8 text-center text-xs sm:text-sm">
-                <p>&copy; <span id="currentYear"></span> CurateMyStay. All Rights Reserved. Designed with <span class="text-brand-secondary">&hearts;</span>.</p>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> CurateMyStay. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
@@ -546,64 +273,38 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                 if (targetId === "#") {
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                    return;
-                }
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const navHeight = document.getElementById('mainNav').offsetHeight;
-                    const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight;
-                    
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-                const mobileMenu = document.getElementById('mobileMenu');
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
+                // Check if target is not just "#"
+                if (targetId.length > 1) {
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 }
             });
         });
 
-        // Accordion functionality
-        const accordionItems = document.querySelectorAll('.accordion-item');
-        accordionItems.forEach(item => {
-            const trigger = item.querySelector('.accordion-trigger');
-            trigger.addEventListener('click', () => {
-                item.classList.toggle('active');
-            });
-        });
+        // Simple fade-in animation on scroll for sections
+        const sections = document.querySelectorAll('.fade-in-up');
+        const observerOptions = {
+            root: null, // relative to document viewport
+            rootMargin: '0px',
+            threshold: 0.1 // 10% of item is visible
+        };
 
-        // Intersection Observer for animations
-        const animatedElements = document.querySelectorAll('.animate-on-scroll');
-        const observer = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries, observer) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('is-visible');
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target); // Optional: stop observing after animation
                 }
             });
-        }, {
-            threshold: 0.1 
-        });
-        animatedElements.forEach(el => observer.observe(el));
+        }, observerOptions);
 
-        // Sticky Nav shadow
-        const nav = document.getElementById('mainNav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 30) {
-                nav.classList.add('nav-scrolled');
-            } else {
-                nav.classList.remove('nav-scrolled');
-            }
-        });
-
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const mobileMenu = document.getElementById('mobileMenu');
-        mobileMenuButton.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
+        sections.forEach(section => {
+            section.style.animationPlayState = 'paused'; // Initially pause animation
+            observer.observe(section);
         });
 
     </script>
