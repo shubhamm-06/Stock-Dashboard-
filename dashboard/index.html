@@ -524,7 +524,7 @@
             }
 
             .cash-position__details {
-                grid-template-columns: repeat(2, 1fr);
+                grid-template-columns: repeat(2, 1fr); /* Adjusted to 2 for better fit if 4 items are too cramped */
                 gap: 10px;
             }
 
@@ -601,6 +601,9 @@
             }
             .cash-position__formula.summary__percentage {
                 font-size: 10px; /* Adjust for smaller mobile */
+            }
+             .cash-position__details { /* Ensure 2 columns for small mobile too if 4 items */
+                grid-template-columns: repeat(2, 1fr);
             }
         }
 
@@ -724,8 +727,13 @@
                 <div class="cash-position__details">
                     <div class="cash-position__box">
                         <div class="cash-position__label">Cash Position</div>
-                        <div class="cash-position__value" data-cash-label="Current Cash Position">Loading...</div>
-                        <p class="cash-position__formula" data-cash-formula="Current Cash Position">Loading...</p>
+                        <div class="cash-position__value" data-cash-label="Calculated Cash Position">Loading...</div>
+                        <p class="cash-position__formula" data-cash-formula="Calculated Cash Position">1M - Invested</p>
+                    </div>                    
+                    <div class="cash-position__box">
+                        <div class="cash-position__label">Total Accumulated Cash Position</div>
+                        <div class="cash-position__value" data-cash-label="Total Accumulated Cash Position">Loading...</div>
+                        <p class="cash-position__formula" data-cash-formula="Total Accumulated Cash Position">Loading...</p>
                     </div>
                     <div class="cash-position__box">
                         <div class="cash-position__label">Risk Free Return</div>
@@ -842,7 +850,7 @@
             return {
                 totalInvested,
                 totalCurrent,
-                cashPosition, 
+                cashPosition, // This is 1M - Invested
                 allocationData,
             };
         }
@@ -864,7 +872,7 @@
             }
 
             if (summaryPLData) { // summaryPLData is summaryPLDataResult[0]
-                realisedPLValue = summaryPLData["realizedPnL"] || 0; // UPDATED KEY
+                realisedPLValue = summaryPLData["realizedPnL"] || 0; 
                 const realisedPLElement = document.querySelector('.summary__number[data-label="Realised P&L"]');
                 realisedPLElement.textContent = `${realisedPLValue >= 0 ? "+" : ""}$${realisedPLValue.toLocaleString("en-US", {
                     minimumFractionDigits: 2,
@@ -872,13 +880,13 @@
                 })}`;
                 realisedPLElement.classList.toggle("positive", realisedPLValue >= 0);
                 realisedPLElement.classList.toggle("negative", realisedPLValue < 0);
-                const realisedPLPercentage = (summaryPLData["realizedPnLPercent"] || 0) * 100; // UPDATED KEY
+                const realisedPLPercentage = (summaryPLData["realizedPnLPercent"] || 0) * 100; 
                 const realisedPLPercentageElement = document.querySelector('.summary__percentage[data-label="Realised P&L%"]');
                 realisedPLPercentageElement.textContent = `${realisedPLPercentage >= 0 ? "+" : ""}${realisedPLPercentage.toFixed(2)}%`;
                 realisedPLPercentageElement.classList.toggle("positive", realisedPLPercentage >= 0);
                 realisedPLPercentageElement.classList.toggle("negative", realisedPLPercentage < 0);
                 
-                unrealisedPLValue = summaryPLData["unrealizedPnL"] || 0; // UPDATED KEY
+                unrealisedPLValue = summaryPLData["unrealizedPnL"] || 0; 
                 const unrealisedPLElement = document.querySelector('.summary__number[data-label="Unrealised P&L"]');
                 unrealisedPLElement.textContent = `${unrealisedPLValue >= 0 ? "+" : ""}$${unrealisedPLValue.toLocaleString("en-US", {
                     minimumFractionDigits: 2,
@@ -886,16 +894,15 @@
                 })}`;
                 unrealisedPLElement.classList.toggle("positive", unrealisedPLValue >= 0);
                 unrealisedPLElement.classList.toggle("negative", unrealisedPLValue < 0);
-                const unrealisedPLPercentage = (summaryPLData["unrealizedPnLPercent"] || 0) * 100; // UPDATED KEY
+                const unrealisedPLPercentage = (summaryPLData["unrealizedPnLPercent"] || 0) * 100; 
                 const unrealisedPLPercentageElement = document.querySelector('.summary__percentage[data-label="Unrealised P&L%"]');
                 unrealisedPLPercentageElement.textContent = `${unrealisedPLPercentage >= 0 ? "+" : ""}${unrealisedPLPercentage.toFixed(2)}%`;
                 unrealisedPLPercentageElement.classList.toggle("positive", unrealisedPLPercentage >= 0);
                 unrealisedPLPercentageElement.classList.toggle("negative", unrealisedPLPercentage < 0);
 
-                accumulatedInterest = summaryPLData["accumulatedDailyInterestSince"] !== undefined ? parseFloat(summaryPLData["accumulatedDailyInterestSince"]) : 0; // UPDATED KEY
+                accumulatedInterest = summaryPLData["accumulatedDailyInterestSince"] !== undefined ? parseFloat(summaryPLData["accumulatedDailyInterestSince"]) : 0;
             }
 
-            // Calculate and Update NET P&L
             const netPLValue = realisedPLValue + unrealisedPLValue + accumulatedInterest;
             const netPLElement = document.querySelector('.summary__number[data-label="NET P&L"]');
             netPLElement.textContent = `${netPLValue >= 0 ? "+" : ""}$${netPLValue.toLocaleString("en-US", {
@@ -909,7 +916,7 @@
             if (portfolioProcessedData && portfolioProcessedData.totalInvested > 0) {
                 netPLPercentageValue = (netPLValue / portfolioProcessedData.totalInvested) * 100;
             } else if (portfolioProcessedData && portfolioProcessedData.totalInvested === 0 && netPLValue !== 0) {
-                 netPLPercentageValue = (netPLValue > 0) ? Infinity : -Infinity; // Or handle as "N/A"
+                 netPLPercentageValue = (netPLValue > 0) ? Infinity : -Infinity; 
             }
 
 
@@ -924,30 +931,44 @@
             }
         }
 
-        function updateCashPositionDetails(summaryData, portfolioData) { // Added portfolioData parameter
+        function updateCashPositionDetails(summaryData, portfolioData) {
             const defaultCashValueColor = '#1a3c34';
             const defaultFormulaColor = '#777';
         
+            const totalAccCashPosValEl = document.querySelector('.cash-position__value[data-cash-label="Total Accumulated Cash Position"]');
+            const totalAccCashPosFormulaEl = document.querySelector('.cash-position__formula[data-cash-formula="Total Accumulated Cash Position"]');
+            const calculatedCashPosValEl = document.querySelector('.cash-position__value[data-cash-label="Calculated Cash Position"]');
+            // Formula for calculatedCashPosValEl is static in HTML: "1M - Invested"
+            const riskFreeReturnValEl = document.querySelector('.cash-position__value[data-cash-label="Risk Free Return"]');
+            const riskFreeReturnFormulaEl = document.querySelector('.cash-position__formula[data-cash-formula="Risk Free Return"]');
+            const accumulatedInterestValEl = document.querySelector('.cash-position__value[data-cash-label="Accumulated Interest"]');
+            const accumulatedInterestFormulaEl = document.querySelector('.cash-position__formula[data-cash-formula="Accumulated Interest"]');
+
+            // Populate "Calculated Cash Position" (1M - Invested)
+            if (portfolioData && typeof portfolioData.cashPosition !== 'undefined') {
+                const calculatedCashVal = parseFloat(portfolioData.cashPosition);
+                 calculatedCashPosValEl.textContent = `$${calculatedCashVal.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            } else {
+                calculatedCashPosValEl.textContent = 'N/A';
+            }
+
             if (!summaryData) { 
-                console.warn("No summary data provided for cash position details.");
-                document.querySelector('.cash-position__value[data-cash-label="Current Cash Position"]').textContent = 'N/A';
-                document.querySelector('.cash-position__formula[data-cash-formula="Current Cash Position"]').textContent = '';
+                console.warn("No summary data provided for some cash position details.");
+                totalAccCashPosValEl.textContent = 'N/A';
+                totalAccCashPosFormulaEl.textContent = '';
                 
-                const riskFreeReturnValEl = document.querySelector('.cash-position__value[data-cash-label="Risk Free Return"]');
                 if (riskFreeReturnValEl) {
                     riskFreeReturnValEl.textContent = 'N/A';
                     riskFreeReturnValEl.style.color = defaultCashValueColor;
                 }
-                document.querySelector('.cash-position__formula[data-cash-formula="Risk Free Return"]').textContent = '';
+                if (riskFreeReturnFormulaEl) riskFreeReturnFormulaEl.textContent = '';
                 
-                const accumulatedInterestValEl = document.querySelector('.cash-position__value[data-cash-label="Accumulated Interest"]');
                 if (accumulatedInterestValEl) {
                     accumulatedInterestValEl.textContent = 'N/A';
                     accumulatedInterestValEl.style.color = defaultCashValueColor;
                 }
-                const accumulatedInterestFormulaEl = document.querySelector('.cash-position__formula[data-cash-formula="Accumulated Interest"]');
                 if (accumulatedInterestFormulaEl) {
-                    accumulatedInterestFormulaEl.innerHTML = 'N/A'; // Use innerHTML for consistency
+                    accumulatedInterestFormulaEl.innerHTML = 'N/A';
                     accumulatedInterestFormulaEl.className = 'cash-position__formula'; 
                     accumulatedInterestFormulaEl.style.color = defaultFormulaColor;
                     accumulatedInterestFormulaEl.style.fontStyle = 'italic'; 
@@ -955,33 +976,32 @@
                 return;
             }
         
-            // Using "CashPostion" as per the "current" JSON structure
-            const cashPositionValueString = summaryData["CashPostion"]; 
-            const cashPositionValue = cashPositionValueString !== undefined ? parseFloat(cashPositionValueString) : 0;
-            document.querySelector('.cash-position__value[data-cash-label="Current Cash Position"]').textContent = `$${cashPositionValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-            document.querySelector('.cash-position__formula[data-cash-formula="Current Cash Position"]').textContent = "Cash + Realized Profit + Interest Earned";
+            // Populate "Total Accumulated Cash Position"
+            const totalAccumulatedCashValueString = summaryData["CashPostion"]; 
+            const totalAccumulatedCashValue = totalAccumulatedCashValueString !== undefined ? parseFloat(totalAccumulatedCashValueString) : 0;
+            totalAccCashPosValEl.textContent = `$${totalAccumulatedCashValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            totalAccCashPosFormulaEl.textContent = "Cash + Realized Profit + Interest Earned";
         
-            const riskFreeReturnValue = summaryData["riskFreeReturn"] !== undefined ? parseFloat(summaryData["riskFreeReturn"]) * 100 : 0; // UPDATED KEY
-            const riskFreeReturnElement = document.querySelector('.cash-position__value[data-cash-label="Risk Free Return"]');
-            riskFreeReturnElement.textContent = `${riskFreeReturnValue.toFixed(1)}%`;
+            // Populate "Risk Free Return"
+            const riskFreeReturnValue = summaryData["riskFreeReturn"] !== undefined ? parseFloat(summaryData["riskFreeReturn"]) * 100 : 0;
+            riskFreeReturnValEl.textContent = `${riskFreeReturnValue.toFixed(1)}%`;
             if (riskFreeReturnValue >= 0) {
-                riskFreeReturnElement.style.color = '#28a745'; 
+                riskFreeReturnValEl.style.color = '#28a745'; 
             } else {
-                riskFreeReturnElement.style.color = '#dc3545';
+                riskFreeReturnValEl.style.color = '#dc3545';
             }
-            document.querySelector('.cash-position__formula[data-cash-formula="Risk Free Return"]').textContent = "(Return earned on Savings Account UAE)";
+            riskFreeReturnFormulaEl.textContent = "Return earned on Savings Account UAE";
         
-            const accumulatedInterestActualValue = summaryData["accumulatedDailyInterestSince"] !== undefined ? parseFloat(summaryData["accumulatedDailyInterestSince"]) : 0; // UPDATED KEY
-            const accumulatedInterestValueElement = document.querySelector('.cash-position__value[data-cash-label="Accumulated Interest"]');
-            accumulatedInterestValueElement.textContent = `$${accumulatedInterestActualValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-            accumulatedInterestValueElement.style.color = defaultCashValueColor;
+            // Populate "Accumulated Interest from C.P"
+            const accumulatedInterestActualValue = summaryData["accumulatedDailyInterestSince"] !== undefined ? parseFloat(summaryData["accumulatedDailyInterestSince"]) : 0;
+            accumulatedInterestValEl.textContent = `$${accumulatedInterestActualValue.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+            accumulatedInterestValEl.style.color = defaultCashValueColor;
         
-            // **** START OF MODIFIED SECTION FOR PERCENTAGES ****
-            const formulaElement = document.querySelector('.cash-position__formula[data-cash-formula="Accumulated Interest"]');
-            
-            if (formulaElement) {
-                const totalInvested = portfolioData && portfolioData.totalInvested !== undefined ? parseFloat(portfolioData.totalInvested) : 0;
-        
+            if (accumulatedInterestFormulaEl) {
+                const totalInvestedForFormula = portfolioData && portfolioData.totalInvested !== undefined ? parseFloat(portfolioData.totalInvested) : 0;
+                // Use totalAccumulatedCashValue for w.r.t CP, as this is the "CashPostion" from summaryData
+                const cashPositionForFormula = totalAccumulatedCashValue; 
+
                 let percentageWrtCP = 0;
                 let percentageWrtInvestment = 0;
         
@@ -989,36 +1009,33 @@
                     percentageWrtCP = 0;
                     percentageWrtInvestment = 0;
                 } else {
-                    if (cashPositionValue !== 0) {
-                        percentageWrtCP = (accumulatedInterestActualValue / cashPositionValue) * 100;
+                    if (cashPositionForFormula !== 0) {
+                        percentageWrtCP = (accumulatedInterestActualValue / cashPositionForFormula) * 100;
                     } else {
-                        percentageWrtCP = NaN; // Division by zero
+                        percentageWrtCP = NaN; 
                     }
         
-                    if (totalInvested !== 0) {
-                        percentageWrtInvestment = (accumulatedInterestActualValue / totalInvested) * 100;
+                    if (totalInvestedForFormula !== 0) {
+                        percentageWrtInvestment = (accumulatedInterestActualValue / totalInvestedForFormula) * 100;
                     } else {
-                        percentageWrtInvestment = NaN; // Division by zero
+                        percentageWrtInvestment = NaN; 
                     }
                 }
         
                 const formatPercentageSpan = (value, label) => {
-                    if (isNaN(value)) return `<span style='color: #777;'>N/A ${label}</span>`; // Default color for N/A
+                    if (isNaN(value)) return `<span style='color: #777;'>N/A ${label}</span>`;
                     const color = value >= 0 ? '#28a745' : '#dc3545';
                     return `<span style="color: ${color};">${value >= 0 ? '+' : ''}${value.toFixed(2)}%</span> ${label}`;
                 };
         
-                const percentageWrtCPText = formatPercentageSpan(percentageWrtCP, "(w.r.t CP)");
+                const percentageWrtCPText = formatPercentageSpan(percentageWrtCP, "(w.r.t Total Acc. CP)");
                 const percentageWrtInvText = formatPercentageSpan(percentageWrtInvestment, "(w.r.t Investment)");
         
-                formulaElement.innerHTML = `${percentageWrtCPText}<br>${percentageWrtInvText}`;
-                
-                formulaElement.className = 'cash-position__formula';
-                formulaElement.style.fontStyle = 'normal'; 
-                formulaElement.style.color = ''; // Let span colors take precedence
-                                                // text-align is center by default for .cash-position__box, so it should be fine.
+                accumulatedInterestFormulaEl.innerHTML = `${percentageWrtCPText}<br>${percentageWrtInvText}`;
+                accumulatedInterestFormulaEl.className = 'cash-position__formula';
+                accumulatedInterestFormulaEl.style.fontStyle = 'normal'; 
+                accumulatedInterestFormulaEl.style.color = ''; 
             }
-            // **** END OF MODIFIED SECTION FOR PERCENTAGES ****
         }
 
 
@@ -1110,12 +1127,12 @@
         function updateAllocationChart(invested, cash) {
              if (typeof invested === 'undefined' || typeof cash === 'undefined') return;
             const ctx = document.getElementById("allocationChart").getContext("2d");
-            const displayTotal = parseFloat(invested) + parseFloat(cash); // Dynamic total
+            const displayTotal = parseFloat(invested) + parseFloat(cash); 
 
             if (allocationChart) {
                 allocationChart.data.datasets[0].data = [invested];
                 allocationChart.data.datasets[1].data = [cash];
-                allocationChart.options.scales.x.max = displayTotal > 0 ? displayTotal : 1; // Avoid max 0 if both are 0
+                allocationChart.options.scales.x.max = displayTotal > 0 ? displayTotal : 1; 
                 allocationChart.update();
             } else {
                 allocationChart = new Chart(ctx, {
@@ -1130,7 +1147,7 @@
                             borderRadius: 2,
                         },
                         {
-                            label: "Cash Position",
+                            label: "Cash Position", // This label refers to the 'cash' parameter passed
                             data: [cash],
                             backgroundColor: "#3498db",
                             barThickness: 60,
@@ -1152,8 +1169,10 @@
                                 callbacks: {
                                     label: (context) => {
                                         const value = context.raw;
-                                        const currentDisplayTotal = context.chart.options.scales.x.max; // Use current max from chart for percentage
+                                        const currentDisplayTotal = context.chart.options.scales.x.max; 
                                         const percentage = (currentDisplayTotal > 0 ? (value / currentDisplayTotal) * 100 : 0).toFixed(1);
+                                        // The label "Cash Position" in tooltip will refer to the 'cash' parameter's meaning
+                                        // which is Total Accumulated Cash (from summaryData) or fallback (1M - Invested).
                                         return `${context.dataset.label}: $${value.toLocaleString("en-US", {
                                             minimumFractionDigits: 2,
                                             maximumFractionDigits: 2,
@@ -1366,20 +1385,25 @@
             const summaryDataForDisplay = summaryPLDataResult && summaryPLDataResult.length > 0 ? summaryPLDataResult[0] : null;
 
             updateSummary(processedPortfolioData, summaryDataForDisplay); 
-            updateCashPositionDetails(summaryDataForDisplay, processedPortfolioData); // Pass processedPortfolioData
+            // Pass both portfolioData (for 1M - Invested) and summaryData (for other cash details)
+            updateCashPositionDetails(summaryDataForDisplay, processedPortfolioData); 
 
-            if (processedPortfolioData && summaryDataForDisplay && summaryDataForDisplay.CashPostion !== undefined) { // Use summaryData's CashPostion
+            // For the allocation bar chart:
+            // 'Invested' comes from processedPortfolioData.totalInvested
+            // 'Cash' ideally comes from summaryDataForDisplay.CashPostion (Total Accumulated Cash)
+            // If summaryData is not available, fallback to processedPortfolioData.cashPosition (1M - Invested)
+            if (processedPortfolioData && summaryDataForDisplay && summaryDataForDisplay.CashPostion !== undefined) {
                  updateAllocationChart(
-                       processedPortfolioData.totalInvested, 
-                       parseFloat(summaryDataForDisplay.CashPostion) 
+                     processedPortfolioData.totalInvested, 
+                     parseFloat(summaryDataForDisplay.CashPostion) 
                  );
-            } else if (processedPortfolioData) { // Fallback if summaryData's CashPostion is not available
+            } else if (processedPortfolioData) { 
                  updateAllocationChart(
-                       processedPortfolioData.totalInvested,
-                       processedPortfolioData.cashPosition // This is 1M - totalInvested
+                     processedPortfolioData.totalInvested,
+                     processedPortfolioData.cashPosition // This is 1M - totalInvested
                  );
             } else {
-                 updateAllocationChart(0,0); // Fallback if no data
+                 updateAllocationChart(0,0); 
             }
 
 
