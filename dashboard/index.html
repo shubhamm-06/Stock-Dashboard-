@@ -399,12 +399,28 @@
         }
         
         .cash-position__formula { 
-            font-size: 11px; /* Base size, will be overridden by summary__percentage styles if classes are applied */
+            font-size: 13px; /* Base size, will be overridden by summary__percentage styles if classes are applied */
             color: #777; 
             margin-top: 8px;
             font-style: italic;
             min-height: 2.5em; /* Ensure enough height for two lines */
             line-height: 1.4em; /* Adjusted for better two-line display */
+        }
+        /* Make "Accumulated Interest" formula text bigger and uniform */
+        .cash-position__formula[data-cash-formula="Accumulated Interest"] {
+            font-size: 13px; /* Adjusted for desktop */
+        }
+
+        @media (max-width: 768px) {
+            .cash-position__formula[data-cash-formula="Accumulated Interest"] {
+                font-size: 12px; /* Adjusted for tablet */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .cash-position__formula[data-cash-formula="Accumulated Interest"] {
+                font-size: 11px; /* Adjusted for mobile */
+            }
         }
         /* Styles for RFCP percentage to mimic summary__percentage - This block might be less relevant now for the multi-line display */
         .cash-position__formula.summary__percentage {
