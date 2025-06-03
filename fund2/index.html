@@ -1,0 +1,1302 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8" />
+<meta content="width=device-width,initial-scale=1" name="viewport" />
+<link href="https://unpkg.com/tabulator-tables@5.5.1/dist/css/tabulator.min.css" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
+<style>
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+        font-family: inter;
+    }
+
+    .container {
+        box-sizing: border-box;
+        color: #333;
+        font-family: Inter, sans-serif;
+        max-width: 1400px;
+        padding: 0;
+        margin: 0 auto;
+    }
+
+    .card-section {
+        background: #fff;
+        border-radius: 12px;
+        padding: 25px;
+        margin-bottom: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border: 1px solid #e0e4e8;
+    }
+
+    .summary__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+    }
+
+    .summary__box {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        border: 1px solid #e0e4e8;
+        text-align: center;
+        transition: transform 0.2s ease;
+    }
+
+    .summary__label {
+        font-size: 14px;
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+
+    .summary__number {
+        font-size: 24px;
+        font-weight: 600;
+        color: #1a3c34;
+    }
+
+    .summary__number.positive {
+        color: #28a745;
+    }
+
+    .summary__number.negative {
+        color: #dc3545;
+    }
+
+    .summary__percentage {
+        font-size: 14px;
+        font-weight: 500;
+        margin-top: 5px;
+        display: inline-block;
+        padding: 2px 8px;
+        border-radius: 4px;
+    }
+
+    .summary__percentage.positive {
+        color: #28a745;
+        background: #e6f3e9;
+    }
+
+    .summary__percentage.negative {
+        color: #dc3545;
+        background: #fce8e9;
+    }
+
+    .portfolio__breakdown {
+        display: flex;
+        gap: 25px;
+        align-items: stretch;
+    }
+
+    .portfolio__piechart-section {
+        width: 55%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .portfolio__heading {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #1a3c34;
+    }
+
+    .portfolio__container {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .portfolio__color-meaning {
+        max-height: 290px;
+        overflow-y: auto;
+        padding-left: 10px;
+        width: auto;
+        scrollbar-width: thin;
+        scrollbar-color: #bbb #f5f7fa;
+    }
+
+    .portfolio__color-meaning::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .portfolio__color-meaning::-webkit-scrollbar-track {
+        background: #f5f7fa;
+        border-radius: 4px;
+    }
+
+    .portfolio__color-meaning::-webkit-scrollbar-thumb {
+        background-color: #bbb;
+        border-radius: 4px;
+        border: 2px solid #f5f7fa;
+    }
+
+    .portfolio__color-meaning::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+
+    .portfolio__color-box {
+        display: flex;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+
+    .portfolio__color {
+        width: 8px;
+        height: 8px;
+        border-radius: 4px;
+        margin-right: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .portfolio__meaning {
+        font-size: 14px;
+        color: #333;
+        font-weight: 500;
+    }
+
+    .portfolio__piechart {
+        max-width: 60%;
+        flex: 1;
+    }
+
+    .notifications__section {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .notifications__heading {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 15px;
+        color: #1a3c34;
+    }
+
+    .notifications__scrollable {
+        height: 300px;
+        overflow-y: auto;
+        padding: 10px;
+        border: 1px solid #e0e4e8;
+        border-radius: 6px;
+        background: #fafafa;
+        scrollbar-width: thin;
+        scrollbar-color: #bbb #f5f7fa;
+    }
+
+    .notifications__scrollable::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    .notifications__scrollable::-webkit-scrollbar-track {
+        background: #f5f7fa;
+        border-radius: 4px;
+    }
+
+    .notifications__scrollable::-webkit-scrollbar-thumb {
+        background-color: #bbb;
+        border-radius: 4px;
+        border: 2px solid #f5f7fa;
+    }
+
+    .notifications__scrollable::-webkit-scrollbar-thumb:hover {
+        background-color: #999;
+    }
+
+    .notifications__box {
+        display: flex;
+        align-items: center;
+        padding: 12px;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        background: #fff;
+        transition: all 0.2s ease;
+        opacity: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        border-left: 4px solid #000;
+    }
+
+    .notifications__box.show {
+        opacity: 1;
+    }
+
+    .notifications__box:hover {
+        background: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .notifications__box--buy {
+        border-left-color: #28a745;
+    }
+
+    .notifications__box--sell {
+        border-left-color: #dc3545;
+    }
+
+    .notifications__img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 16px;
+        border: 1px solid #eee;
+        object-fit: cover;
+    }
+
+    .notifications__content {
+        flex-grow: 1;
+        min-width: 0;
+    }
+
+    .notifications__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 4px;
+    }
+
+    .notifications__title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #1a3c34;
+    }
+
+    .notifications__date {
+        font-size: 12px;
+        color: #999;
+    }
+
+    .notifications__message {
+        font-size: 14px;
+        color: #555;
+        line-height: 1.5;
+        overflow-wrap: break-word;
+    }
+
+    #stock-table {
+        border-radius: 0;
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .tabulator .tabulator-header {
+        font-size: 12px;
+        text-transform: uppercase;
+        font-weight: 600;
+        background: #dae7eb;
+        color: #333;
+        border-bottom: 2px solid #ccc;
+    }
+
+    .tabulator .tabulator-header .tabulator-col {
+        padding: 10px;
+        white-space: nowrap;
+    }
+
+    .tabulator .tabulator-cell {
+        padding: 10px;
+        font-size: 14px;
+        color: #333;
+        border-right: 1px solid #e5e5e5;
+        white-space: nowrap;
+    }
+
+    .tabulator .tabulator-row:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+
+    .tabulator .tabulator-row:hover {
+        background-color: #fff9cc;
+    }
+
+    .tabulator .tabulator-footer {
+        background-color: #fff;
+        border-top: 2px solid #ddd;
+    }
+
+    .tabulator {
+        background-color: #f5f7fa !important;
+    }
+
+    #skeleton-loader {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .skeleton-line {
+        height: 25px;
+        background: #e0e0e0;
+        border-radius: 4px;
+        animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+        0% {
+            opacity: 1;
+        }
+
+        50% {
+            opacity: 0.4;
+        }
+
+        100% {
+            opacity: 1;
+        }
+    }
+
+    .ntf-toggle {
+        margin-top: 12px;
+        font-size: 0.9rem;
+        color: #39808d;
+        cursor: pointer;
+        text-decoration: underline;
+        transition: transform 0.2s ease;
+    }
+
+    .ntf-toggle:hover {
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 768px) {
+        .card-section {
+            padding: 20px 8px;
+        }
+
+        .summary__grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+
+        .summary__box {
+            padding: 12px 8px;
+        }
+
+        .summary__label {
+            font-size: 12px;
+        }
+
+        .summary__number {
+            font-size: 18px;
+        }
+
+        .summary__percentage {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+
+        .portfolio__breakdown {
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .portfolio__piechart-section {
+            width: 100%;
+        }
+
+        .portfolio__container {
+            flex-direction: row;
+            gap: 30px;
+            justify-content: start;
+        }
+
+        .portfolio__piechart {
+            max-width: 200px;
+        }
+
+        .portfolio__color-meaning {
+            width: auto;
+            max-height: 150px;
+            padding-right: 5px;
+        }
+
+        .portfolio__meaning {
+            font-size: 10px;
+        }
+
+        .notifications__scrollable {
+            height: 300px;
+            padding: 8px;
+        }
+
+        .notifications__box {
+            padding: 10px;
+        }
+
+        .notifications__img {
+            width: 32px;
+            height: 32px;
+            margin-right: 12px;
+        }
+
+        .notifications__title {
+            font-size: 14px;
+        }
+
+        .notifications__date {
+            font-size: 11px;
+        }
+
+        .notifications__message {
+            font-size: 13px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .summary__number {
+            font-size: 16px;
+        }
+
+        .summary__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .portfolio__piechart {
+            max-width: 50%;
+            max-height: 210px;
+        }
+
+        .portfolio__color-meaning {
+            width: auto;
+        }
+
+        .portfolio__color-box {
+            margin-bottom: 6px;
+        }
+
+        .notifications__box {
+            padding: 8px;
+        }
+
+        .notifications__img {
+            width: 28px;
+            height: 28px;
+            margin-right: 10px;
+        }
+
+        .notifications__title {
+            font-size: 13px;
+        }
+
+        .notifications__date {
+            font-size: 10px;
+        }
+
+        .notifications__message {
+            font-size: 12px;
+        }
+    }
+
+    .mobile-data-card {
+        font-family: sans-serif;
+        padding: 12px;
+        background-color: #fff;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        width: 100%;
+        max-width: 600px;
+        margin: 0 auto;
+        font-size: 12px;
+    }
+
+    .card-asset-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+    }
+
+    .card-asset-name {
+        font-size: 16px;
+        font-weight: 400;
+        color: #333;
+    }
+
+    .card-loss {
+        color: #e57373;
+        font-weight: 400;
+    }
+
+    .card-data-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 8px;
+        flex-wrap: wrap;
+    }
+
+    .card-pairs {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .card-pair {
+        display: flex;
+        gap: 4px;
+    }
+
+    .card-label {
+        font-weight: 400;
+        color: #666;
+    }
+
+    .card-value {
+        font-weight: 500;
+        color: #666;
+    }
+
+    .card-percentage {
+        color: #e57373;
+        font-weight: 500;
+    }
+
+    .card-data-row:last-child {
+        border-top: 1px solid #eee;
+        padding-top: 8px;
+        margin-top: 8px;
+    }
+
+    @media (max-width: 600px) {
+        #stock-table {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 0;
+            max-width: 100%;
+        }
+
+        .mobile-data-card {
+            padding: 10px;
+        }
+    }
+</style>
+<div class="container">
+    <div class="card-section summary__grid">
+        <div class="summary__box">
+            <h4 class="summary__label">Invested</h4>
+            <h3 class="summary__number" data-label="Invested">Loading...</h3>
+        </div>
+        <div class="summary__box">
+            <h4 class="summary__label">Current</h4>
+            <h3 class="summary__number" data-label="Current">Loading...</h3>
+        </div>
+        <div class="summary__box">
+            <h4 class="summary__label">Realised P&L</h4>
+            <h3 class="summary__number" data-label="Realised P&L">Loading...</h3>
+            <h6 class="summary__percentage" data-label="Realised P&L%">x%...</h6>
+        </div>
+        <div class="summary__box">
+            <h4 class="summary__label">Unrealised P&L</h4>
+            <h3 class="summary__number" data-label="Unrealised P&L">Loading...</h3>
+            <h6 class="summary__percentage" data-label="Unrealised P&L%">x%...</h6>
+        </div>
+        <!-- <div class="summary__box">
+            <h4 class="summary__label">Cash Position</h4>
+            <h3 class="summary__number" data-label="Cash Position">Loading...</h3>
+        </div> -->
+    </div>
+    <div class="portfolio__breakdown">
+        <div class="card-section portfolio__piechart-section">
+            <h3 class="portfolio__heading">Allocation</h3>
+            <div class="portfolio__container">
+                <div class="portfolio__piechart">
+                    <canvas id="portfolioChart" height="300"></canvas>
+                </div>
+                <div class="portfolio__color-meaning" id="color-meaning"></div>
+            </div>
+        </div>
+        <div class="card-section notifications__section">
+            <h5 class="notifications__heading">Recent Buy & Sell</h5>
+            <div class="notifications__scrollable">
+                <div id="ntf-container"></div>
+            </div>
+            <div class="ntf-toggle" style="display: none" id="ntf-toggle"></div>
+        </div>
+    </div>
+    <div class="card-section">
+        <h5 class="notifications__heading">Stock Holdings</h5>
+        <div id="stock-table">
+            <div id="skeleton-loader">
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+                <div class="skeleton-line" style="width: 100%"></div>
+            </div>
+        </div>
+        <div class="chart-container" style="height: 100px">
+            <canvas id="allocationChart"></canvas>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/tabulator-tables@5.5.1/dist/js/tabulator.min.js"></script>
+<script>
+    // Function to fetch data
+    async function fetchWithCache(url) {
+        try {
+            const response = await fetch(url, { cache: "no-store" }); // "no-store" ensures fresh data, not implementing custom 30-min cache here
+            if (!response.ok)
+                throw new Error(`Network response was not ok for ${url}`);
+            const data = await response.json();
+            return data;
+        } catch (error) {
+            console.error(`Error fetching data from ${url}:`, error);
+            return null;
+        }
+    }
+
+    // Fetch Portfolio Data
+    async function fetchPortfolioData() {
+        return await fetchWithCache(
+            "https://shubhamm-06.github.io/Portfolio-API/fund2/data.json"
+        );
+    }
+
+    // Fetch Notifications Data
+    async function fetchNotificationsData() {
+        return await fetchWithCache(
+            "https://shubhamm-06.github.io/Portfolio-API/fund2/notification.json"
+        );
+    }
+
+    // Fetch Summary P&L Data
+    async function fetchSummaryPLData() {
+        return await fetchWithCache(
+            "https://shubhamm-06.github.io/Portfolio-API/fund2/summary.json"
+        );
+    }
+
+    // Process Portfolio Data
+    function processPortfolioData(data) {
+        if (!data || !Array.isArray(data)) return null;
+
+        const predefinedColors = [
+            "#003f5c",
+            "#2f4b7c",
+            "#665191",
+            "#a05195",
+            "#d45087",
+            "#f95d6a",
+            "#ff7c43",
+            "#ffa600",
+            "#ffb347",
+            "#ffd700",
+            "#d4a017",
+            "#a2d729",
+            "#4caf50",
+            "#2e8b57",
+            "#20b2aa",
+            "#00bcd4",
+            "#29b6f6",
+            "#2196f3",
+            "#1e88e5",
+            "#1976d2",
+            "#1565c0",
+            "#0d47a1",
+            "#5e35b1",
+            "#7e57c2",
+            "#ab47bc",
+            "#ec407a",
+            "#ef5350",
+            "#ff7043",
+            "#ff8a65",
+            "#ffa726",
+            "#ffb74d",
+            "#ffd54f",
+            "#fff176",
+            "#e6ee9c",
+            "#cddc39",
+            "#aed581",
+            "#81c784",
+            "#4db6ac",
+            "#4dd0e1",
+            "#4fc3f7",
+            "#64b5f6",
+            "#7986cb",
+            "#9575cd",
+            "#ba68c8",
+            "#f06292",
+            "#e57373",
+            "#ff8a65",
+            "#ffd54f",
+            "#dce775",
+            "#aed581",
+        ];
+
+        let totalInvested = 0;
+        let totalCurrent = 0;
+        const allocationData = [];
+
+        data.forEach((item, index) => {
+            const buyValue = parseFloat(item["Buy Value"]) || 0;
+            const presentValue = parseFloat(item["Present Value"]) || 0;
+            const allocation = parseFloat(item["Allocation (%)"]) || 0;
+            const ticker = item["Ticker"] || "Unknown";
+
+            totalInvested += buyValue;
+            totalCurrent += presentValue;
+
+            allocationData.push({
+                ticker,
+                allocation,
+                color: predefinedColors[index % predefinedColors.length],
+            });
+        });
+
+        const cashPosition = 1000000 - totalInvested; // Assuming initial cash is 1,000,000
+
+        return {
+            totalInvested,
+            totalCurrent,
+            cashPosition,
+            allocationData,
+        };
+    }
+
+    // Update Summary
+    function updateSummary(portfolioProcessedData, summaryPLData) {
+        if (portfolioProcessedData) {
+            document.querySelector(
+                '.summary__number[data-label="Invested"]'
+            ).textContent = `$${portfolioProcessedData.totalInvested.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }
+            )}`;
+            document.querySelector(
+                '.summary__number[data-label="Current"]'
+            ).textContent = `$${portfolioProcessedData.totalCurrent.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }
+            )}`;
+            document.querySelector(
+                '.summary__number[data-label="Cash Position"]'
+            ).textContent = `$${portfolioProcessedData.cashPosition.toLocaleString(
+                "en-US",
+                {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                }
+            )}`;
+        }
+
+        if (summaryPLData) {
+            // Realised P&L
+            const realisedPLValue = summaryPLData["Realized_P&L"] || 0;
+            const realisedPLElement = document.querySelector(
+                '.summary__number[data-label="Realised P&L"]'
+            );
+            realisedPLElement.textContent = `${realisedPLValue >= 0 ? "+" : ""
+                }$${realisedPLValue.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                })}`;
+            realisedPLElement.classList.toggle("positive", realisedPLValue >= 0);
+            realisedPLElement.classList.toggle("negative", realisedPLValue < 0);
+
+            const realisedPLPercentage =
+                (summaryPLData["Realized P&L%"] || 0) * 100;
+            const realisedPLPercentageElement = document.querySelector(
+                '.summary__percentage[data-label="Realised P&L%"]'
+            );
+            realisedPLPercentageElement.textContent = `${realisedPLPercentage >= 0 ? "+" : ""
+                }${realisedPLPercentage.toFixed(2)}%`;
+            realisedPLPercentageElement.classList.toggle(
+                "positive",
+                realisedPLPercentage >= 0
+            );
+            realisedPLPercentageElement.classList.toggle(
+                "negative",
+                realisedPLPercentage < 0
+            );
+
+            // Unrealised P&L
+            const unrealisedPLValue = summaryPLData["Unrealized P&L"] || 0;
+            const unrealisedPLElement = document.querySelector(
+                '.summary__number[data-label="Unrealised P&L"]'
+            );
+            unrealisedPLElement.textContent = `${unrealisedPLValue >= 0 ? "+" : ""
+                }$${unrealisedPLValue.toLocaleString("en-US", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                })}`;
+            unrealisedPLElement.classList.toggle(
+                "positive",
+                unrealisedPLValue >= 0
+            );
+            unrealisedPLElement.classList.toggle("negative", unrealisedPLValue < 0);
+
+            const unrealisedPLPercentage =
+                (summaryPLData["Unrealized P&L%"] || 0) * 100;
+            const unrealisedPLPercentageElement = document.querySelector(
+                '.summary__percentage[data-label="Unrealised P&L%"]'
+            );
+            unrealisedPLPercentageElement.textContent = `${unrealisedPLPercentage >= 0 ? "+" : ""
+                }${unrealisedPLPercentage.toFixed(2)}%`;
+            unrealisedPLPercentageElement.classList.toggle(
+                "positive",
+                unrealisedPLPercentage >= 0
+            );
+            unrealisedPLPercentageElement.classList.toggle(
+                "negative",
+                unrealisedPLPercentage < 0
+            );
+        }
+    }
+
+    // Portfolio Chart
+    let portfolioChart;
+    const centerTextPlugin = {
+        id: "centerText",
+        afterDraw: (chart) => {
+            const { ctx, chartArea } = chart;
+            if (!chartArea) return;
+
+            const centerX = chartArea.left + chartArea.width / 2;
+            const centerY = chartArea.top + chartArea.height / 2;
+
+            let textToDisplay = "Allocation";
+            const activeElements = chart.getActiveElements();
+            if (activeElements.length > 0) {
+                const index = activeElements[0].index;
+                textToDisplay = `${chart.data.labels[index]
+                    } (${chart.data.datasets[0].data[index].toFixed(2)}%)`;
+            }
+
+            ctx.save();
+            ctx.font = "12px Inter";
+            ctx.fillStyle = "#1a3c34";
+            ctx.textAlign = "center";
+            ctx.textBaseline = "middle";
+            ctx.fillText(textToDisplay, centerX, centerY);
+            ctx.restore();
+        },
+    };
+
+    function updatePortfolioChart(allocationData) {
+        if (!allocationData) return;
+        const ctx = document.getElementById("portfolioChart").getContext("2d");
+        const labels = allocationData.map((item) => item.ticker);
+        const data = allocationData.map((item) => item.allocation);
+        const colors = allocationData.map((item) => item.color);
+
+        const colorMeaning = document.getElementById("color-meaning");
+        colorMeaning.innerHTML = allocationData
+            .map(
+                (item) => `
+            <div class="portfolio__color-box">
+                <div class="portfolio__color" style="background: ${item.color
+                    }"></div>
+                <div class="portfolio__meaning">${item.ticker
+                    } (${item.allocation.toFixed(2)}%)</div>
+            </div>`
+            )
+            .join("");
+
+        if (portfolioChart) {
+            portfolioChart.data.labels = labels;
+            portfolioChart.data.datasets[0].data = data;
+            portfolioChart.data.datasets[0].backgroundColor = colors;
+            portfolioChart.update();
+        } else {
+            portfolioChart = new Chart(ctx, {
+                type: "doughnut",
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            data: data,
+                            backgroundColor: colors,
+                            borderWidth: 0,
+                            cutout: "60%",
+                            hoverOffset: 10,
+                        },
+                    ],
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                title: (tooltipItems) => tooltipItems[0].label,
+                                label: (tooltipItem) => `${tooltipItem.raw.toFixed(2)}%`,
+                            },
+                        },
+                    },
+                    animation: {
+                        animateRotate: true,
+                        animateScale: true,
+                    },
+                    hover: {
+                        onHover: (event, elements) => {
+                            event.native.target.style.cursor = elements.length
+                                ? "pointer"
+                                : "default";
+                            portfolioChart.draw(); // Force redraw for center text
+                        },
+                    },
+                },
+                plugins: [centerTextPlugin],
+            });
+        }
+    }
+
+    // Fund Allocation Chart
+    let allocationChart;
+    function updateAllocationChart(invested, cash) {
+        if (typeof invested === "undefined" || typeof cash === "undefined")
+            return;
+        const ctx = document.getElementById("allocationChart").getContext("2d");
+        const total = 1000000; // Assuming total fund capability
+
+        if (allocationChart) {
+            allocationChart.data.datasets[0].data = [invested];
+            allocationChart.data.datasets[1].data = [cash];
+            allocationChart.update();
+        } else {
+            allocationChart = new Chart(ctx, {
+                type: "bar",
+                data: {
+                    labels: [""],
+                    datasets: [
+                        {
+                            label: "Invested",
+                            data: [invested],
+                            backgroundColor: "#2ecc71",
+                            barThickness: 60,
+                            borderRadius: 2,
+                        },
+                        {
+                            label: "Cash Position",
+                            data: [cash],
+                            backgroundColor: "#3498db",
+                            barThickness: 60,
+                            borderRadius: 2,
+                        },
+                    ],
+                },
+                options: {
+                    indexAxis: "y",
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        x: { stacked: true, display: false, max: total },
+                        y: { stacked: true, display: false },
+                    },
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            enabled: true,
+                            callbacks: {
+                                label: (context) => {
+                                    const value = context.raw;
+                                    const percentage = ((value / total) * 100).toFixed(1);
+                                    return `${context.dataset.label}: $${value.toLocaleString(
+                                        "en-US",
+                                        {
+                                            minimumFractionDigits: 2,
+                                            maximumFractionDigits: 2,
+                                        }
+                                    )} (${percentage}%)`;
+                                },
+                            },
+                        },
+                    },
+                },
+            });
+        }
+    }
+
+    // Stock Table
+    let cachedFinanceData = null;
+    let lastIsMobile = null;
+
+    async function createTable() {
+        try {
+            if (!cachedFinanceData) {
+                cachedFinanceData = await fetchPortfolioData();
+            }
+            const financeData = cachedFinanceData;
+            const skeletonLoader = document.getElementById("skeleton-loader");
+            const stockTable = document.getElementById("stock-table");
+
+            if (!stockTable) {
+                console.error("stock-table element not found");
+                return;
+            }
+
+            if (financeData && financeData.length > 0) {
+                const formatCurrency = (value) => {
+                    const num = parseFloat(value);
+                    return isNaN(num)
+                        ? value
+                        : num.toLocaleString("en-US", {
+                            style: "currency",
+                            currency: "USD",
+                            minimumFractionDigits: 2,
+                        });
+                };
+                const formatpl = (value) => {
+                    const num = parseFloat(value);
+                    if (isNaN(num)) return value;
+                    const formatted = "$" + Math.abs(num).toFixed(2);
+                    return num < 0
+                        ? `<span style="color: red;">-${formatted}</span>`
+                        : `<span style="color: green;">+${formatted}</span>`;
+                };
+                const formatPercentage = (value) => {
+                    const num = parseFloat(value);
+                    if (isNaN(num)) return value;
+                    const formatted = Math.abs(num).toFixed(2) + "%";
+                    return num < 0
+                        ? `<span style="color: red;">-${formatted}</span>`
+                        : `<span style="color: green;">+${formatted}</span>`;
+                };
+
+                const createCard = (data) => {
+                    return `
+                        <div class="mobile-data-card">
+                            <div class="card-data-row">
+                                <div class="card-pairs">
+                                    <div class="card-pair">
+                                        <span class="card-label">Qty</span>
+                                        <span class="card-value">${data["Qty"]
+                        }</span>
+                                    </div>
+                                    <div class="card-pair">
+                                        <span class="card-label">Avg</span>
+                                        <span class="card-value">${formatCurrency(
+                            data["Avg Buy Price (P/S)"]
+                        )}</span>
+                                    </div>
+                                </div>
+                                <span class="card-percentage">${formatPercentage(
+                            data["P&L (%)"]
+                        )}</span>
+                            </div>
+                            <div class="card-asset-header">
+                                <span class="card-asset-name">${data["Ticker"]
+                        }</span>
+                                <span class="card-value">${formatpl(
+                            data["Present Value"] - data["Buy Value"]
+                        )}</span>
+                            </div>
+                            <div class="card-data-row">
+                                <div class="card-pairs">
+                                    <div class="card-pair">
+                                        <span class="card-label">Invested</span>
+                                        <span class="card-value">${formatCurrency(
+                            data["Buy Value"]
+                        )}</span>
+                                    </div>
+                                </div>
+                                <div class="card-pair">
+                                    <span class="card-label">LTP</span>
+                                    <span class="card-value">${formatCurrency(
+                            data["LTP"]
+                        )} (${formatPercentage(
+                            data["Price Change (1D)"]
+                        )})</span>
+                                </div>
+                            </div>
+                        </div>`;
+                };
+
+                const isMobile = window.matchMedia("(max-width: 600px)").matches;
+
+                if (
+                    lastIsMobile !== isMobile ||
+                    stockTable.innerHTML === "" ||
+                    (skeletonLoader && skeletonLoader.style.display !== "none")
+                ) {
+                    lastIsMobile = isMobile;
+                    stockTable.innerHTML = "";
+
+                    if (isMobile) {
+                        stockTable.innerHTML = financeData.map(createCard).join("");
+                    } else {
+                        const columns = Object.keys(financeData[0]).map((key) => ({
+                            title: key,
+                            field: key,
+                            headerSort: true,
+                            minWidth: 90,
+                            hozAlign: "left",
+                            frozen: key === "Ticker",
+                            formatter: (cell) => {
+                                const headerName = cell.getColumn().getDefinition().title;
+                                const raw = cell.getRow().getData()[key];
+                                if (key === "Ticker") return `<strong>${raw}</strong>`;
+                                if (
+                                    [
+                                        "Buy Value",
+                                        "Avg Buy Price (P/S)",
+                                        "LTP",
+                                        "Present Value",
+                                    ].includes(headerName)
+                                ) {
+                                    return formatCurrency(raw);
+                                }
+                                if (
+                                    ["P&L (%)", "Price Change (1D)", "Allocation (%)"].includes(
+                                        headerName
+                                    )
+                                ) {
+                                    return formatPercentage(raw);
+                                }
+                                return raw;
+                            },
+                        }));
+
+                        new Tabulator("#stock-table", {
+                            data: financeData,
+                            columns,
+                            layout: "fitDataTable",
+                            responsiveLayout: false,
+                            height: "auto",
+                        });
+                    }
+                    if (skeletonLoader) skeletonLoader.style.display = "none";
+                }
+            } else {
+                if (skeletonLoader) skeletonLoader.style.display = "none";
+                stockTable.innerHTML = "<p>No data found.</p>";
+            }
+        } catch (error) {
+            console.error("Error in createTable:", error);
+            const stockTable = document.getElementById("stock-table");
+            if (stockTable) stockTable.innerHTML = "<p>Failed to load data.</p>";
+            const skeletonLoader = document.getElementById("skeleton-loader");
+            if (skeletonLoader) skeletonLoader.style.display = "none";
+        }
+    }
+
+    let resizeTimeout;
+    window.addEventListener("resize", () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            createTable(); // Re-render table on resize
+        }, 200);
+    });
+
+    // Notifications Rendering
+    function renderNotifications(notifs) {
+        const container = document.getElementById("ntf-container");
+        container.innerHTML = notifs
+            .map((notif) => {
+                let content = notif.Content || ""; // Ensure content is a string
+                const trimmedContent = content.trim().toLowerCase();
+                let borderClass = "";
+
+                if (trimmedContent.startsWith("bought")) {
+                    borderClass = "notifications__box--buy";
+                } else if (trimmedContent.startsWith("sold")) {
+                    borderClass = "notifications__box--sell";
+                }
+
+                content = content.replace(/([\d\W]+)/g, "<strong>$1</strong>");
+                content = content.replace(/^(\w+)/, "<strong>$1</strong>");
+
+                return `
+                <div class="notifications__box ${borderClass}">
+                    <img class="notifications__img" src="${notif.TickerImg}" alt="${notif.Ticker}">
+                    <div class="notifications__content">
+                        <div class="notifications__header">
+                            <div class="notifications__title">${notif.Ticker}</div>
+                            <div class="notifications__date">${notif.Date}</div>
+                        </div>
+                        <div class="notifications__message">${content}</div>
+                    </div>
+                </div>`;
+            })
+            .join("");
+
+        document.querySelectorAll(".notifications__box").forEach((box, index) => {
+            setTimeout(() => box.classList.add("show"), index * 100);
+        });
+    }
+
+    function toggleRender(notifs) {
+        // This function seems to be for a toggle functionality not fully implemented with a button
+        const container = document.getElementById("ntf-container");
+        container.style.opacity = 0;
+        setTimeout(() => {
+            renderNotifications(notifs);
+            container.style.opacity = 1;
+        }, 300);
+    }
+
+    async function fetchNotifications() {
+        const data = await fetchNotificationsData();
+        if (!data || data.length === 0) {
+            document.getElementById("ntf-container").innerHTML =
+                "<p>No recent notifications.</p>";
+            return;
+        }
+        const initialNotifs = data.sort(
+            (a, b) => new Date(b.Date) - new Date(a.Date)
+        );
+        renderNotifications(initialNotifs);
+    }
+
+    // Main Dashboard Update Function
+    async function updateDashboard() {
+        const portfolioDataPromise = fetchPortfolioData();
+        const summaryPLDataPromise = fetchSummaryPLData();
+        const notificationsDataPromise = fetchNotificationsData(); // Fetch notifications along with other data
+
+        const [portfolioData, summaryPLDataResult, notificationsData] =
+            await Promise.all([
+                portfolioDataPromise,
+                summaryPLDataPromise,
+                notificationsDataPromise,
+            ]);
+
+        let processedPortfolioData = null;
+        if (portfolioData) {
+            processedPortfolioData = processPortfolioData(portfolioData);
+            if (processedPortfolioData) {
+                updatePortfolioChart(processedPortfolioData.allocationData);
+                updateAllocationChart(
+                    processedPortfolioData.totalInvested,
+                    processedPortfolioData.cashPosition
+                );
+            }
+        }
+
+        const summaryPLData = summaryPLDataResult ? summaryPLDataResult[0] : null; // API returns an array with one object
+        updateSummary(processedPortfolioData, summaryPLData); // Update summary with both data sets
+
+        // Process and render notifications
+        if (!notificationsData || notificationsData.length === 0) {
+            document.getElementById("ntf-container").innerHTML =
+                "<p>No recent notifications.</p>";
+        } else {
+            const initialNotifs = notificationsData.sort(
+                (a, b) => new Date(b.Date) - new Date(a.Date)
+            );
+            renderNotifications(initialNotifs);
+        }
+
+        await createTable(); // createTable uses cachedPortfolioData or fetches if needed
+    }
+
+    document.addEventListener("DOMContentLoaded", updateDashboard);
+</script>
+
+</html>
