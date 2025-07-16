@@ -792,7 +792,7 @@
         </div>
         
         <div class="card-section">
-            <h5 class="notifications__heading">Sold Stock Holding</h5>
+            <h5 class="notifications__heading">Sold Stock:</h5>
             <div id="sold-stock-table">
                 <div id="sold-skeleton-loader">
                     <div class="skeleton-line" style="width:100%"></div>
@@ -1312,7 +1312,7 @@
                             new Tabulator("#stock-table", {
                                 data: financeData,
                                 columns,
-                                layout: "fitColumns",
+                                layout: "fitDataTable",
                                 responsiveLayout: false, 
                                 height: "auto",
                             });
