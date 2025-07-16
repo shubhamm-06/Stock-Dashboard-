@@ -1,0 +1,146 @@
+[
+    {
+        "Ticker": "AMZN",
+        "Sale Price": 895.67,
+        "Buy Price": 826.29,
+        "Shares Sold": 691,
+        "Realized Profit": 47941.58,
+        "P&L%": 8.4
+    },
+    {
+        "Ticker": "AMZN",
+        "Sale Price": 276.47,
+        "Buy Price": 265.09,
+        "Shares Sold": 702,
+        "Realized Profit": 7988.76,
+        "P&L%": 4.29
+    },
+    {
+        "Ticker": "AMZN",
+        "Sale Price": 295.35,
+        "Buy Price": 288.41,
+        "Shares Sold": 296,
+        "Realized Profit": 2054.24,
+        "P&L%": 2.41
+    },
+    {
+        "Ticker": "V",
+        "Sale Price": 104.41,
+        "Buy Price": 115.64,
+        "Shares Sold": 567,
+        "Realized Profit": -6367.41,
+        "P&L%": -9.71
+    },
+    {
+        "Ticker": "PG",
+        "Sale Price": 509.21,
+        "Buy Price": 518.53,
+        "Shares Sold": 281,
+        "Realized Profit": -2618.92,
+        "P&L%": -1.8
+    },
+    {
+        "Ticker": "NVDA",
+        "Sale Price": 357.06,
+        "Buy Price": 390.3,
+        "Shares Sold": 885,
+        "Realized Profit": -29417.4,
+        "P&L%": -8.52
+    },
+    {
+        "Ticker": "NVDA",
+        "Sale Price": 258.75,
+        "Buy Price": 255.71,
+        "Shares Sold": 516,
+        "Realized Profit": 1568.64,
+        "P&L%": 1.19
+    },
+    {
+        "Ticker": "JNJ",
+        "Sale Price": 308.51,
+        "Buy Price": 324.06,
+        "Shares Sold": 761,
+        "Realized Profit": -11833.55,
+        "P&L%": -4.8
+    },
+    {
+        "Ticker": "JNJ",
+        "Sale Price": 824.11,
+        "Buy Price": 838.62,
+        "Shares Sold": 760,
+        "Realized Profit": -11027.6,
+        "P&L%": -1.73
+    },
+    {
+        "Ticker": "MSFT",
+        "Sale Price": 179.59,
+        "Buy Price": 171.19,
+        "Shares Sold": 962,
+        "Realized Profit": 8080.8,
+        "P&L%": 4.91
+    },
+    {
+        "Ticker": "GOOGL",
+        "Sale Price": 140.22,
+        "Buy Price": 135.11,
+        "Shares Sold": 450,
+        "Realized Profit": 2299.5,
+        "P&L%": 3.78
+    },
+    {
+        "Ticker": "TSLA",
+        "Sale Price": 180.50,
+        "Buy Price": 195.75,
+        "Shares Sold": 300,
+        "Realized Profit": -4575,
+        "P&L%": -7.79
+    },
+    {
+        "Ticker": "AAPL",
+        "Sale Price": 215.04,
+        "Buy Price": 205.99,
+        "Shares Sold": 500,
+        "Realized Profit": 4525,
+        "P&L%": 4.39
+    },
+    {
+        "Ticker": "META",
+        "Sale Price": 502.11,
+        "Buy Price": 489.50,
+        "Shares Sold": 250,
+        "Realized Profit": 3152.5,
+        "P&L%": 2.58
+    },
+    {
+        "Ticker": "BAC",
+        "Sale Price": 38.75,
+        "Buy Price": 42.10,
+        "Shares Sold": 1200,
+        "Realized Profit": -4020,
+        "P&L%": -8.67
+    },
+    {
+        "Ticker": "XOM",
+        "Sale Price": 114.33,
+        "Buy Price": 110.01,
+        "Shares Sold": 800,
+        "Realized Profit": 3456,
+        "P&L%": 3.93
+    },
+    {
+        "Ticker": "UNH",
+        "Sale Price": 530.15,
+        "Buy Price": 515.80,
+        "Shares Sold": 150,
+        "Realized Profit": 2152.5,
+        "P&L%": 2.78
+    },
+    {
+        "Ticker": "HD",
+        "Sale Price": 340.90,
+        "Buy Price": 355.20,
+        "Shares Sold": 200,
+        "Realized Profit": -2860,
+        "P&L%": -4.03
+    }
+]
