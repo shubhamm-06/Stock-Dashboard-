@@ -1,0 +1,522 @@
+[
+  {
+    "Ticker": "CRWD",
+    "TickerImg": "https://ik.imagekit.io/kkbzr2uz4cp/stock/nasdaq/crwd.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 441.7156235,
+    "Total Investment": 5000,
+    "Allocation": 1.9,
+    "Content": "Bought 11.31 shares of Crowdstrike Holdings Inc (CRWD) at an average price of $441.71 per share. Total Allocation changed to 1.9%",
+    "Date": "05/08/2025"
+  },
+  {
+    "Ticker": "CLPT",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAMAAABw3UvaAAAAaVBMVEX8/v/////+///9///h8vtfw+zb8Pr5+/2jq8PP1ODX7vr1+/7D5vfl9PygqMGrs8iYobzW2uSm2/Nrx+3s9/3s7/Ty9fjCyNeLlbSAjK7h5eyd1/KT1PG04PWJ0PB5hakAAGe3vdBodqATR8mqAAABvElEQVQ4jdWU3XKjMAyFfWSCsTEGp4AD+9Nt3/8h9wjKZadxr3aZjMco/izpSMKYf+cB9PcNLv5A+Nl/A/x9c/dbI7UYg+wFPSxsFRcjwi/kzc33vobEywtDta9/fLzFGoVkntEPcB62rcoSbYshYI5w0VWBR6j9/dZWhooQMER6lD7WlZLl0Bxbdk8VZ64GqJPmBFnH5l6lzEXCyFdxQjsM18ZoeFZ39nyFtp2cdh0Zvp8ZYEwF1tPmx84Z2WHs0r1BdDHIqVtF8mGH55lxXPNxybYgO0w0T4fbrQDeL5MuCYXwtiI5vNP+gFlGuFVjyIXZGCQFSxZZykQwG4LZTXpUXELnkEbPq+06MiJ14L1uTnBZLB77mJHfN3A6klHQ8pJOY5pygqXHD2leAacg+BewPrx/0Nm0c+E80g24Twpi2k6Px2PXKXW8uSsoXVrKChS369F9pwZ4S+RogipFFVd/Vcme5Ti+ThDVnnozayPyUSw5qnUop8c/LasQEaW4aLc+2a8SGk5HMzQ9x7LhN6QJz5HSzkMbhrlxCG0bOSVPgxjoajChnembdHhyRsRQG7HMkD0p5urM//b5C60AErLHgvd5AAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought",
+    "Average Price": 10.14999665,
+    "Total Investment": 5000,
+    "Allocation": 4.23,
+    "Content": "Bought 492.61 shares of Clearpoint Neuro Inc (CLPT) at an average price of $10.14 per share. Total Allocation changed to 4.23%",
+    "Date": "05/08/2025"
+  },
+  {
+    "Ticker": "AEO",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAALCAMAAAAdtr4vAAAAY1BMVEX///8AAACqqqq+vr5FRUVzc3NgYGDMzMyJiYlpaWnExMSPj4+cnJzR0dGgoKBvb2+Dg4NbW1vr6+va2to+Pj5UVFQWFhYlJSU4ODgsLCwyMjIODg62trZPT08fHx95eXn09PSM6dlPAAAA8klEQVQokX2Qi46DIBBFZ0RckIdWKvXVpf//lQsDNKmpexPDIHMuwwWIYhyKWBc1s7zp5boNP/CPNjSlanYhxJibJcqmueF4zfX7MlQQ339HJP5Aewk+ux6nMzhVQOA3JslhD7sooFdR+aapHl89k68Attg2v23Ux90TUlYHQDJItdMsH7ScS29Po7J6o8nJ3QFmHb9oERw1K8+lHNrHCXzVOKWnJY7RxUfcqCJhyL7HJwgadc6GVXAGpSUkNrc6Wu8b7fZlWVbyAIWPEHw2JPCZ3OIIBtIrmpK6UWlntLVWuxKLHrh9lQHi4Cn51K1kAP0H148JyOxnKDQAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 12.63511678,
+    "Total Investment": 5000,
+    "Allocation": 1.89,
+    "Content": "Bought 395.72 shares of American Eagle Outfitters Inc (AEO) at an average price of $12.63 per share. Total Allocation changed to 1.89%",
+    "Date": "04/08/2025"
+  },
+  {
+    "Ticker": "AMZN",
+    "TickerImg": "https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/amazon-512.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 234.1516896,
+    "Total Investment": 2990,
+    "Allocation": 6.99,
+    "Content": "Bought 12.76 shares of Amazon.com Inc (AMZN) at an average price of $234.15 per share. Total Allocation changed to 6.99%",
+    "Date": "01/08/2025"
+  },
+  {
+    "Ticker": "LLY",
+    "TickerImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Eli_Lilly_and_Company.svg/1200px-Eli_Lilly_and_Company.svg.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 740.1239708,
+    "Total Investment": 4000,
+    "Allocation": 1.5,
+    "Content": "Bought 5.4 shares of Eli Lilly And Co (LLY) at an average price of $740.12 per share. Total Allocation changed to 1.5%",
+    "Date": "01/08/2025"
+  },
+  {
+    "Ticker": "TEM",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAICAMAAACbIsyBAAAAZlBMVEUAAAD///+Tk5N+fn6MjIz09PTNzc17e3s/Pz+JiYmPj4/7+/uEhIQLCwtCQkJTU1PW1tYrKyvc3Ny6urrGxsYwMDDAwMCfn5+srKzk5OQjIyNpaWkZGRlMTEzu7u4eHh43NzdcXFxcPOtEAAAA8UlEQVQYlVWQS7aEIAxEqxBoFX/4RX3a9v43+QIOPGZQkAo3AbD0hS1VaYNZtZLQK7XSJJ1WJTmU4g1kr5V4g55pKo9tH/E3QAFQx2mRYmYSBlnIz21yjIlkGb+omxoB9hxPYHQdLWoaY1wEW3JKYIbMnBuGUYoRrKQaSONiH9l3ojLx17ZHTIGzxwN6hAfMxf8ufIP3YWDHUokkMIV7QCovRvYCYy2lFluUBDZVFRzlAj3lfQvtSRa43hO993X8HNfI1PUGi7vbgdgM6QdqQCfQT9KN3dTkeT6N9N7M19St/iLLSd0gwy9vlSPnz5Hvgf878AvsPn/NZQAAAABJRU5ErkJggg==",
+    "Buy or Sell": "Bought",
+    "Average Price": 56.58989305,
+    "Total Investment": 3000,
+    "Allocation": 2.95,
+    "Content": "Bought 53.01 shares of Tempus AI Inc (TEM) at an average price of $56.58 per share. Total Allocation changed to 2.95%",
+    "Date": "01/08/2025"
+  },
+  {
+    "Ticker": "ELV",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAMAAACY9M4aAAAAflBMVEX///8AAGAAFmeEj612gqTr7fKKlLERMHD09fjX2+QAGmji5ewADmQAEWUAKm7FytjU7fwvsvKN0PdMW4ilrcIAAFkAH2rS1uGgqL8ABWIlPnlteZ2Vnri4vs9baZJjcJdhwPSi2Piy3vlLuvMyRnwAJGyvtcg9UYQcOHZTZJFn9nX9AAAB1klEQVQ4jZ2T2bLjIAxEGwMBgw3J2PFucxfi5f9/cGRnaiZPuZPoAVCVTtEtAXCP8y+8FefL5S3yfPn4fIc8X76Bd8ivb03r58frVwK+0S8SxRHomXwRVCrG2EEkL4PbsR1g2Q8S9UwnPddIuUj9iHq0J+GpxJ763Y8XvD7A4g+oUbSrudn6yoH56n2WVLmqwPObMaxGneQVWzAw51hJxKpadp13sGln6DXCKWBTiM6jrBRO5oTZCHTO6zG1rMe9IWsXps0TiMlxziPTJ5bqhMuc760jMLdAFmw27MrKKnAe2PzgEZsbhqEZtGXDyNI7uP0D2+YAjaCqod49ainlLnXISPrehbhM3e7Bwld/QZImYWXKApDuM3fOmCSBYBpL263XEWiShGSNWaVy58AZgWyCZ9XaFpS6SD4l+BGYhd7HEUg8pBBUCx96X3KMgjohmj0PNC0ax3TS1r849f8Legm6fMil0yBd0/gTaFJY9vD2Za49da34EXQEGqRxbSAL1W/SWKVWPU1qeg52zimlb6PM0qmXIUqj585iEjI+v1SN1t/SpA+bJ9V1JxPt4yG1b36UmmhDHwQF1yKSx9pZFDPCc7AgcCGPhkMuNx70orFVlv4Yn/Eb1iYhUoXWsHEAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 283.0776199,
+    "Total Investment": 5000,
+    "Allocation": 3.96,
+    "Content": "Bought 17.66 shares of Elevance Health Inc (ELV) at an average price of $283.07 per share. Total Allocation changed to 3.96%",
+    "Date": "01/08/2025"
+  },
+  {
+    "Ticker": "UNH",
+    "TickerImg": "data:image/png;base64,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",
+    "Buy or Sell": "Bought",
+    "Average Price": 249.1503398640544,
+    "Total Investment": 4985,
+    "Allocation": 5.71,
+    "Content": "Bought 20 shares of UnitedHealth Group Inc (UNH) at an average price of $249.15 per share. Total Allocation changed to 5.71%",
+    "Date": "31/07/2025"
+  },
+  {
+    "Ticker": "NVO",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3s3mvhhcsti4CfcfLtFOjWL1_HCVDZYl9Jw&s",
+    "Buy or Sell": "Bought",
+    "Average Price": 47.07521678137328,
+    "Total Investment": 5000,
+    "Allocation": 4.37,
+    "Content": "Bought 106.21 shares of Novo Nordisk A/S (NVO) at an average price of $47.07 per share. Total Allocation changed to 4.37%",
+    "Date": "31/07/2025"
+  },
+  {
+    "Ticker": "EOSE",
+    "TickerImg": "https://media.licdn.com/dms/image/v2/C4D0BAQH6RY4kuFLGAQ/company-logo_200_200/company-logo_200_200/0/1645546082388/eos_energy_storage_logo?e=2147483647&v=beta&t=DRwz9nPYZHSkMFVky8_eZFrqwzuz8uhGM2k7QZ8w5gw",
+    "Buy or Sell": "Bought",
+    "Average Price": 5.935,
+    "Total Investment": 2967.5,
+    "Allocation": 2.4,
+    "Content": "Bought 500 shares of Eos Energy Enterprises Inc (EOSE) at an average price of $5.93 per share. Total Allocation changed to 2.4%",
+    "Date": "31/07/2025"
+  },
+  {
+    "Ticker": "DOCN",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAKCAMAAADW6m2KAAAAaVBMVEX///8Adf8AfP8Acv/6/f8AgP8Aev/V5f+Wvv/P4f/x9//q8v+awf8ti/+lx/+61P+Qu/92rP+vzv8ThP/K3f89kv9wqf85j/9NmP+Asv9rpf96r/9Glf9bn//l7//h6/8Aaf8AZf8Abv9ay6obAAABCklEQVQokZWRbY+DIBCEZ0FBQMHyIlKrtv3/P7LS3iVt7sOlk8AOIU92WADIKc9dg6/VczrEzLec5CxCFxrqYTkvEtZVq0a8UpwadJfyF5y4qmXl8tiZ8xRlddjinlBZhnVVS3j699XyJ++4raBGXHsfeZtjWamMjDVhF8dNkh2RyWzRQvSeaPxt/AMaqLl3wZghnswMZVMMqr7i7AnaBX9t+n5w5chhDMQKzK+ournYzmWlDnC7oHVzDI1wkHfNsbkkrZt99t0BTgW3hBPl2re9U0Gx25BzPEOUqRWRaROuQqLjtCWWdhoGP4IAe8N+pVa/DWz04/pyzUd5M4d2iz33H5PWY/fvNz4A/E0OV2YEEUwAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 28.08,
+    "Total Investment": 2808,
+    "Allocation": 4.75,
+    "Content": "Bought 100 shares of DigitalOcean Holdings Inc (DOCN) at an average price of $28.08 per share. Total Allocation changed to 4.75%",
+    "Date": "30/07/2025"
+  },
+  {
+    "Ticker": "CLPT",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAMAAABw3UvaAAAAaVBMVEX8/v/////+///9///h8vtfw+zb8Pr5+/2jq8PP1ODX7vr1+/7D5vfl9PygqMGrs8iYobzW2uSm2/Nrx+3s9/3s7/Ty9fjCyNeLlbSAjK7h5eyd1/KT1PG04PWJ0PB5hakAAGe3vdBodqATR8mqAAABvElEQVQ4jdWU3XKjMAyFfWSCsTEGp4AD+9Nt3/8h9wjKZadxr3aZjMco/izpSMKYf+cB9PcNLv5A+Nl/A/x9c/dbI7UYg+wFPSxsFRcjwi/kzc33vobEywtDta9/fLzFGoVkntEPcB62rcoSbYshYI5w0VWBR6j9/dZWhooQMER6lD7WlZLl0Bxbdk8VZ64GqJPmBFnH5l6lzEXCyFdxQjsM18ZoeFZ39nyFtp2cdh0Zvp8ZYEwF1tPmx84Z2WHs0r1BdDHIqVtF8mGH55lxXPNxybYgO0w0T4fbrQDeL5MuCYXwtiI5vNP+gFlGuFVjyIXZGCQFSxZZykQwG4LZTXpUXELnkEbPq+06MiJ14L1uTnBZLB77mJHfN3A6klHQ8pJOY5pygqXHD2leAacg+BewPrx/0Nm0c+E80g24Twpi2k6Px2PXKXW8uSsoXVrKChS369F9pwZ4S+RogipFFVd/Vcme5Ti+ThDVnnozayPyUSw5qnUop8c/LasQEaW4aLc+2a8SGk5HMzQ9x7LhN6QJz5HSzkMbhrlxCG0bOSVPgxjoajChnembdHhyRsRQG7HMkD0p5urM//b5C60AErLHgvd5AAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought",
+    "Average Price": 10.87,
+    "Total Investment": 3261,
+    "Allocation": 4.23,
+    "Content": "Bought 300 shares of Clearpoint Neuro Inc (CLPT) at an average price of $10.87 per share. Total Allocation changed to 4.23%",
+    "Date": "30/07/2025"
+  },
+  {
+    "Ticker": "UNH",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA7VBMVEX///8RIowAAIEAAH7y8/gAAIQAAHwAD4XM0OI8RJP+/v8vOJCkqch6gLHGyd0FG4o6QpW2udkAAHfn6PPV1ufO0d8AFog2PI+Ok7nt7vRWXaMpNJGBhrIUHYLv8PE4QZkAAG9+hrzb3eciKoljaaUAAGekqccAEocACoafo8kJHoqKj7q9wdtscq1OVJ2usc+Ynch0eqoAEH4kKoNyd69JTpZSV5ZcYZ5SW6gcJ4zIy+UdJITd4PCjq9Jud7V8hr8LGXtbY5k8Q4x8f6mIjLIsMoO5vM7W2N5ITZKSmcquscpjaq2ZmrpRXKYAAF7X18m5AAALhElEQVR4nO2ce3vauBKHZUmWQVxMbDCYQEMwXYzNrQSaJjHndNNuL8l2v//HOSMZCJcke3aTPjz1M+8/GF/k+ekyM0JKCEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBPm/kIQMK/6xrfiplAtOgR/biJ9Irt7xogwrTHqNwfmVnVmFbitycoTkrYwqdFt9FtHsKpSDuDg/jVhmFZ4EnSIhLZrFNoT4R04unMj8jZBSJhVCgGguG988mlmFSVPUOakxWsymQncu+naFk3JGFfpxQA0juwr5IKCRkWGFkwum9GVW4bAgbMPIsMKTzlpfZhUyAxX+4qDCY9v3clDhse17Oajw2Pa9HFR4bPteDio8tn0vBxUe276XgwqPbd/LQYXHtu/loMJj2/dyDhSKjUJZ72dS4aoNwy7hp1ZeHtu+l7Oj8GytcM7CJJMKF5zcOWp1bR6CQvfKWhzbvFdgW6H3XpI7oVZIR6HnEtcIm8c27xXYUXgpSVHQE0Luw4iTxLPuj23eK7Ct0BoRMmBsSEgzvCIkx8LRsc17BbYVmi1CppRBnBiHZwScjnl+bPNegWv6oJBNCYmpcAmvWB8IGVJzeWzzXoHrrTYUE/AxlsnBi6rmHJgqsfnlyW234ZDwvGcQ0jV12A8h7P/6uOaWQpf4ljcmZEIpuJtxP3CPbd4r4HsbgdEpJ0NmxhDwqVUl0ujnM5CWEh5Ea4VhSTkaFSwWYUGSKs1EsICBt1nldsqEL/ohhPp2OIeuyujg2Na9BvJy000ZtBtTw7BMKXjVVkirx7buVZiKlUAK0XBu0TtCLi0KTtTwzrIwDMGZrgJiRFWe5lUISZgFGfe1o8ZlJhjrbqq2Pcu6x8oq6Iuy6qTsmmRgeggkwoIGbIMLfW8xSGVyoj+WxKd2Fqa/CnAvPeuqlZBuPqQ9kNa2WVf9jiGKxzbtFRlblUXT6rMeh+jRFwM1r4hOM9KEmu6NaXv9GShTDQlxntdtZ3hsq14Vv0WNEYT6mHnsEnruwgKdMgtZ6QMtYbFQ0JA1IIDUQ7ogww/z+2wExBRZYpFhF94lRBYtjzY5Hy3j4X+Obdar0u33P5xUu8U6DWksycnkvz+6rSw1IiHVNmUApU2Vj7ql5XAwP7ZNr4zbqgTB2Twn9Z+XTOaD+2z5GoX0/Yco6FazFBERBEEQBEF+YV6WlmUwqfuJkqSbAq9ID/au85O/+TcrfpJUYU7EV+VsF/jE/W5uO/F23ST3yESDDxvxBM6/fA7i37Tb7ejjAnT8/jFqz273LJs7F/pM9aklzZKgrE1IWZXT/ngru+nBt6dmuNMOZZG+2FWTRZ53qHM4WRzWxWWvMBsMnX8r7AF/wKKwrF7Jc4E13DNMCkMk6qDXeOJ5meStU1XOnEZRwqENp9Rg5Sen8DKpe6f6avyJ6Lc+sm1h4rShRmXDofY/FnTYeSSL1uuVrd7B1bEj9MVvgyfHypwphaRKvXSTjAztynMmNMxU4fxz+j2ku8sYkpQdli5Ozf+FQuJP42TnBKdRfaWw0TuoAl7Ud3Nn63dquXUExyNaUMegsKkvvbHss4Ob5cNTrZXCYNUt6J5Cwk/ph5WxLNoq5El3JLdeQ3hzMOjtbITYU/g4sfP0L/Ejum7DdCuXv6PwkJXCifOUwt/0Yr82+H3/uZJ2Ra+Op+VRz423b9pVKH3XhSHQHebUuTfVWg2GJo8pXUqe3pUMyxuvI3ND9xmF1eFmPPrlk7K7pVAWqdlIi6T0XBX0sGh65tnrbjag8BLw0+B9uysfUU3vXBmqP6RM7QSr4ZHy/P45hVN6FV3Kd8JxCjXlIR3WccHfGZERGHUw8c3lrLkQl+kDw4JzO7ub7ysMU4W1/Mf7QjBJSy4072dRS1e0Uih7ncgwgnbQVQpjP+849N2qEZK+vdmqUQZfmtzYgZNM/lgUVPR4H9xfLOCpO3bVrhOytIyrj777h8OcamtWd8Yuvy+Wz3YG4q5Cv3ZqjuLbWrdC8zB2/HlIXfn1i2nGX79+lcSvq1WHiaPXx4aC5WQtKHgP41DxJlWYY5FL+MJREmP1b3cSKgabNuzWovDT1xoUSWj4n2+t7pA6q8X9IbU3a8T+D6iU7pzSa8cdweNu+8Ilbn6WEF4OLHgN747Dtk/41Lwq3boyFnnuT7/vLqLvj8NzGhR8tS1N+7Mlo1BzXcrStigJHbvGzhTeHlA1khosWrfhD+n7nLt9pZDX1UYockdvoHCbqsd6tMLXCok0zD/Tt9JID8SmtTJjYO4vMCY0Oismptkil9ofDB3lrJu0orpETEEhqZmGslcWmO6gO88fKAy1mrLeLLlRSLWn6QqqlZ6btiQDZqk6SGb2qg0Nz9FESuEds1RX6Xp0AP3WU684N2+2FNrm2tNEM9UpY2qn6VMcqk0N2/jUEJJfOLmcoOoe6TknRI6ZDkprhelD52b7IA06UGj2/VShcmhLuq1wINRitdpnKK7JuB+pG3m9v+mlb3yg6ymF95ahrroX6s31jlITm8GeQl3V1FKLUmBptKUQrrx7O4PsaPbXhLhgosr3SIt6uoXq4QgU0h2F9Lv6dmfS8t8r1H3pUYWxKargvPh3ypZ+4KVLnZf0kXHIC/ZV4rs+ZDBX6iXqhrz3uELaSi1dKZyueilP5mYUjhIJCkM9OGSzH+jPcf9C7reh2usBo988zJAOFdafVDiyDKH6oQC34BorhY9GCzeIIt1lKWM6JWzMZmf2EwrPdxQ+eBoeREJFJpeqDSsqFfDy+kLTC/mBQh1Da+bh9uN/ppBVeYpM/kah3XbXt0L3jlhRxvRphVu9NEejVbSQTY+5qcLBocIfewrLaRu+RGEXIj+Mv/TlxL2yU4W9vV6qFUIvXRmsZMxFAdxO6WAcEjVb21fIT20veVShHHunq89ArhWe7yismeHBTAUy743C0bMKm18mjrnK3v4syrzX1v1vAXMLKfdzmpGlPa0k/Js8EWrXHsSDQDXotsLPrUOFcMMqa9tXSErU0Ocr4SWRP1JPMw+3x+EXM/X2O9j26UrhPH5e4R2n6xq6XcLrIPBCW954j7Sh+gOSE91+OZNUPO1XDTuQvS87CluxmlvsKXRtKy2Jn0W7CoeCKttkJJZqy7hSyOteqjDUo7kBvvBA4buQ1dIqi8q61bUnWytcx0OomXwZkhNLm5F0fFJlumPcMXtr9iS1L62oPQmmPk16JXJqX/lqt5dxIcdQhql6NyiEiH9fVApbqUIjrWgVadPZU5caWiGn64api6HapyMsKKFnqpotskhF2ZqZjpkFe+QvObhgeW32fCFVpmJ7ynBoA8g0ZK+vqk8GZolUb1wi82IM5bkdVacl51ZN0is2pOVqa7NhaAcxMA2199ClQtVqw+HQ2hBGeeGHZ0wuunxh67obm5Aj3nRJmdp5d7tvqkp3rtSpnqBa4cS0x2n7Jh3lai471bQehpBAfvf6A1/lNCJWfhic7+Esy6074tPdn+wWbI/fCiY64BGGHeb0J28dxtJvzkL920OQ7DjjQied75Q63z47k3PH7MTlDtwpOkzWOh0Gz0Qciu1EY3GjJgAV4Sychu+wt6MpvEAXWRXOrWiR0w688G1J1RfrFNbGDUTn909tZ5D8lZDE6aiirfSnj1nwueCU9QAfi454O6l2zM6p6qWTm8UnZ/bEFvnctDRX6aokb1LgUH3I9TfiTqerfN0dxAN3lfl1p98TeEQC6wc3B7rY6XVq8/V02lWFLPnDZX/wHSzdfN88lXbV5Xlpqc7KnRLhwjA+4enr5fUULJFvlJ/TvnQZD3+V3yEft/M562tbffwXQZJ/9CtqzWQH+Wi2uKOPxMEMwX+nwPsvx7bj58GLJ8AkG/vjEQRBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEATJMv8DIEcpgZdzr9wAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 267.23,
+    "Total Investment": 2672.3,
+    "Allocation": 5.71,
+    "Content": "Bought 10 shares of UnitedHealth Group Inc (UNH) at an average price of $267.23 per share. Total Allocation changed to 5.71%",
+    "Date": "29/07/2025"
+  },
+  {
+    "Ticker": "TEM",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAICAMAAACbIsyBAAAAZlBMVEUAAAD///+Tk5N+fn6MjIz09PTNzc17e3s/Pz+JiYmPj4/7+/uEhIQLCwtCQkJTU1PW1tYrKyvc3Ny6urrGxsYwMDDAwMCfn5+srKzk5OQjIyNpaWkZGRlMTEzu7u4eHh43NzdcXFxcPOtEAAAA8UlEQVQYlVWQS7aEIAxEqxBoFX/4RX3a9v43+QIOPGZQkAo3AbD0hS1VaYNZtZLQK7XSJJ1WJTmU4g1kr5V4g55pKo9tH/E3QAFQx2mRYmYSBlnIz21yjIlkGb+omxoB9hxPYHQdLWoaY1wEW3JKYIbMnBuGUYoRrKQaSONiH9l3ojLx17ZHTIGzxwN6hAfMxf8ufIP3YWDHUokkMIV7QCovRvYCYy2lFluUBDZVFRzlAj3lfQvtSRa43hO993X8HNfI1PUGi7vbgdgM6QdqQCfQT9KN3dTkeT6N9N7M19St/iLLSd0gwy9vlSPnz5Hvgf878AvsPn/NZQAAAABJRU5ErkJggg==",
+    "Buy or Sell": "Bought",
+    "Average Price": 58.27,
+    "Total Investment": 5244.3,
+    "Allocation": 2.95,
+    "Content": "Bought 90 shares of Tempus AI Inc (TEM) at an average price of $58.27 per share. Total Allocation changed to 2.95%",
+    "Date": "29/07/2025"
+  },
+  {
+    "Ticker": "ELV",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAYCAMAAACY9M4aAAAAflBMVEX///8AAGAAFmeEj612gqTr7fKKlLERMHD09fjX2+QAGmji5ewADmQAEWUAKm7FytjU7fwvsvKN0PdMW4ilrcIAAFkAH2rS1uGgqL8ABWIlPnlteZ2Vnri4vs9baZJjcJdhwPSi2Piy3vlLuvMyRnwAJGyvtcg9UYQcOHZTZJFn9nX9AAAB1klEQVQ4jZ2T2bLjIAxEGwMBgw3J2PFucxfi5f9/cGRnaiZPuZPoAVCVTtEtAXCP8y+8FefL5S3yfPn4fIc8X76Bd8ivb03r58frVwK+0S8SxRHomXwRVCrG2EEkL4PbsR1g2Q8S9UwnPddIuUj9iHq0J+GpxJ763Y8XvD7A4g+oUbSrudn6yoH56n2WVLmqwPObMaxGneQVWzAw51hJxKpadp13sGln6DXCKWBTiM6jrBRO5oTZCHTO6zG1rMe9IWsXps0TiMlxziPTJ5bqhMuc760jMLdAFmw27MrKKnAe2PzgEZsbhqEZtGXDyNI7uP0D2+YAjaCqod49ainlLnXISPrehbhM3e7Bwld/QZImYWXKApDuM3fOmCSBYBpL263XEWiShGSNWaVy58AZgWyCZ9XaFpS6SD4l+BGYhd7HEUg8pBBUCx96X3KMgjohmj0PNC0ax3TS1r849f8Legm6fMil0yBd0/gTaFJY9vD2Za49da34EXQEGqRxbSAL1W/SWKVWPU1qeg52zimlb6PM0qmXIUqj585iEjI+v1SN1t/SpA+bJ9V1JxPt4yG1b36UmmhDHwQF1yKSx9pZFDPCc7AgcCGPhkMuNx70orFVlv4Yn/Eb1iYhUoXWsHEAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 280.45,
+    "Total Investment": 5849.5,
+    "Allocation": 3.96,
+    "Content": "Bought 20.85 shares of Elevance Health Inc (ELV) at an average price of $280.45 per share. Total Allocation changed to 3.96%",
+    "Date": "24/07/2025"
+  },
+  {
+    "Ticker": "TMO",
+    "TickerImg": "https://logowik.com/content/uploads/images/c4999.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 410.92,
+    "Total Investment": 5136.5,
+    "Allocation": 7.36,
+    "Content": "Bought 12.5 shares of Thermo Fisher Scientific Inc (TMO) at an average price of $410.92 per share. Total Allocation changed to 7.36%",
+    "Date": "21/07/2025"
+  },
+  {
+    "Ticker": "DOCN",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAKCAMAAADW6m2KAAAAaVBMVEX///8Adf8AfP8Acv/6/f8AgP8Aev/V5f+Wvv/P4f/x9//q8v+awf8ti/+lx/+61P+Qu/92rP+vzv8ThP/K3f89kv9wqf85j/9NmP+Asv9rpf96r/9Glf9bn//l7//h6/8Aaf8AZf8Abv9ay6obAAABCklEQVQokZWRbY+DIBCEZ0FBQMHyIlKrtv3/P7LS3iVt7sOlk8AOIU92WADIKc9dg6/VczrEzLec5CxCFxrqYTkvEtZVq0a8UpwadJfyF5y4qmXl8tiZ8xRlddjinlBZhnVVS3j699XyJ++4raBGXHsfeZtjWamMjDVhF8dNkh2RyWzRQvSeaPxt/AMaqLl3wZghnswMZVMMqr7i7AnaBX9t+n5w5chhDMQKzK+ournYzmWlDnC7oHVzDI1wkHfNsbkkrZt99t0BTgW3hBPl2re9U0Gx25BzPEOUqRWRaROuQqLjtCWWdhoGP4IAe8N+pVa/DWz04/pyzUd5M4d2iz33H5PWY/fvNz4A/E0OV2YEEUwAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 29.61,
+    "Total Investment": 7402.5,
+    "Allocation": 4.75,
+    "Content": "Bought 250 shares of DigitalOcean Holdings Inc (DOCN) at an average price of $29.61 per share. Total Allocation changed to 4.75%",
+    "Date": "21/07/2025"
+  },
+  {
+    "Ticker": "EOSE",
+    "TickerImg": "https://media.licdn.com/dms/image/v2/C4D0BAQH6RY4kuFLGAQ/company-logo_200_200/company-logo_200_200/0/1645546082388/eos_energy_storage_logo?e=2147483647&v=beta&t=DRwz9nPYZHSkMFVky8_eZFrqwzuz8uhGM2k7QZ8w5gw",
+    "Buy or Sell": "Bought",
+    "Average Price": 5.33,
+    "Total Investment": 2665,
+    "Allocation": 2.4,
+    "Content": "Bought 500 shares of Eos Energy Enterprises Inc (EOSE) at an average price of $5.33 per share. Total Allocation changed to 2.4%",
+    "Date": "17/07/2025"
+  },
+  {
+    "Ticker": "ASML",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx72B79u6LaENX_yULKgk2-yGRb9F0rOLHbg&s",
+    "Buy or Sell": "Bought",
+    "Average Price": 741.63,
+    "Total Investment": 10380,
+    "Allocation": 7.1,
+    "Content": "Bought 13.99 shares of ASML Holding NV (ASML) at an average price of $741.63 per share. Total Allocation changed to 7.1%",
+    "Date": "16/07/2025"
+  },
+  {
+    "Ticker": "DUOL",
+    "TickerImg": "https://d35aaqx5ub95lt.cloudfront.net/images/f2a2e608c854822ad2563a09595e7827.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 378.5,
+    "Total Investment": 3785,
+    "Allocation": 0.7,
+    "Content": "Bought 10 shares of Duolingo Inc (DUOL) at an average price of $378.5 per share. Total Allocation changed to 0.7%",
+    "Date": "14/07/2025"
+  },
+  {
+    "Ticker": "PANW",
+    "TickerImg": "data:image/png;base64,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",
+    "Buy or Sell": "Bought",
+    "Average Price": 188.3333333,
+    "Total Investment": 2825,
+    "Allocation": 1.63,
+    "Content": "Bought 15 shares of Palo Alto Networks Inc (PANW) at an average price of $188.33 per share. Total Allocation changed to 1.63%",
+    "Date": "14/07/2025"
+  },
+  {
+    "Ticker": "OSCR",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAcCAMAAAADZYwMAAAAh1BMVEX///8+Pv9AQP86Ov/o6P83N/9FRf/u7v/k5P/7+/9KSv9DQ//x8f/Pz/88PP/r6/9VVf9YWP/19f/IyP9cXP9fX/9OTv+xsf+jo/+Vlf+np/9oaP+Zmf+Bgf+Fhf9iYv+2tv/X1/9tbf97e//c3P8uLv/Dw/+Pj/+8vP8eHv9ycv+Kiv+srP/hijE1AAABjUlEQVQ4je1S23KCMBDdSzYIaOSioCigoLa1/P/3NSSgdqYzfe1D9yUnJznZPZsF+I+/F9k6nGG4/okFCIKX+0u/lIkwH3J33Ing0bHDyHYrh1WNIrqCNFEq6YJWXIoNmWhLxI3FWusWqbZo61nZ2yu5xJymzHXEasFJgU7Y6mJ89oR0hHdsAc7XjwA6HY3sgHwCJbq3xS0bLIxaYIGnsdQbkq8+R1mWdLfocglXBr3X3fUKte68pzoahfG729zj3eS4o2Eh+p6PHWni/aMTocGzR8qgFZrMbaKZhQo/YRBC/gxhi/lDqAzPkFxGj4tvQgiqFHUB7e/CmuZSD1S6daXptqe51DAEpOnthSt1EuZmas4NJUyvo/E3HC6MyrFH25xGH/zdPnrJCHff+NJgBfs4zSBL8AZ97NgdmhKC6Ttq/x2z0PpBvUHiN3uGmlqyHh0bbTAeWVjZAUgS5sYNAD3cl6kIH9xwBT0L967fdhBlGkRYNyQSVZCMI5fCM7LgOeRP+MLaYpbwH382vgBjxhco2tUKbgAAAABJRU5ErkJggg==",
+    "Buy or Sell": "Bought",
+    "Average Price": 14.80487805,
+    "Total Investment": 3035,
+    "Allocation": 1.09,
+    "Content": "Bought 204.99 shares of Oscar Health Inc (OSCR) at an average price of $14.8 per share. Total Allocation changed to 1.09%",
+    "Date": "14/07/2025"
+  },
+  {
+    "Ticker": "CLPT",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADgAAAAgCAMAAABw3UvaAAAAaVBMVEX8/v/////+///9///h8vtfw+zb8Pr5+/2jq8PP1ODX7vr1+/7D5vfl9PygqMGrs8iYobzW2uSm2/Nrx+3s9/3s7/Ty9fjCyNeLlbSAjK7h5eyd1/KT1PG04PWJ0PB5hakAAGe3vdBodqATR8mqAAABvElEQVQ4jdWU3XKjMAyFfWSCsTEGp4AD+9Nt3/8h9wjKZadxr3aZjMco/izpSMKYf+cB9PcNLv5A+Nl/A/x9c/dbI7UYg+wFPSxsFRcjwi/kzc33vobEywtDta9/fLzFGoVkntEPcB62rcoSbYshYI5w0VWBR6j9/dZWhooQMER6lD7WlZLl0Bxbdk8VZ64GqJPmBFnH5l6lzEXCyFdxQjsM18ZoeFZ39nyFtp2cdh0Zvp8ZYEwF1tPmx84Z2WHs0r1BdDHIqVtF8mGH55lxXPNxybYgO0w0T4fbrQDeL5MuCYXwtiI5vNP+gFlGuFVjyIXZGCQFSxZZykQwG4LZTXpUXELnkEbPq+06MiJ14L1uTnBZLB77mJHfN3A6klHQ8pJOY5pygqXHD2leAacg+BewPrx/0Nm0c+E80g24Twpi2k6Px2PXKXW8uSsoXVrKChS369F9pwZ4S+RogipFFVd/Vcme5Ti+ThDVnnozayPyUSw5qnUop8c/LasQEaW4aLc+2a8SGk5HMzQ9x7LhN6QJz5HSzkMbhrlxCG0bOSVPgxjoajChnembdHhyRsRQG7HMkD0p5urM//b5C60AErLHgvd5AAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought",
+    "Average Price": 11.53846154,
+    "Total Investment": 3000,
+    "Allocation": 4.23,
+    "Content": "Bought 259.99 shares of Clearpoint Neuro Inc (CLPT) at an average price of $11.53 per share. Total Allocation changed to 4.23%",
+    "Date": "14/07/2025"
+  },
+  {
+    "Ticker": "META",
+    "TickerImg": "https://blog.logomyway.com/wp-content/uploads/2021/11/meta-logo.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 718.3333333,
+    "Total Investment": 2155,
+    "Allocation": 0.86,
+    "Content": "Bought 3 shares of Meta Platforms Inc (META) at an average price of $718.33 per share. Total Allocation changed to 0.86%",
+    "Date": "11/07/2025"
+  },
+  {
+    "Ticker": "TSM",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARsAAACyCAMAAABFl5uBAAABL1BMVEX////nABIiGBbmAAD50c8AAAD66ejX1tXAvb2gnpzv7++cmJa3trT29vWIhoT9/P2TkI6Fg4J+eXf40NLKyMfm5eTS0c+lo6Lc29i7uboNAADjAACQi4uuq6gLAAATAAAcEQ5GPz72xsbuam7l6+rFAAAzLCnoWV772NpPSUguJSJuaWb0r694c3P44OHxlZXDERdZVFPzuLrtTFPwg4fvoKLmNjv/9PXoDxvsZWnLAACMk5FjX1zEwsQdCwLkFCLtdHjPNjreyMnNsrWyWVx2fnz1s7POcXGsaGnwcXHWa2voPkLSVVPpLjTPmJrsfn2aSUu2lpXEdXj6trRfZWKtu7vZR0ylWlq8SUnCiIiQnp7bsrLegIG+ICW/pqKleXu5TE2iNznGPD7DBBGnAAAUnsw6AAASHklEQVR4nO2d/2PaNt7HzdwE29gYgsFQ2+tK0sHKtwVCSBY40nVLb6NZrnuebNfds3vubvf//w1n6SMZSbaTtLGN6fH+IYrlb9ILfftIsiRJO+2000477bTTTo+QUa/rLU/X1UpJ1XWvpdfrxqbDtHkZRd22bV2vaoZpSpJelCTTNLQDy7NVVS/+1xLSFNWeN3H0NRW8EBskONSsua0q2kYCt0lZtqr7sa7AUTQbySj5p1pqqZF9+DYmSz0mEFxw7mCDZJdtK7vQbVB11W5KKilJCBvDBldpgksOTcJm0ZTqtlrPLoybUatU9euhVs/2kPS5jl37+cHA18FxCR96PXDsno5VrfiXer1Ka9OhT1GmV9XhvxJJN6S8MfaeYe2RtEHTDclbNDlVS56ZTUgzl2obmgL/lkjtQ/PU3mdYlI1Q3iikGCr7mc/7FOt1G6WV+iPZ+H6qnUlwM5TiYhqPZ+NXau4nVWk13R78kwQbSRq4n06dperSAfyXDBtVaqmpBjgzFat+QZMwG8mofAqN5RLGkTQbv3FdSi3IGUkrA4Xk2UjGlpc61kvyTwpsJGuwzRVWqUjLTMJGW5ATYrv4cyyBDW0XL0i7mLIhLRyrWdzato7p2vrcRpaT7X0JelkGS2muEhccdW6rSIOKYE+Be+DiI+/Y5k5XXc8ub6cRoVWlIGFIz7/A2iO5QEw35PfXY+1wLDHdoF7C8jb2fdVxWbJmAwUKZcOXN/f038SUNwtcjVe2r0RuQATSZyNVmsmGPHURNFmwkQ62K+U0aPWaBRvX3qaU0/CKpLLOgk1VKm0PnLotNUgjLxs221Mgaz6QjNlIle2oyk0UhazZSNvRCMRB/Ug2pNz4CDbBm/Ist65pmrHQDQ255WYd68s9kK6hI81tgPcBOA0XXFUBtwxOkbi2wl2tkattC94B3lb+4Si6tVgsLLuEnIU1KDaR6j0CgSDaa4D3ADtNq1zHrqrDcRmcRhVcWycPITdX4Wrbhnf04FDJu1VeJwZ3Q2jfUDucdEY85cc1H5inqs/gZmpmkTxFs9qfcl4eV0i0xPJGYPMshs3dZTFh87nApkrfQSHlUxUpAzZiugnYaHnuJrUWEgneRtgE9+dQph/VjbKR8purKsam2Rh5HbcqIh6bZSMpOTWscBg3zIY+MWfy8E+2aTb1PE5gIgMmtA6/u+33jO9LF9t+pLM8rn1D7SnBzIJ35LEeryiWr8ZBAzu+zYDdgQXuHHtbLWozKODfI95wl1XxLOYhliJ4z8nNA/Au2eBNHgLvaCj5G7MybA3LxcZkvaXDYRkcY4DNQq2oG1iVOvhXwWlWwPUscMlh3eW9DzRyNxzqCvUGE3QAdmwpd70VFRKiu8ubmDHfBPpvmHfkzSA3P88Pm68+Mg5pSS3nh43ufWQk0pFh01HcHLDJ2cwcXXNzxEbTPzIaj5ZpmqGaoCLliM1iY22cQxnpnPNrNPLExpIWm7Gq9uWCL/mE8/TjkCs2G0o45xFsUM9AvthspG38xCmE2aBv41xSBt1tTwVs7p6b9EA2kfYUZtPcwJiDuSxEsKkulEVPwVoMFtgtVbAbeM/B23PJVTq4PfDW4a5F2eYeQr1dlTwEHqaQ026Je/ZibmHHq6Bz2bPpyBFsTNvQDGo4laAesxRwKyaW/5tip068/TyF3TI4fp7Crp+nsAuHJn2YUqRXs6clpQFuVSLvIDab/w7JztyoOoQc5bOZMr64r83NT7vYon+yk9k/I6lGYINjIJbFwvybGDYX4CTPJtPSeH9UCMgIbHAwBDaWYs5QSiKRj2QzvDx8dV5Dhw/t95O40zlh0z10GDI+m3Mfxf4Q69vXM4llY7ZPOksHNRCXk5PvavvY+3sSbobNCF3iXKFDpt9v2K0N92PYXEjGsNsdmiTeMWyOLGnWHb857HROTzvnJ/3aLGEYnNoTngyC40cLx1/2/15KazZ/7mBPuApf4Swn5z98PcZnKRvVqJ3ia2SWTe3HUxm0OnkiiWyG01cFB0le3nSRRzSb2fjttezIaznO8rK/nwoYc3oti2QETicBm6uzqGtRCC/xw45Qejf3a29OyXVym7Lp3hTW9/qRux6zbIzpqUOJo9OTYTSbdseR19cxAbgeDZNncxh+VRyb4WodOST2mmvMefS2s1oyCavgoPThQxivwkmzQ8e3F69PxAg78jjEpir1l/GBleVO4onn8D40AZt2ED357Mef2v0Je6eMcv3MkYV0JaPcMbxxIpPbGXRSjTuRZ8eWwOYvy/VlOFMV+MfKcj9hNueOLEaIvptm6BvERhoHKJwR1OFtJi04qEKahZ4jT7u1yKjjk0s/H/QLMafld1z1NeuwWfJ69Bpl3+6Er0Iuk2XTPzn0tRRSz2raB139fPU/KF9UuuuQtak9NZvwLaJZmDIF70QmT3myjC/rXrCfgHSZJoY8QT8EJLpDHk4nWThY+3zQoXrBukCf79je/y6Dcz/eerpbRqsp6PqrIJv9cqt7+q9/nchhCj6e08kqOl8VSJ3ohE/L73W6cMPte7bx9fNCabUU0uw85eHcpABHKCbawQnSFvlpfQE6pHb4byPqf4YOUT01vBQiKU/GuMXS5ZqXVI48efO34Wy23x2dCYGYwDv8dNNmEo3zLXiTHvV9/iactzNmExS80CW4tqfGpOqQUS2B2zcjLuGgGoe2/ZQfwwWbX7tY1GYYCfGEVl1V6jLl2or2T9CWcZ97HQWaBRvSb22uA7Dk2fgBd4JbgA37LEcesu3itpDh5JHE2lNXfDzbxPts/bjrwMwMVq445X+L5C30ODZFqEiHbElo8Hb4DGd5HMswGxmlccaeGkdULIw9dcLdO8LeF0wm9VMnZaPTTmM+V8mJo4llQ8LdZcvCQlvoo7jEDdMoNpADWVvznEtVM5YNGh/k2kyH2Psdg2a87p5Qgq/rp07onkzYkF9nyCf2zmu+T/Tqz1A0hNmMRTY19uxK4thIfMIhNfK6oeCg6ymbxroLJ6jIfVMkhTVi4tjQnhjhvNPB5mBk/w3HJtRHMQulKo5NO8SGzc64TCNMmszQ7yVppl5P0+gPjGVDfof/EytmZ4KuuZcNRsiyMcMZgGXTDbFhUpKD30HYaOyweLc/nV6l1VsRx4ZEWioVRMnycmpG9W0lzOZMuJyyMTKba3Ifm4snkZ0Tvw+5yx7Chj37ADZslsK9kQGbzObTxrGhfbgVvxCNMonkDi5R7mbDjU+F0w377XyIzZivpZhu9MymmsSxIaskeHNb/3ukXSjLX///rX4Mi9WVqv4ftvErv8NrLtDFFdDTGDbOL3rgTVZoeMfe/Mo30d4ybH7G73BbeOU7L7Mu4/vTjf/zR/f1oE4/0l+M1+qITzetmHRzV546jE03G2dDyxvoE21HdynIzq9wFc5TJ4mWN5PY8iazCQMPYyNJ351F04GWSspsLvE7aB2++XqKNKYoG1WaRnbaQoM0DTbrl0EzmrKpZzYmfl/bjx27G68iuqnkazMVNh3GA5tfUe3idBXLhli7/Ljm8DI0bIB7TlJgcyNaZ5SNldmsv1hbk7Q9xPHw1jRULPtFZQpspmy6OZUYOzyz6QICm2A8nIY7Yq7A+Fqg45iYzU2ibFgPro/Ci/pAMRWLKo4N6dsKJgVwc0zGfAewPD5Kng1jTyH8674tNeKT6LZTSHqMSgqxCbrrDcjVtV+vrrDpJMy/4Xqq5B/SYMN1BTrL2RGd3hLujkA3O90EqYCEXux1jzSeRIUmRTjOUDJ8NuhLFdNSTORKv7Ehd1ZHumnwbGro+roKd+kN05ix7eJz5G+2GvCwqv+/wMb3GfJpc/l6YcLXMqE4YNPLSX5cXOyeCTLuAbZe0BCM47xTlJ7SQvKNGiSld7ti7rz2kPdbNnrv0GXeAO6qqv4fls0vt8i7rMLD5nqrxdtTyPu2I6Tpv+oKCpP4za+Ju5WTHtpEWhb4AAQFDlgtuL9aPhuG54mydvIE56nLUJ5i7fD78hSLDvpEK+LvdjZCv5zQRTHFbS5nmTwaaSUGgCZN0sLCQXac2m9wyI5Pre+5xGw6fJ6SPqi8qYXKG+miL7YWHGcyfcI2/fbJuJ8jpzERRxyMdM7IAKH1Lf7piVkjvxHZMKUxqadW7E8f6ks3wgmDZcOO0ZBxuCpf4kPwUOdw52R61a7V2iM6t8qRU5iEI0lX4ddPrrrDWffEwRGgBay8GrJs+LIY2jfsQ2AyLsuGK1qXITZsU69wTdiEUnXAB8/gom30lNBETA8pkL57sGKCwXrZuRnSeaL7fbb5R9rFfL1yLbLhBu+cfZENNy/CoWykSRQcMbxn6aARmhHcz1NAEWAH0OTV6P376ehwyRlVKIMgNtwvHxrX5DMvFPksG34crEvZCHNJIsPZSW37AiPu1/gG/7ZcZUFmLgnjeRKwOeNvn/BsDD6OZybPRhgSHgVspP7dsxJlZyrGKEF1I6cPyZ0irq4vlhEn2aDhtrrP5kaIAkoaDBuhzMfNEYYND7ZQMAM20uyPeDqyPElnpijVMNzhiaOMzYSLjhNKKkHA5OU/oAF/pIezpnzFzKMYiaeRdRKwMcRiBXcn0vl+33djZsf5mbwtpSxjxM1J8//HjSzcOL9od2f748trHhAuq1ejGvSlD9sn4W4dFMFvoe1XexPR3Sxfj/8ObIYR/a3yqsZ+I7Q/Ck34RR8JpjAfKaxZvxPMgDz7YQyJQWkVG8VBo4jUPHj9/s2/vn7x4psXvn5/+8/3r62m798rNhrFV98goRP4D6M/fkLn//Xi6wj98eLft+js317E6N9F/7R/gf8O/02vv/udTtTEs1LPx6nOS+e1P2yPx+3h+o1GBa29RxbyKx9h3d5iR6uCL6xhd3TUAO+jiya434NTvMDLJRzZFjkNTp24Hqzvp5Gr6WldIQ9h31GvN+yj5vD9FKnfTreUeYBQaVERvrt72HcwwjdCrY9aFzLiu7vNfJQYJbRzXb6+19zEN4kxsvPGJjfJJoffQOdoSbKGlS82rTytSObmic0iX+v1erlaq4O+JR8y1VKOvvPNVbJBW6fmh429sSVeomXukX/uWXMheh8h7Z41F+L3g2G96Tp5zz8uCunJVRZYAzoGo8AYTAuGT47B2y7DTqs9j4yqgDcZg1HKJThNHkJcxQ3GYHTsDuCqcklhH6LM8TLYCy9fS0r50kqwvtyday6Ydbq+n2Yyay6YdbqKAjn7HLw18rBWA66ukod9Ri4rCmsu4DE7M4erZtqQTR61ZqYCp78gK63FlTcvyaL9dCtb7h1a7pJNMJ1342xymGzA4tw8m2J+rExWOKKbZpPTla9xvb1hNl6eLClWCMRm2Wg5MsB5obhslk0uC2KQ1dgsGyXPe3RVNsomt6vsgyrE1oldExz22XxKZ7ODQ+cmWXD6GWETt7/mS7JZp+BdzZn9Lar+lWcjVQ+w481tcL+CjVcrn8H+rJ+V8KF6DFeXenDZATn9HLxVcveBCw85hpvsl+Qh1Buu9l7mfK8cOowippvnsGPvHulWsMlhDw6Db4RIDUz3ZaWdETTzkLuIt2CHr795zq1g5znr7n3L1M+h2CFsktiDILvPFx6hh+zp9ig2kXssZffl6mNkPGAvwOTTDa2scq4H7CGZOJtyanOyElbx3r1Hk2bj5tWMCqt43561CbNRtweNX03ds9dxomxce5vQ+HBI+LNgM9guNLjMQcqgDt+isoaqiGOwbhc/9cW0i9Hh0z2RzT37a5K7KBvsXc67pRAlbWB73hyGkpSvSlju82OsLytwfKzA8ggDWCahqsLV5NDrKWQgCrzncFNpAN5upaV4822pvHmZrhZnh9OddWLWkqd7c9GuC8HgXq8lX8/X9iYfolKDhj2RPd1CbJRtsKHitPiS/JMGG2uez/GWh0ojjfkU2NTdbSyFOam4hZw8m9Y25yeqIko6SbPRqnnuNv8AqXqybGzJztEk2Ueq7s7hn2TYzKtbX9KwWkB07tt3/iFsmoP8dwx/oPCOeI9kY6KOs0+hDA7JUzUNLKKne6RdTHKJEW1PmaF0Uy/lbJ5jYjJ1tUIEI01qyXarSAdV1hHd9eGnSmannXbaaaeddtop1zL2N6Jh7cOV/Lps92jMbrKUb60yZ/OAtXjyoTQ2gNmx2bHZsclSV5suYR+uzMviYZ/qqlZ7kmtlXofvtNNOO+20U9r6D2PvaEvDPqBwAAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought",
+    "Average Price": 230,
+    "Total Investment": 2300,
+    "Allocation": 0.86,
+    "Content": "Bought 10 shares of Taiwan Semicndctr Mnufctrng Co Ltd (TSM) at an average price of $230 per share. Total Allocation changed to 0.86%",
+    "Date": "11/07/2025"
+  },
+  {
+    "Ticker": "UNH",
+    "TickerImg": "data:image/png;base64,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",
+    "Buy or Sell": "Bought",
+    "Average Price": 302.4,
+    "Total Investment": 1512,
+    "Allocation": 5.71,
+    "Content": "Bought 5 shares of UnitedHealth Group Inc (UNH) at an average price of $302.4 per share. Total Allocation changed to 5.71%",
+    "Date": "11/07/2025"
+  },
+  {
+    "Ticker": "TMO",
+    "TickerImg": "https://logowik.com/content/uploads/images/c4999.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 435,
+    "Total Investment": 3262.5,
+    "Allocation": 7.36,
+    "Content": "Bought 7.5 shares of Thermo Fisher Scientific Inc (TMO) at an average price of $435 per share. Total Allocation changed to 7.36%",
+    "Date": "11/07/2025"
+  },
+  {
+    "Ticker": "GOOGL",
+    "TickerImg": "https://s3-symbol-logo.tradingview.com/alphabet--600.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 180.2857143,
+    "Total Investment": 3155,
+    "Allocation": 9.99,
+    "Content": "Bought 17.49 shares of Alphabet Inc Class A (GOOGL) at an average price of $180.28 per share. Total Allocation changed to 9.99%",
+    "Date": "11/07/2025"
+  },
+  {
+    "Ticker": "XLV",
+    "TickerImg": "https://g.foolcdn.com/art/companylogos/square/spy.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 134.7466667,
+    "Total Investment": 10106,
+    "Allocation": 4.62,
+    "Content": "Bought 74.99 shares of Health Care Select Sector SPDR Fund (XLV) at an average price of $134.74 per share. Total Allocation changed to 4.62%",
+    "Date": "09/07/2025"
+  },
+  {
+    "Ticker": "XLV",
+    "TickerImg": "https://g.foolcdn.com/art/companylogos/square/spy.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 135.65,
+    "Total Investment": 2713,
+    "Allocation": 4.62,
+    "Content": "Bought 20 shares of Health Care Select Sector SPDR Fund (XLV) at an average price of $135.65 per share. Total Allocation changed to 4.62%",
+    "Date": "03/07/2025"
+  },
+  {
+    "Ticker": "IJR",
+    "TickerImg": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/072015/ishares_by_blackrock.png?itok=PTkpmJEu",
+    "Buy or Sell": "Bought",
+    "Average Price": 114.55,
+    "Total Investment": 2863.75,
+    "Allocation": 3.09,
+    "Content": "Bought 25 shares of iShares Core S&P Small-Cap ETF (IJR) at an average price of $114.55 per share. Total Allocation changed to 3.09%",
+    "Date": "03/07/2025"
+  },
+  {
+    "Ticker": "UNH",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAA7VBMVEX///8RIowAAIEAAH7y8/gAAIQAAHwAD4XM0OI8RJP+/v8vOJCkqch6gLHGyd0FG4o6QpW2udkAAHfn6PPV1ufO0d8AFog2PI+Ok7nt7vRWXaMpNJGBhrIUHYLv8PE4QZkAAG9+hrzb3eciKoljaaUAAGekqccAEocACoafo8kJHoqKj7q9wdtscq1OVJ2usc+Ynch0eqoAEH4kKoNyd69JTpZSV5ZcYZ5SW6gcJ4zIy+UdJITd4PCjq9Jud7V8hr8LGXtbY5k8Q4x8f6mIjLIsMoO5vM7W2N5ITZKSmcquscpjaq2ZmrpRXKYAAF7X18m5AAALhElEQVR4nO2ce3vauBKHZUmWQVxMbDCYQEMwXYzNrQSaJjHndNNuL8l2v//HOSMZCJcke3aTPjz1M+8/GF/k+ekyM0JKCEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBEEQBPm/kIQMK/6xrfiplAtOgR/biJ9Irt7xogwrTHqNwfmVnVmFbitycoTkrYwqdFt9FtHsKpSDuDg/jVhmFZ4EnSIhLZrFNoT4R04unMj8jZBSJhVCgGguG988mlmFSVPUOakxWsymQncu+naFk3JGFfpxQA0juwr5IKCRkWGFkwum9GVW4bAgbMPIsMKTzlpfZhUyAxX+4qDCY9v3clDhse17Oajw2Pa9HFR4bPteDio8tn0vBxUe276XgwqPbd/LQYXHtu/loMJj2/dyDhSKjUJZ72dS4aoNwy7hp1ZeHtu+l7Oj8GytcM7CJJMKF5zcOWp1bR6CQvfKWhzbvFdgW6H3XpI7oVZIR6HnEtcIm8c27xXYUXgpSVHQE0Luw4iTxLPuj23eK7Ct0BoRMmBsSEgzvCIkx8LRsc17BbYVmi1CppRBnBiHZwScjnl+bPNegWv6oJBNCYmpcAmvWB8IGVJzeWzzXoHrrTYUE/AxlsnBi6rmHJgqsfnlyW234ZDwvGcQ0jV12A8h7P/6uOaWQpf4ljcmZEIpuJtxP3CPbd4r4HsbgdEpJ0NmxhDwqVUl0ujnM5CWEh5Ea4VhSTkaFSwWYUGSKs1EsICBt1nldsqEL/ohhPp2OIeuyujg2Na9BvJy000ZtBtTw7BMKXjVVkirx7buVZiKlUAK0XBu0TtCLi0KTtTwzrIwDMGZrgJiRFWe5lUISZgFGfe1o8ZlJhjrbqq2Pcu6x8oq6Iuy6qTsmmRgeggkwoIGbIMLfW8xSGVyoj+WxKd2Fqa/CnAvPeuqlZBuPqQ9kNa2WVf9jiGKxzbtFRlblUXT6rMeh+jRFwM1r4hOM9KEmu6NaXv9GShTDQlxntdtZ3hsq14Vv0WNEYT6mHnsEnruwgKdMgtZ6QMtYbFQ0JA1IIDUQ7ogww/z+2wExBRZYpFhF94lRBYtjzY5Hy3j4X+Obdar0u33P5xUu8U6DWksycnkvz+6rSw1IiHVNmUApU2Vj7ql5XAwP7ZNr4zbqgTB2Twn9Z+XTOaD+2z5GoX0/Yco6FazFBERBEEQBEF+YV6WlmUwqfuJkqSbAq9ID/au85O/+TcrfpJUYU7EV+VsF/jE/W5uO/F23ST3yESDDxvxBM6/fA7i37Tb7ejjAnT8/jFqz273LJs7F/pM9aklzZKgrE1IWZXT/ngru+nBt6dmuNMOZZG+2FWTRZ53qHM4WRzWxWWvMBsMnX8r7AF/wKKwrF7Jc4E13DNMCkMk6qDXeOJ5meStU1XOnEZRwqENp9Rg5Sen8DKpe6f6avyJ6Lc+sm1h4rShRmXDofY/FnTYeSSL1uuVrd7B1bEj9MVvgyfHypwphaRKvXSTjAztynMmNMxU4fxz+j2ku8sYkpQdli5Ozf+FQuJP42TnBKdRfaWw0TuoAl7Ud3Nn63dquXUExyNaUMegsKkvvbHss4Ob5cNTrZXCYNUt6J5Cwk/ph5WxLNoq5El3JLdeQ3hzMOjtbITYU/g4sfP0L/Ejum7DdCuXv6PwkJXCifOUwt/0Yr82+H3/uZJ2Ra+Op+VRz423b9pVKH3XhSHQHebUuTfVWg2GJo8pXUqe3pUMyxuvI3ND9xmF1eFmPPrlk7K7pVAWqdlIi6T0XBX0sGh65tnrbjag8BLw0+B9uysfUU3vXBmqP6RM7QSr4ZHy/P45hVN6FV3Kd8JxCjXlIR3WccHfGZERGHUw8c3lrLkQl+kDw4JzO7ub7ysMU4W1/Mf7QjBJSy4072dRS1e0Uih7ncgwgnbQVQpjP+849N2qEZK+vdmqUQZfmtzYgZNM/lgUVPR4H9xfLOCpO3bVrhOytIyrj777h8OcamtWd8Yuvy+Wz3YG4q5Cv3ZqjuLbWrdC8zB2/HlIXfn1i2nGX79+lcSvq1WHiaPXx4aC5WQtKHgP41DxJlWYY5FL+MJREmP1b3cSKgabNuzWovDT1xoUSWj4n2+t7pA6q8X9IbU3a8T+D6iU7pzSa8cdweNu+8Ilbn6WEF4OLHgN747Dtk/41Lwq3boyFnnuT7/vLqLvj8NzGhR8tS1N+7Mlo1BzXcrStigJHbvGzhTeHlA1khosWrfhD+n7nLt9pZDX1UYockdvoHCbqsd6tMLXCok0zD/Tt9JID8SmtTJjYO4vMCY0Oismptkil9ofDB3lrJu0orpETEEhqZmGslcWmO6gO88fKAy1mrLeLLlRSLWn6QqqlZ6btiQDZqk6SGb2qg0Nz9FESuEds1RX6Xp0AP3WU684N2+2FNrm2tNEM9UpY2qn6VMcqk0N2/jUEJJfOLmcoOoe6TknRI6ZDkprhelD52b7IA06UGj2/VShcmhLuq1wINRitdpnKK7JuB+pG3m9v+mlb3yg6ymF95ahrroX6s31jlITm8GeQl3V1FKLUmBptKUQrrx7O4PsaPbXhLhgosr3SIt6uoXq4QgU0h2F9Lv6dmfS8t8r1H3pUYWxKargvPh3ypZ+4KVLnZf0kXHIC/ZV4rs+ZDBX6iXqhrz3uELaSi1dKZyueilP5mYUjhIJCkM9OGSzH+jPcf9C7reh2usBo988zJAOFdafVDiyDKH6oQC34BorhY9GCzeIIt1lKWM6JWzMZmf2EwrPdxQ+eBoeREJFJpeqDSsqFfDy+kLTC/mBQh1Da+bh9uN/ppBVeYpM/kah3XbXt0L3jlhRxvRphVu9NEejVbSQTY+5qcLBocIfewrLaRu+RGEXIj+Mv/TlxL2yU4W9vV6qFUIvXRmsZMxFAdxO6WAcEjVb21fIT20veVShHHunq89ArhWe7yismeHBTAUy743C0bMKm18mjrnK3v4syrzX1v1vAXMLKfdzmpGlPa0k/Js8EWrXHsSDQDXotsLPrUOFcMMqa9tXSErU0Ocr4SWRP1JPMw+3x+EXM/X2O9j26UrhPH5e4R2n6xq6XcLrIPBCW954j7Sh+gOSE91+OZNUPO1XDTuQvS87CluxmlvsKXRtKy2Jn0W7CoeCKttkJJZqy7hSyOteqjDUo7kBvvBA4buQ1dIqi8q61bUnWytcx0OomXwZkhNLm5F0fFJlumPcMXtr9iS1L62oPQmmPk16JXJqX/lqt5dxIcdQhql6NyiEiH9fVApbqUIjrWgVadPZU5caWiGn64api6HapyMsKKFnqpotskhF2ZqZjpkFe+QvObhgeW32fCFVpmJ7ynBoA8g0ZK+vqk8GZolUb1wi82IM5bkdVacl51ZN0is2pOVqa7NhaAcxMA2199ClQtVqw+HQ2hBGeeGHZ0wuunxh67obm5Aj3nRJmdp5d7tvqkp3rtSpnqBa4cS0x2n7Jh3lai471bQehpBAfvf6A1/lNCJWfhic7+Esy6074tPdn+wWbI/fCiY64BGGHeb0J28dxtJvzkL920OQ7DjjQied75Q63z47k3PH7MTlDtwpOkzWOh0Gz0Qciu1EY3GjJgAV4Sychu+wt6MpvEAXWRXOrWiR0w688G1J1RfrFNbGDUTn909tZ5D8lZDE6aiirfSnj1nwueCU9QAfi454O6l2zM6p6qWTm8UnZ/bEFvnctDRX6aokb1LgUH3I9TfiTqerfN0dxAN3lfl1p98TeEQC6wc3B7rY6XVq8/V02lWFLPnDZX/wHSzdfN88lXbV5Xlpqc7KnRLhwjA+4enr5fUULJFvlJ/TvnQZD3+V3yEft/M562tbffwXQZJ/9CtqzWQH+Wi2uKOPxMEMwX+nwPsvx7bj58GLJ8AkG/vjEQRBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEARBEATJMv8DIEcpgZdzr9wAAAAASUVORK5CYII=",
+    "Buy or Sell": "Bought",
+    "Average Price": 312.3373243,
+    "Total Investment": 6000,
+    "Allocation": 5.71,
+    "Content": "Bought 19.21 shares of UnitedHealth Group Inc (UNH) at an average price of $312.33 per share. Total Allocation changed to 5.71%",
+    "Date": "02/07/2025"
+  },
+  {
+    "Ticker": "TMO",
+    "TickerImg": "https://logowik.com/content/uploads/images/c4999.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 426.32,
+    "Total Investment": 5000,
+    "Allocation": 7.36,
+    "Content": "Bought 11.72 shares of Thermo Fisher Scientific Inc (TMO) at an average price of $426.32 per share. Total Allocation changed to 7.36%",
+    "Date": "02/07/2025"
+  },
+  {
+    "Ticker": "GOOGL",
+    "TickerImg": "https://s3-symbol-logo.tradingview.com/alphabet--600.png",
+    "Buy or Sell": "Bought ",
+    "Average Price": 177.61666666666667,
+    "Total Investment": 10657,
+    "Allocation": 9.99,
+    "Content": "Bought  60 shares of Alphabet Inc Class A (GOOGL) at an average price of $177.61 per share. Total Allocation changed to 9.99%",
+    "Date": "30/06/2025"
+  },
+  {
+    "Ticker": "UNH",
+    "TickerImg": "data:image/png;base64,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",
+    "Buy or Sell": "Bought",
+    "Average Price": 301.7335967,
+    "Total Investment": 5500,
+    "Allocation": 5.71,
+    "Content": "Bought 18.22 shares of UnitedHealth Group Inc (UNH) at an average price of $301.73 per share. Total Allocation changed to 5.71%",
+    "Date": "26/06/2025"
+  },
+  {
+    "Ticker": "NKE",
+    "TickerImg": "https://i.pinimg.com/736x/57/26/0e/57260eadcce5e448097cb3c35ce1d515.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 62.15883277,
+    "Total Investment": 5500,
+    "Allocation": 2.48,
+    "Content": "Bought 88.48 shares of Nike Inc (NKE) at an average price of $62.15 per share. Total Allocation changed to 2.48%",
+    "Date": "26/06/2025"
+  },
+  {
+    "Ticker": "NVO",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3s3mvhhcsti4CfcfLtFOjWL1_HCVDZYl9Jw&s",
+    "Buy or Sell": "Bought",
+    "Average Price": 69.10517808,
+    "Total Investment": 5750,
+    "Allocation": 4.37,
+    "Content": "Bought 83.2 shares of Novo Nordisk A/S (NVO) at an average price of $69.1 per share. Total Allocation changed to 4.37%",
+    "Date": "23/06/2025"
+  },
+  {
+    "Ticker": "SOXX",
+    "TickerImg": "https://upload.wikimedia.org/wikipedia/commons/1/13/Ishares_logo.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 225.92,
+    "Total Investment": 4520,
+    "Allocation": 3.97,
+    "Content": "Bought 20 shares of iShares Semiconductor ETF (SOXX) at an average price of $225.92 per share. Total Allocation changed to 3.97%",
+    "Date": "23/06/2025"
+  },
+  {
+    "Ticker": "SOXX",
+    "TickerImg": "https://upload.wikimedia.org/wikipedia/commons/1/13/Ishares_logo.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 227.6,
+    "Total Investment": 5690,
+    "Allocation": 3.97,
+    "Content": "Bought 25 shares of iShares Semiconductor ETF (SOXX) at an average price of $227.6 per share. Total Allocation changed to 3.97%",
+    "Date": "18/06/2025"
+  },
+  {
+    "Ticker": "ASML",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx72B79u6LaENX_yULKgk2-yGRb9F0rOLHbg&s",
+    "Buy or Sell": "Bought ",
+    "Average Price": 775.56,
+    "Total Investment": 5512,
+    "Allocation": 7.1,
+    "Content": "Bought  7.1 shares of ASML Holding NV (ASML) at an average price of $775.56 per share. Total Allocation changed to 7.1%",
+    "Date": "16/06/2026"
+  },
+  {
+    "Ticker": "DUOL",
+    "TickerImg": "https://d35aaqx5ub95lt.cloudfront.net/images/f2a2e608c854822ad2563a09595e7827.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 477.2727273,
+    "Total Investment": 2625,
+    "Allocation": 0.7,
+    "Content": "Bought 5.49 shares of Duolingo Inc (DUOL) at an average price of $477.27 per share. Total Allocation changed to 0.7%",
+    "Date": "12/06/2025"
+  },
+  {
+    "Ticker": "IJR",
+    "TickerImg": "https://d1yjjnpx0p53s8.cloudfront.net/styles/logo-original-577x577/s3/072015/ishares_by_blackrock.png?itok=PTkpmJEu",
+    "Buy or Sell": "Bought",
+    "Average Price": 109.52,
+    "Total Investment": 5476,
+    "Allocation": 3.09,
+    "Content": "Bought 50 shares of iShares Core S&P Small-Cap ETF (IJR) at an average price of $109.52 per share. Total Allocation changed to 3.09%",
+    "Date": "10/06/2025"
+  },
+  {
+    "Ticker": "AMZN",
+    "TickerImg": "https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/amazon-512.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 213.94035342946387,
+    "Total Investment": 5000,
+    "Allocation": 6.99,
+    "Content": "Bought 23.37 shares of Amazon.com Inc (AMZN) at an average price of $213.94 per share. Total Allocation changed to 6.99%",
+    "Date": "09/06/2025"
+  },
+  {
+    "Ticker": "ASML",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx72B79u6LaENX_yULKgk2-yGRb9F0rOLHbg&s",
+    "Buy or Sell": "Bought",
+    "Average Price": 771.3073659853452,
+    "Total Investment": 5000,
+    "Allocation": 7.1,
+    "Content": "Bought 6.48 shares of ASML Holding NV (ASML) at an average price of $771.3 per share. Total Allocation changed to 7.1%",
+    "Date": "09/06/2025"
+  },
+  {
+    "Ticker": "SLV",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAXEAAACICAMAAAAmsyvzAAAAgVBMVEX///8AAADl5eWenp4NDQ1tbW3h4eHo6OhXV1f39/e0tLT8/PwSEhI/Pz+vr6+SkpKpqaksLCzx8fHKysq/v7/Ly8vb29uAgIDV1dWMjIzAwMCXl5c6OjpsbGx1dXV7e3tiYmJPT09kZGQbGxsyMjIlJSVFRUUgICBaWlqGhoYRERHyLAlhAAAQFElEQVR4nO2daWOqOBSGQRREKlJUxKUutbXa//8DR7JAkpMVe2fqnbwf5nZYAjyEk+TknBgEXl5eXl5eXl5eXl5eXl6/SmlSL+d31VWS/df38rQqB7wSxXGDfHUJOZ1uk4HqYEH+9TDa8hjDo+yg5WoYyrXfyI4Xj4r/5BM8myIBzggckUUq3FgrWNPFEzxxRkbi4gESHUWinrhGBuL12Qz8rj1vqT1xjfTERSuvFmfPPXGNtMTfrIGH4YE5zxPXSEf83QF4GF46y+KJa6QhfnMCHoavKT3TE9dITXzuCDwMP2kt98Q1UhN3Bh6GU3KqJ66RkvisB/Fwic/1xDUS+3/vZHvWBzgl64lrNF/POE3I9tyd99S3nI/oJEF6LeqyaRzTwXwL9zO9HE/cXRKjcii5I9L8g9sdMfs8cXfVALjELTv/7HYv2R2euLuAGd9KD6Pt7gs/kfFjxMt6sl2N3o5vo8M2X5bmE5wVb4rZYb8/rKNFnZoPR8rieR5t741eVCxq1RSOq0DfUDGNg7+Fk7BVTTyZrE6NO/LjOJsbbiEuoJfhPXelnkTHrzC8rGQzJ9VWmNY6HxYm6unk8CXc1O62cLmrKHxhRdu/lVDqq+r88jsMV+JGFfFix23eV8rbitcqN/FJOusUJPxzDM/47hhfXMGfkEYiOfJSaw2t+VVxV9PIGro4AnrDm0XiX8oC0jAH2+TEJXMbR/l9LqaKB0M6LySnJOJRzcYNT4Wpv6nGafSh+vrYdgvqXV1/OCnGnCLx0OlrlhGv5FVKQm9inAU5wbsRiQ8lz9YZP8NoYyx72uxouq2xVXulIA7sOLAcOkmIF6rbFJvk6kN1JCvw6UuIA6x0dJeejOVD0zWwua0DOM2aOARU6MsxENd8xBF36trmwUL4bUDioIP7Qg6NbcqfCeVbnRRKqoItcYmrdmQfdSIST7RuMaYrX+50B6rOkhMHZ5D2Bg41pOI/6tT6vvgKZE8cNESNZrbGXCRuqLjtq3Ryn/E3I97wK/yq8IGVbflcLT/Z35ep16vy1spjVI6yboKZuEHr9sSFw1kXLXF4C9gslvYXYJ51Yz6aqm8dVxve94m5pjsSD7tum7KBlYh7+9KPkhM+zqpdJuoe1P4s+djchrju45tGhq6nK3GmVXaYXD07EccobBtmpDEt3NoSMZ+rM/FAOwi5H6er6q7Ep8y5DhEbrMU0EkeNhW2Pg4i2zrKG/3I8XsDAwQK4mvjSeD/TSNXjdyUest6ME7fnuC7yYvYmLfHNgfhaUjbSR1SVWVZWkcRy7KS3dNeW+K+yeMLWEKtBi3pm2SZa5XMrdZ05E+fa9/bRh9vulVZ7yWkOxNE7hR3DM3Pl+QvYTXrX4mb+oSe0S7u3Aa4hbtlVu0i6L3LiL8fVbS/vcHMNPOn7fgkFS/rRzHDDQBzXvrG4WXB6XsT9e/aGWoHWEb8rGJbsSNza6A3BcFRGfETqaykzivzniOjBMS6EWuh2NtpP6nrRNMal9JideAngqkJbReLQdRccujl5k3RRcJajsxCMuSXEmSGi5E2+8edX4YfMWk3E05gXJSN+oY17gesqiFsFjT/olCCjIxIXpwMa5WPJRqm0kZ72TfuJ8+RD4pW+2KNwVwrvhFgFr90uCXEARmwbb/AKon8QDTyBfT3azhbJpI9mToHlU4qFBIgLlg8YFssKIlZSZtgpIS6eDYabku9IHFzitwbLPpg9ViqZciTAl6wUY1kAcdOzWxIXe6zMzBQkPhHPFl0IwIoHEo8V2iqd+RnlqsQzvYxZKZn1MK3zKYvEQbfpJBxgSRy4q9S7YBUH403pcEW8dWQ/lIkL74XlxA8jc+ZVkNpmSrTvXLxt0LiLD68inpZJkpSt1RS/DR1x2DkWLeTrFOoinTDUtmfXwq2uWxC/a2Flzz/p4eJtA6MnOqwg8Wy+PTLzdJd9tElAE6YjDrtw8mk/g/CtG1we57VDfIgd8Xv1Kk7m26MDGWO8itg6iMQX8jlzsSehIy7MWAS9wrPpaNjs8vgAzcajxO9KF7KRNqefIW6R0IilIw4MrP00DivSONm4PCyZOxBvVEUni4s+RHxp75XREQfGtR9x6nexybKcWsVnORIPGgsLQitanR4n7pIp4ETcPGchE22CUqvEVmjKfoJ4o3j7Kr/kw8SNhouVE3GH+TZGrXHKTjaHmyY5exO/qzrIrlg/SNwtv+5fsCqM68VqRtBsWHoTvz+CpDnJHyPuMIPbyIl4rzwbbhylC52jkg1kf4y47K1vHyMuf4qhqi11It6rd/jJF5EW2tDDRsZoBxPxmTYuaCRe7/YQcUm3cDTHI86yWszAMMyNuDgZsk7ElXeg4GRuPNNP7F/AGYIMxMd6lwfwJ+PAu77EQV1+5c2iaIrdiIvV4w0cYalkMtL0YE3BJVriyZfhxkBrhOcIehIH70+MoXbxq0Di4AsyoNEqWdwUQ3/TQEhHnIxtj+qzQY8Lh471JA6QiP6Yx4iDKS27ADO1snom6SSLMaKiNMTbdlE6BYYEvOd45rEncTFU5Sye9phVAU0nKJ8okz+v1FsVg6hyU99DTZwdi6iC6b7Fy+ERQE/i4lQ6sGdiDLcjceAek8eXZNNQNquWKwK6RV/2VXpUJxXxjH/8s8w6pTAUAteOnsTFTxTEv4unORKH81mymhTfx/NniHwRqqqvUGZP4hIf/FrwxpWSvtwQ7+pJXOzrgm6S+BE4EpeMgcC8BZnyAshJQL0s7Uvwu5uiKOTEFVHFx2hRJ2VZJvViBqJpGpHPtCdx0NE1nMUeYEMcZjfdVbADjridnPrikbet7gV4TsQeliRCwEy810ofjeqHiIMRDh8CIJkWQHYnsyYudx+Oo001SOJlfmD9g6/cm2B2nCOuaJBNIokfMhK3SjKS6SN4iDisgmz/TTrbOjweP9+tiUsruUoMcrHwl1G0qeO4qidrOOo3zTVL67hLqgIrauV6Epfk/LWxcwXoFvG3bEfcyZtF64+jn9cAXGHH7dc5ZNW6FHoSl370w/F+P9ZOB+ztibs5Jwlyu8kIKhqTUa53u91NMuS3zee0UVt8X7+KS8pIJxfiTnYl3DWGJVNMvihEICzR0GQu6dyo+uM9ark6QsiWeI+Fi0JH4rB51qnpd0hnXpQiY/w0zJL55v7c0LGlHHM623JmRNbbPw5j5i3kRhwGiauFBzMuyOkIYVsE28vsOw9y0FlUj/IHbhE1bKeoN3FTXMgUOORDZ+LyKEKZ6JjX4dOjNfo0aKAv3oLkQ7y8znfokhjmtoaQcp5T335MpY2rK3HbRqr7aBPbVOrWBTYtg+jzeKeSgr6L1j8+sDV6QkD1A3P5upbtJrnfsAfxoLawXjuuAKtqziwncq2C7Xp5pz0Ac0KGOaDK5hPciWEaj8SrKGfMX/GAFoZXOPTHlY8NJI4cM3NXgnWLFbMgioJRHkQgacg4s5zMDN3RKwyLeSgma3CSXeW1dV6CR3/rQTzIdMy/pH7ZXGtbbvxnTp55AJe7Uq3pyaqSrG5INC5k03riUYC4+JHyCSQ1yKLlUhISrpqPFhl+NNM1geaKaCR1/sMgUsy0nXIRbHm+1Uk1G/ZeuCyrc7ykWKfpvuifmmG63Hx2/WwvAz0Vy2K9Hx1mxfzBldiqYsSNbz7fTCH4KR9lfdd4vZGmBc3X+5t8TS8XpUlV18u6jst/5Sd+sn/lKmVVzxeLzbKyX5mqrJbolNr/EpWXl5eXl5eXl5eXl5eXl5eXl5eXl5eXl5eXixTTSz1nnXpPVj3/LBeayzeF9Tdi5lLPIzxjilZCsFmWC8WgsNH3bJrgaWs7v4gCHizW0/jdinoQD0n40ciWeK4jHtot2x2QF/d/JY4WZfgx4pYp8v9v4k0c5M8Rt0vY/ruIJ8ulPtoGgSnTNC1xZPlVJA7btJRGziiIJ3EcVzgarf1dgxRGwrTF/EXEF0sUUvfaQGl+bJksmLhY3/+kcVcIDP4TPfkHS3y5ahJKhsyP16RbFDB2QhF8HfG4+VnnVZoypeHUHMR5iVbR+Fp1EWwpjju7RFnAEifF/Ckof1SIeBtN90ZWqsKB/ShAjHYkOi44hXHcEa+7SLIPcjgTWFgzxHHW2CRgieOSE+7n1mgqMRMRumSIl/aW6PdJCDFd4yBVlO2NnquNwWQYoeUWopY4l7SLfzyNi4lftsQzFLddBBxxnPFX8jl8U3hz85Z4hgL/bBqf3ygxqHcQnEjFxBWsfS60F5kclJHWJFvQOs6V0URRC8klGSWObFeTm8QSj8jffEpZ03sRFkRJKfEdvc5TCj9vE/yMDcEK29XGrKBg39ZW8k+PwsxbO74KD/d/yit9FQjJyyZNUSP7XqKiNzjNDKXuY+JxVVVLnNe0J5ffJlmMg4xrkiM1bIoZomIQ8SWuEpZd+F+oiFY7UqeHnf1o/ulC6Xnilybot2s52V9xobHc6F0l4XFAXiZmizMCQO8wwW8Jh+Xf8DvAQfioYSjDK/2Nz3qP9z6tou5BAwJqhqtYxewJYH+85nqHZV3XCa6UBDDJxkDA0IYLQdtIJD7HW3bMtc44v3HNFIOIn7r38JxiR0BjjATVrRXe03WO0YNOFnfhZvGbIZ4TG/yNiaMz2VwVpueCUyR54ruYrJlBcx/xmwNuFCZFyPanYH6hWOJHQhCRD5rKdOwODDHNRjGp5JQ4v1QU8Y6x+RNsEgp6Ezzx5kOqmAqNLq0nbvFbr79VrFVBWScp6W+j/zBd3pCp8mf8mghxzPOWb/dDTLxg3iISSxytktn2Va60WPRh0QWPcDnoLDYHiiUOElOfRkwdr9tq3DzxK0O4EVPH8d8t8V1bdXHdxJ1DMm4fNZUUE//GPe6GYUsct44rWiZuFFBvaYzvh5DdN/5hTPxchuIbfSrh3mGDJUY1C2VG0wQ41lqiDY1fJY0R2DtjQrx7F6SO4y2oO3HvWFxqQrwk/6Zsf/xGSaM/zs34Hq/KMyHFoM7NvZszXWLiw5KQf9a5CTJ6GY5JsiJK9aLDPzZVKxTVtpxoIHkfkGS4I72e0CHnGL+acID6nY2F+iAvtSOOR5yn1rRP33Er3CznSV78iWROxzmtHCgNzun35H+RhDEnSf4/UqidROCTljgew7y0+aUnYXm0dZDT14cNV8yOOQv6bvnFZpB94Yahq4CMgOiYtt8PIP3nQsTbHGN+DQguf1kA3phRQrxLFx7RQlKG1YH1HaKJugs3ykcVtnHHsOuLYO9hyixxs2d9h1fyZp9R6MulvwzR+So+24ejYnFP8dQkneeMMZi7wUarVRybffTbQavVdfOcxHmYMcSx2W6GvSVNIu6W4I5IZZi2xaCbwi/5SZ2HWdbkqaabImfHLJeOCHMckXDuXYPFZIOH43VNh4PxJM/npXAgKSfIxC3kf+pJMeGzhuOFppi/Q2V4WL/yNd7rj4ouUiQu/u31h9QuX/nEzqLnEhnf7J9zEvE5VS7n9d/SKHl5eXl5eXl5eVnoH7no0HXCTl+JAAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought ",
+    "Average Price": 31.339971835811976,
+    "Total Investment": 15000,
+    "Allocation": 6.12,
+    "Content": "Bought  478.62 shares of iShares Silver Trust (SLV) at an average price of $31.33 per share. Total Allocation changed to 6.12%",
+    "Date": "05/06/2025"
+  },
+  {
+    "Ticker": "TMO",
+    "TickerImg": "https://logowik.com/content/uploads/images/c4999.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 407.19928332926133,
+    "Total Investment": 5000,
+    "Allocation": 7.36,
+    "Content": "Bought 12.27 shares of Thermo Fisher Scientific Inc (TMO) at an average price of $407.19 per share. Total Allocation changed to 7.36%",
+    "Date": "04/06/2025"
+  },
+  {
+    "Ticker": "NVO",
+    "TickerImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3s3mvhhcsti4CfcfLtFOjWL1_HCVDZYl9Jw&s",
+    "Buy or Sell": "Bought",
+    "Average Price": 72.1001326642441,
+    "Total Investment": 5000,
+    "Allocation": 4.37,
+    "Content": "Bought 69.34 shares of Novo Nordisk A/S (NVO) at an average price of $72.1 per share. Total Allocation changed to 4.37%",
+    "Date": "04/06/2025"
+  },
+  {
+    "Ticker": "AMZN",
+    "TickerImg": "https://cdn4.iconfinder.com/data/icons/flat-brand-logo-2/512/amazon-512.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 207.14655618850338,
+    "Total Investment": 10000,
+    "Allocation": 6.99,
+    "Content": "Bought 48.27 shares of Amazon.com Inc (AMZN) at an average price of $207.14 per share. Total Allocation changed to 6.99%",
+    "Date": "03/06/2025"
+  },
+  {
+    "Ticker": "PANW",
+    "TickerImg": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQMAAADCCAMAAAB6zFdcAAAArlBMVEX///8AAAD6WC3Nzc05OTmxsbGSkpL09PQeHh5NTU2ioqKfn5/6+vrm5uZSUlLr6+v6ShG8vLz6Thv6VSjc3NyDg4NdXV0jIyP90cfU1NR7e3tJSUn8v7L6UiP+9PHCwsJra2v7n4sqKir+5uH6dVU0NDSrq6sYGBj7hGn6ZD2MjIxnZ2f8rJsNDQ2Xl5dBQUH6YTn93db5OgD6aEP7i3L6b0z7knr8mYL7f2L9y8Dx2qbvAAAIKElEQVR4nO2aC3ebNh+HIRgTbMAhBTKgCZ7f2e7sOd6tu3z/LzZJ6C8JAQl1nW7t+3vO6QkIyUiP7qKOAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDXxC/W/dPTG7xkHSaMendp+qbm6ZPwmnnSvP/1p8790483byBh6wrml6b32/TuNfOkeH93c2dKePrt8fHn60uY/YcdMAU3pgSm4ObmDSRc2UGQpfPmSlkTCgwJQsFbSLimgzw58cvldXImFSgJUgGT8OOVJVzTwam9XFwlY0qBlKAUXF/CNR3cfpKDyGtW408NBUKCoeDqEv41B2nhp3k19rSjgEv4+Gjej44JkUBcBp7vN3EvxspLWXgWGEFDDli0XeoNVFKUNb7ffTLgYClzEhnRYp6wNF6craOydJp8koJ37/73Uyfk7vvhdF6bAzYql0V7ue2sfLxqI/PrGkuinoPVgaJtDh2L8TKk9A+5ejLgQEFF9tYn9WISs478cx46R7M+XlDgOKaEMQXkYOkcdC62lNfguZvBvTfsIMo70SpVl03SLR9V4OsO4rATKPUnjl/sameZTVRgShhVQA6qQ+eVpXj27PbwhxzED1asfSsxm/XSJxMdpHbCQqQrHP9YpE7e77AjCpiEx9cUkIOT9UrxknXfgbTTcRAPRBMVlQ08WE9y4NvJXFfsLRap5weVM7DPGFPg/P7YVfBdf3bwBvLJOI+VYdtzENmtgLMX3eE88MSb4KAcypKwxxqBEyf9rmAreCQFH+4tBXf9KdJ0kBR7de0bRd0f84NqE57tQI8Fs0IXujKLWleHnPpFMeJgVrQkzJ62Ghb6Wqym/fXx0B8RP0HBwDpBOxATtOqHor537OI0b61HtVE4w8FKGeT9Z6UGQX4XiUI37RC5kw/Mtm44MGYjiukeeEqPKmbbK/pFCvoSlIO0vVftPxNl2PgqZmPkxHBAA6cc7RyScOA3uZvrZYEcc7xhB8YaiZqMDFKWy+so6EkgBwUFUJnEHsbTEaO1kW/DAWVYzafyfiOybwzg0qHoZS86oDH2TAEU+3AlBbYEcqBKS9aPqvCl/1wVW6oMN+o4iGyHajZRDSBuFodjrdIvXnNA/VE3QRkwfOx0gQJLAjnQ48ymUwtp4VoEHQfUd3QRqDe3LTfL7XF/+ZqDpXyo25DsX/spCu6nKOjuHWh9oH9UvlC0ZU9PFCMOyGHas8pbVnTsp3/VAS3X9M6h6oVoPt5fouDm5tfv7BwbimnbYNTIBAf6GIgmd88YzT7TQd4LMfjB2BtO6wjigVYw0A5C5YBGsTYGVWnXAZVYtwNK5alu1XJUG8RXHMyNF7W81A6YhPvPU6DqUU9hsvnXxlKlOPiZKlvXAQ3izyr9QoZk6sqdVYsmcKY60D9AyKXXw6AC3RIuVNDvz1SoSlWx3BnRcN11QGO2msioHbF4MtZMDm6niQ5Itjph7M89toT7z1GgHKgyULvb0QBPT2hwsBxQkWkBk6kfpKzL+qSFw4gDfaZKEW8poLNkGZVwsQK9TpQLELVji+nVZJ86t+WApsKHtvuqHdRCOZDdjJq47eCh8xoemZaaayuLAztmLeFyBcZ+4ZhFTqw2QImu+LYe1abJckAldU9p4ATpXkejJ+3BiRpgbQe0elpEzqpZ8wlGRQ1LliUaIse7QivBUnA/WcHY3pmP6ior68Uu1wcMlgM98nXg3Zt8zOa7Z71OtB10z6BESa3TJ8kLzcBxniwF7z5OVjDmYG3WcBfbwWCOxbK2GnjQd2DnYDWyrph28PyBJsr7P6YqGHGwETPxvBt4GnEQ9Y9KtiK9VZSRudGxTtz4LDtwiDJyljymgJX2j4kKlIOd+b6tXJ7UZmB5HnHgOPaKuJCLmc6RWOWPOLCPq0TYxgqc9inug7lwZi1hkgK9Z/J0j9ffMPSJ4iajG+7A/vaemll+0GtG42j0mSq358DJzG1VISfZTiMcOD0b4nvrG8ufd+8mKDDWidFCVPRtZb7Pa6s45PvY3Tlk1LyOjzW/PBtnP438DvGw7nxADuZC14afBAci/Zn/VCMuQ9oMR7t2lXEqFnrgC/yirZbZYZoB9jvm3uHm/i9rUzmioLtWDuKs950oWmXx8DrdhqWOBz5+sODBTyL91/S/Ua1Yhqa9XGJIYAq6O+sxBQP7ha8bJUEoMCWMKvjmHJAEqUBLGFfw7TloJSgFJOEFBd+gAy7BUNBKeEnBl3RQppkTpR77xwkc8SdlwbETs0ertOSfqef8I3PAn7ApIkr59sFnk5Y/X3qvv6Llh7u/Ovfv715U8CUdsKVzELD9QLs3buTJA1sr5OxRyLZoC7lFieVSomFRb9nGlI5zpuYx+tMKeP/3i/G/oAO2OQoD98gKNstKtkktS/c2K53YPfMiRkdWdrZXi57dNXNQRSn7G7jbkh8fZSzJyp8wxV5EFLe80c+b5G7iVsKBK5f/7THJxi3dwm0e9myDUfOt2pY5KJo5iyOi8oUjX76tP2ml8N8kd7OzS+1AtLvWQe6GbubWbIke8dVzyfqF6Ats1xK4m2d+kBWssrS41n/f+zdhDlZuOx7U9ZZvKtoj/YYfvCXiSDN39wUfB1hfWPFxgTlgY0XF+kJdnY0PT18tizp2mvDgBElRFCEf5RPxQS9IEt9Jk4Q3jeV5E7KpIKvZ+BjmTpSs2catLqNDvTl/A80AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/B/wD/KZj0MVvZBpAAAAAElFTkSuQmCC",
+    "Buy or Sell": "Bought",
+    "Average Price": 196.7651804,
+    "Total Investment": 5000,
+    "Allocation": 1.63,
+    "Content": "Bought 25.41 shares of Palo Alto Networks Inc (PANW) at an average price of $196.76 per share. Total Allocation changed to 1.63%",
+    "Date": "03/06/2025"
+  },
+  {
+    "Ticker": "UBER",
+    "TickerImg": "data:image/png;base64,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",
+    "Buy or Sell": "Bought",
+    "Average Price": 84.10004541,
+    "Total Investment": 10000,
+    "Allocation": 3.95,
+    "Content": "Bought 118.9 shares of Uber Technologies Inc (UBER) at an average price of $84.1 per share. Total Allocation changed to 3.95%",
+    "Date": "02/06/2025"
+  },
+  {
+    "Ticker": "GOOGL",
+    "TickerImg": "https://s3-symbol-logo.tradingview.com/alphabet--600.png",
+    "Buy or Sell": "Bought",
+    "Average Price": 168.75928176049683,
+    "Total Investment": 10000,
+    "Allocation": 9.99,
+    "Content": "Bought 59.25 shares of Alphabet Inc Class A (GOOGL) at an average price of $168.75 per share. Total Allocation changed to 9.99%",
+    "Date": "02/06/2025"
+  },
+  {
+    "Ticker": "AMD",
+    "TickerImg": "https://brandlogos.net/wp-content/uploads/2012/03/amd-vector.jpg",
+    "Buy or Sell": "Bought",
+    "Average Price": 112.5479735737358,
+    "Total Investment": 10000,
+    "Allocation": 5.4,
+    "Content": "Bought 88.85 shares of Advanced Micro Devices Inc (AMD) at an average price of $112.54 per share. Total Allocation changed to 5.4%",
+    "Date": "02/06/2025"
+  }
+]

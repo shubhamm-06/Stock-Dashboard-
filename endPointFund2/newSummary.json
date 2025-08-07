@@ -1,0 +1,18 @@
+[
+  {
+    "Unrealized P&L": 5949.740000000049,
+    "Unrealized P&L%": 0.02267594299361844,
+    "Realized_P&L": 0,
+    "Realized P&L%": "",
+    "Net P&L": 5949.740000000049,
+    "Net P&L %": 2.2675942993618436,
+    "Invested Amount": 262381.15,
+    "Current Value": 268330.8900000001,
+    "Last Updated": "2025-06-30T18:30:00.000Z",
+    "Months Since Inception": 5,
+    "Amt added every month": 100000,
+    "Total Investable Amount": 600000,
+    "Cash Position": 337618.85,
+    "Cash Position (%)": 56.26980833333333
+  }
+]
